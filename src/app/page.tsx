@@ -1,7 +1,7 @@
 "use client";
 
 import { useState } from "react";
-import Navbar from "@/components/Navbar"; // Importamos el nuevo Navbar
+import Navbar from "@/components/Navbar";
 import Hero from "@/components/Hero";
 import Projects from "@/components/Projects";
 import Experience from "@/components/Experience";
@@ -12,11 +12,13 @@ export default function Home() {
 
   return (
     <main>
-      {/* El Navbar va hasta arriba y recibe lang y setLang */}
+      {/* 1. Navbar SI recibe setLang porque es donde están los botones ahora */}
       <Navbar lang={lang} setLang={setLang} />
       
-      {/* El resto de componentes siguen igual, recibiendo su prop lang */}
-      <Hero lang={lang} setLang={setLang} />
+      {/* 2. Hero SOLO recibe lang (aquí estaba el error de TypeScript) */}
+      <Hero lang={lang} /> 
+      
+      {/* 3. Los demás componentes solo leen el idioma */}
       <Projects lang={lang} />
       <Experience lang={lang} />
       <Contact lang={lang} />
