@@ -1,5 +1,6 @@
 "use client";
 
+import { motion } from "framer-motion";
 import { translations } from "@/data/data";
 
 export default function Contact({ lang = "es" }: { lang?: "es" | "en" }) {
@@ -13,67 +14,108 @@ export default function Contact({ lang = "es" }: { lang?: "es" | "en" }) {
   const whatsappUrl = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`;
 
   return (
-    <footer className="px-6 py-20 bg-background border-t border-border transition-colors duration-300">
-      <div className="max-w-6xl mx-auto text-center space-y-8">
-        
-        <h2 className="text-3xl font-bold text-foreground">
-          {lang === "es" ? "Construyamos algo impactante juntos." : "Let's build something impactful together."}
-        </h2>
+    <footer id="contact" className="relative py-24 bg-background overflow-hidden border-t border-border">
+      {/* Background Glow */}
+      <div className="absolute top-0 left-1/2 -translate-x-1/2 w-full max-w-3xl h-64 bg-blue-500/10 dark:bg-blue-500/5 blur-[100px] pointer-events-none" />
 
-        {/* BOTÓN DE WHATSAPP */}
-        <a 
-          href={whatsappUrl}
-          target="_blank"
-          rel="noopener noreferrer"
-          className="inline-block px-4 py-1 rounded-full bg-green-100 dark:bg-green-900/30 text-green-700 dark:text-green-400 text-sm font-medium hover:scale-105 hover:bg-green-200 dark:hover:bg-green-900/50 transition-all cursor-pointer border border-green-200 dark:border-green-800"
+      <div className="max-w-6xl mx-auto px-6 relative z-10 text-center">
+        <motion.div
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, margin: "-100px" }}
+          transition={{ duration: 0.8 }}
+          className="mb-16"
         >
-          <span className="mr-2">●</span>
-          {lang === "es" ? "Disponible para contratación" : "Available for hire"}
-        </a>
-
-        <div className="flex flex-col md:flex-row justify-center items-center gap-6 md:gap-12 text-gray-600 dark:text-gray-400">
-          
-          {/* Email */}
-          <a 
-            href={`mailto:${personalData.email}`} 
-            className="group flex items-center gap-2 hover:text-blue-600 dark:hover:text-blue-400 transition"
-          >
-            <span className="text-xl">📧</span>
-            <span className="border-b border-transparent group-hover:border-blue-600 dark:group-hover:border-blue-400">
-              {personalData.email}
+          <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full glass border border-blue-500/20 text-blue-600 dark:text-blue-400 text-sm font-semibold mb-6">
+            <span className="relative flex h-3 w-3">
+              <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-blue-400 opacity-75"></span>
+              <span className="relative inline-flex rounded-full h-3 w-3 bg-blue-500"></span>
             </span>
-          </a>
+            {lang === "es" ? "Disponible para contratación" : "Available for hire"}
+          </div>
 
-          {/* LinkedIn Actualizado */}
-          <a 
+          <h2 className="text-5xl md:text-7xl font-bold text-foreground mb-6 tracking-tight">
+            {lang === "es" ? "Construyamos algo " : "Let's build something "}
+            <span className="text-gradient">
+              {lang === "es" ? "impactante." : "impactful."}
+            </span>
+          </h2>
+          <p className="text-lg text-slate-600 dark:text-slate-400 max-w-2xl mx-auto">
+            {lang === "es" 
+              ? "¿Tienes un proyecto en mente o buscas un desarrollador Full Stack para tu equipo? Hablemos."
+              : "Do you have a project in mind or looking for a Full Stack developer for your team? Let's talk."}
+          </p>
+        </motion.div>
+
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-4xl mx-auto mb-20">
+          <motion.a 
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.5, delay: 0.1 }}
+            href={`mailto:${personalData.email}`} 
+            className="group glass p-8 rounded-2xl hover:-translate-y-2 transition-transform duration-300 flex flex-col items-center justify-center gap-4 border border-border hover:border-blue-500/30"
+          >
+            <div className="w-16 h-16 rounded-full bg-blue-500/10 flex items-center justify-center text-3xl group-hover:bg-blue-500/20 transition-colors">
+              📧
+            </div>
+            <div>
+              <h3 className="text-lg font-bold text-foreground mb-1">Email</h3>
+              <p className="text-slate-500 text-sm">{personalData.email}</p>
+            </div>
+          </motion.a>
+
+          <motion.a 
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.5, delay: 0.2 }}
+            href={whatsappUrl} 
+            target="_blank" 
+            rel="noopener noreferrer"
+            className="group glass p-8 rounded-2xl hover:-translate-y-2 transition-transform duration-300 flex flex-col items-center justify-center gap-4 border border-border hover:border-green-500/30"
+          >
+            <div className="w-16 h-16 rounded-full bg-green-500/10 flex items-center justify-center text-3xl group-hover:bg-green-500/20 transition-colors">
+              💬
+            </div>
+            <div>
+              <h3 className="text-lg font-bold text-foreground mb-1">WhatsApp</h3>
+              <p className="text-slate-500 text-sm">+52 56 6385 2677</p>
+            </div>
+          </motion.a>
+
+          <motion.a 
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.5, delay: 0.3 }}
             href="https://www.linkedin.com/in/juan-carlos-andrés-hernández-8850b136a" 
             target="_blank" 
             rel="noopener noreferrer"
-            className="group flex items-center gap-2 hover:text-blue-600 dark:hover:text-blue-400 transition"
+            className="group glass p-8 rounded-2xl hover:-translate-y-2 transition-transform duration-300 flex flex-col items-center justify-center gap-4 border border-border hover:border-blue-700/30"
           >
-            <span className="text-xl">🔗</span>
-            <span className="border-b border-transparent group-hover:border-blue-600 dark:group-hover:border-blue-400">
-              LinkedIn
-            </span>
-          </a>
-
-          {/* GitHub */}
-          <a 
-            href="https://github.com/mscandy3312" 
-            target="_blank" 
-            rel="noopener noreferrer"
-            className="group flex items-center gap-2 hover:text-blue-600 dark:hover:text-blue-400 transition"
-          >
-            <span className="text-xl">💻</span>
-            <span className="border-b border-transparent group-hover:border-blue-600 dark:group-hover:border-blue-400">
-              GitHub
-            </span>
-          </a>
+            <div className="w-16 h-16 rounded-full bg-blue-700/10 flex items-center justify-center text-3xl group-hover:bg-blue-700/20 transition-colors">
+              🔗
+            </div>
+            <div>
+              <h3 className="text-lg font-bold text-foreground mb-1">LinkedIn</h3>
+              <p className="text-slate-500 text-sm">Juan Carlos Hernández</p>
+            </div>
+          </motion.a>
         </div>
 
-        <div className="border-t border-border pt-8 text-sm text-gray-500 dark:text-gray-600">
-          © {new Date().getFullYear()} {personalData.name}. 
-          <br className="md:hidden" /> {lang === "es" ? "Todos los derechos reservados." : "All rights reserved."}
+        <div className="border-t border-border pt-8 text-sm text-slate-500 dark:text-slate-400 flex flex-col md:flex-row justify-between items-center gap-4">
+          <p>
+            © {new Date().getFullYear()} {personalData.name}.
+          </p>
+          <div className="flex gap-4">
+            <a href="https://github.com/mscandy3312" target="_blank" rel="noopener noreferrer" className="hover:text-foreground transition-colors">
+              GitHub
+            </a>
+            <a href="https://www.linkedin.com/in/juan-carlos-andrés-hernández-8850b136a" target="_blank" rel="noopener noreferrer" className="hover:text-foreground transition-colors">
+              LinkedIn
+            </a>
+          </div>
         </div>
       </div>
     </footer>

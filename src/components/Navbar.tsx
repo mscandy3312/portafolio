@@ -29,23 +29,23 @@ export default function Navbar({ lang, setLang }: NavbarProps) {
   };
 
   return (
-    <nav className={`fixed top-0 w-full z-50 transition-all ${
-      scrolled ? "bg-white/90 dark:bg-slate-900/90 backdrop-blur-sm shadow-sm" : "bg-transparent"
-    } py-3`}>
+    <nav className={`fixed top-0 w-full z-50 transition-all duration-300 ${
+      scrolled ? "glass py-3" : "bg-transparent py-5"
+    }`}>
       <div className="max-w-7xl mx-auto px-6 flex justify-between items-center">
-        <div className="text-xl font-bold text-slate-900 dark:text-white">JC<span className="text-blue-600">.</span></div>
+        <a href="#hero" className="text-2xl font-black text-foreground tracking-tighter">
+          JC<span className="text-blue-500">.</span>
+        </a>
         
-        <div className="flex items-center gap-3">
-          {/* BOTÓN DE IDIOMA ÚNICO */}
+        <div className="flex items-center gap-4">
           <button
             onClick={() => setLang(lang === "es" ? "en" : "es")}
-            className="px-3 py-1 text-xs font-bold border border-slate-300 dark:border-slate-700 text-slate-700 dark:text-slate-200 rounded-md hover:bg-slate-100 dark:hover:bg-slate-800 transition"
+            className="px-4 py-1.5 text-xs font-bold border border-border text-foreground rounded-full hover:bg-foreground/10 transition-colors"
           >
             {lang === "es" ? "EN" : "ES"}
           </button>
-
-          {/* BOTÓN DE TEMA ÚNICO */}
-          <button onClick={toggleTheme} className="p-2 text-lg">
+          
+          <button onClick={toggleTheme} className="p-2 text-xl hover:scale-110 transition-transform text-foreground">
             {isDark ? "☀️" : "🌙"}
           </button>
         </div>

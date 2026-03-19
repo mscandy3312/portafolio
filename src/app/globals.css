@@ -2,17 +2,16 @@
 
 :root {
   --background: #ffffff;
-  --foreground: #0f172a; /* Azul pizarra oscuro (Premium) */
+  --foreground: #020617; /* Slate 950 */
   --card-bg: #f8fafc;
   --border: #e2e8f0;
 }
 
-/* Esta es la clave: cuando el elemento raíz tiene la clase .dark */
 .dark {
-  --background: #0a0a0a;
+  --background: #030712; /* Sleeker dark mode (Gray 950) */
   --foreground: #f8fafc;
-  --card-bg: #111827;
-  --border: #1e293b;
+  --card-bg: rgba(15, 23, 42, 0.4); /* Glass Slate 900 */
+  --border: rgba(30, 41, 59, 0.5); /* Slate 800 */
 }
 
 @theme inline {
@@ -27,3 +26,19 @@ body {
   color: var(--foreground);
   transition: background-color 0.3s ease, color 0.3s ease;
 }
+
+/* Premium Utilities */
+.glass {
+  background: var(--card-bg);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid var(--border);
+}
+
+.text-gradient {
+  background: linear-gradient(135deg, #3b82f6 0%, #8b5cf6 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  color: transparent;
+}

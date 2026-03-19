@@ -12,78 +12,99 @@ export default function Projects({ lang = "es" }: { lang?: "es" | "en" }) {
   return (
     <section
       id="projects"
-      className="min-h-screen px-6 py-20 bg-background transition-colors duration-300"
+      className="py-24 px-6 bg-background relative"
     >
-      {/* CAMBIO AQUÍ: Forzamos el color del título */}
-      <h2 className="text-4xl font-bold text-center mb-16 text-gray-900 dark:text-white transition-colors duration-300">
-        {lang === "es" ? "Proyectos Destacados" : "Featured Projects"}
-      </h2>
+      <div className="max-w-7xl mx-auto">
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, margin: "-100px" }}
+          transition={{ duration: 0.6 }}
+          className="text-center mb-16"
+        >
+          <h2 className="text-4xl md:text-5xl font-bold text-foreground mb-4">
+            {lang === "es" ? "Proyectos Destacados" : "Featured Projects"}
+          </h2>
+          <div className="w-24 h-1 bg-blue-500 mx-auto rounded-full" />
+        </motion.div>
 
-      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-10 max-w-7xl mx-auto">
-        {projectsList.map((project, index) => (
-          <motion.div
-            key={index}
-            initial={{ opacity: 0, y: 40 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: index * 0.1 }}
-            viewport={{ once: true }}
-            className="bg-gray-50 dark:bg-[#1a1a1a] border border-gray-200 dark:border-gray-800 rounded-2xl overflow-hidden hover:scale-105 transition duration-300 shadow-lg dark:shadow-none"
-          >
-            <div
-              className="relative w-full h-56 cursor-pointer"
-              onClick={() => setSelectedImage(project.image)}
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          {projectsList.map((project, index) => (
+            <motion.div
+              key={index}
+              initial={{ opacity: 0, y: 40 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.5, delay: index * 0.1 }}
+              viewport={{ once: true, margin: "-50px" }}
+              className="group glass rounded-2xl overflow-hidden hover:-translate-y-2 transition-all duration-300"
             >
-              <Image
-                src={project.image}
-                alt={project.title}
-                fill
-                className="object-cover"
-              />
-            </div>
-            <div className="p-6">
-              {/* CAMBIO AQUÍ: Forzamos el color del nombre del proyecto */}
-              <h3 className="text-2xl font-semibold mb-4 text-gray-900 dark:text-gray-100 transition-colors">
-                {project.title}
-              </h3>
-              
-              <p className="text-gray-600 dark:text-gray-400 mb-6">
-                {project.description}
-              </p>
-
-              {/* REINSERCIÓN DE BOTONES AZULES (Tech Tags) */}
-              <div className="flex flex-wrap gap-2">
-                {project.tech.map((t, i) => (
-                  <span
-                    key={i}
-                    className="px-3 py-1 text-xs font-medium bg-blue-100 dark:bg-blue-900/30 text-blue-700 dark:text-blue-400 rounded-full border border-blue-200 dark:border-blue-800"
-                  >
-                    {t}
+              <div
+                className="relative w-full h-60 cursor-pointer overflow-hidden"
+                onClick={() => setSelectedImage(project.image)}
+              >
+                <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent z-10 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+                <Image
+                  src={project.image}
+                  alt={project.title}
+                  fill
+                  className="object-cover group-hover:scale-110 transition-transform duration-500"
+                />
+                <div className="absolute bottom-4 left-4 z-20 translate-y-4 opacity-0 group-hover:translate-y-0 group-hover:opacity-100 transition-all duration-300">
+                  <span className="px-3 py-1 bg-white/20 backdrop-blur-md rounded-full text-white text-sm font-medium border border-white/30">
+                    {lang === "es" ? "Ver Imagen" : "View Image"}
                   </span>
-                ))}
+                </div>
               </div>
-            </div>
-          </motion.div>
-        ))}
+
+              <div className="p-6">
+                <h3 className="text-2xl font-bold mb-3 text-foreground group-hover:text-blue-500 transition-colors">
+                  {project.title}
+                </h3>
+                
+                <p className="text-slate-600 dark:text-slate-400 mb-6 line-clamp-3 text-sm leading-relaxed">
+                  {project.description}
+                </p>
+
+                <div className="flex flex-wrap gap-2">
+                  {project.tech.map((t, i) => (
+                    <span
+                      key={i}
+                      className="px-2.5 py-1 text-xs font-semibold bg-blue-500/10 text-blue-600 dark:text-blue-400 rounded-md border border-blue-500/20"
+                    >
+                      {t}
+                    </span>
+                  ))}
+                </div>
+              </div>
+            </motion.div>
+          ))}
+        </div>
       </div>
 
       {/* Modal Zoom */}
       <AnimatePresence>
         {selectedImage && (
           <motion.div
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            exit={{ opacity: 0 }}
+            initial={{ opacity: 0, backdropFilter: "blur(0px)" }}
+            animate={{ opacity: 1, backdropFilter: "blur(8px)" }}
+            exit={{ opacity: 0, backdropFilter: "blur(0px)" }}
             onClick={() => setSelectedImage(null)}
-            className="fixed inset-0 z-50 flex items-center justify-center bg-black/90 p-4 cursor-pointer"
+            className="fixed inset-0 z-50 flex items-center justify-center bg-black/80 p-4 cursor-pointer"
           >
-            <div className="relative w-full max-w-5xl h-[80vh]">
+            <motion.div 
+              initial={{ scale: 0.9, opacity: 0 }}
+              animate={{ scale: 1, opacity: 1 }}
+              exit={{ scale: 0.9, opacity: 0 }}
+              transition={{ type: "spring", stiffness: 300, damping: 25 }}
+              className="relative w-full max-w-5xl h-[85vh] rounded-2xl overflow-hidden shadow-2xl"
+            >
               <Image
                 src={selectedImage}
                 alt="Project Zoom"
                 fill
                 className="object-contain"
               />
-            </div>
+            </motion.div>
           </motion.div>
         )}
       </AnimatePresence>

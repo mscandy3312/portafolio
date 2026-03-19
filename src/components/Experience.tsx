@@ -61,36 +61,56 @@ export default function Experience({ lang = "es" }: { lang?: "es" | "en" }) {
   ];
 
   return (
-    <section id="experience" className="min-h-screen px-6 py-24 bg-background transition-colors duration-300">
-      <h2 className="text-4xl font-bold text-center mb-20 text-foreground">
-        {/* Usamos el título traducido del data.ts */}
-        {t.experience.title}
-      </h2>
+    <section id="experience" className="py-24 px-6 relative bg-background">
+      <div className="max-w-5xl mx-auto">
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, margin: "-100px" }}
+          transition={{ duration: 0.6 }}
+          className="text-center mb-16"
+        >
+          <h2 className="text-4xl md:text-5xl font-bold text-foreground mb-4">
+            {t.experience.title}
+          </h2>
+          <div className="w-24 h-1 bg-blue-500 mx-auto rounded-full" />
+        </motion.div>
 
-      <div className="max-w-5xl mx-auto space-y-12">
-        {experienceData.map((exp, index) => (
-          <motion.div
-            key={index}
-            initial={{ opacity: 0, y: 40 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6 }}
-            viewport={{ once: true }}
-            className="bg-gray-50 dark:bg-white/5 p-8 rounded-2xl border border-gray-200 dark:border-white/10 shadow-sm dark:shadow-none transition-colors"
-          >
-            <h3 className="text-2xl font-semibold text-foreground">
-              {exp.title}
-            </h3>
-            <p className="text-blue-600 dark:text-blue-400 font-medium mb-4">
-              {exp.sub}
-            </p>
-
-            <ul className="text-gray-600 dark:text-gray-400 space-y-2 list-disc list-inside">
-              {exp.items.map((item, i) => (
-                <li key={i}>{item}</li>
-              ))}
-            </ul>
-          </motion.div>
-        ))}
+        <div className="relative space-y-8 before:absolute before:inset-0 before:ml-5 before:-translate-x-px md:before:mx-auto md:before:translate-x-0 before:h-full before:w-0.5 before:bg-gradient-to-b before:from-blue-500 before:via-indigo-500 before:to-transparent">
+          {experienceData.map((exp, index) => (
+            <div key={index} className="relative flex items-center justify-between md:justify-normal md:odd:flex-row-reverse group is-active">
+              {/* Timeline Icon */}
+              <div className="flex items-center justify-center w-10 h-10 rounded-full border-4 border-background bg-blue-500 shadow shrink-0 md:order-1 md:group-odd:-translate-x-1/2 md:group-even:translate-x-1/2 z-10">
+                <div className="w-3 h-3 bg-white rounded-full"></div>
+              </div>
+              
+              <motion.div 
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true, margin: "-50px" }}
+                transition={{ duration: 0.5, delay: 0.1 }}
+                className="w-[calc(100%-4rem)] md:w-[calc(50%-3rem)] glass p-8 rounded-2xl hover:-translate-y-1 transition-transform duration-300 relative"
+              >
+                <div className="flex flex-col mb-4">
+                  <h3 className="text-2xl font-bold text-foreground">
+                    {exp.title}
+                  </h3>
+                  <div className="text-sm font-semibold text-blue-600 dark:text-blue-400 uppercase tracking-wide mt-2">
+                    {exp.sub}
+                  </div>
+                </div>
+                <ul className="text-slate-600 dark:text-slate-400 space-y-3 text-sm md:text-base leading-relaxed">
+                  {exp.items.map((item, i) => (
+                    <li key={i} className="flex gap-3">
+                      <span className="text-blue-500 mt-1 flex-shrink-0">•</span>
+                      <span>{item}</span>
+                    </li>
+                  ))}
+                </ul>
+              </motion.div>
+            </div>
+          ))}
+        </div>
       </div>
     </section>
   );
