@@ -7,10 +7,12 @@ interface SkillsProps {
   lang: "es" | "en";
 }
 
+// Añadidas las tecnologías de CompraNova con jerarquía backend
 const skills = [
   "Next.js", "React", "TypeScript", "Tailwind CSS", "Node.js",
-  "Laravel", "PHP", "MySQL", "Prisma", "React Native",
-  "Android Studio", "Firebase", "Framer Motion", "Git", "WordPress", "AWS"
+  "Java", "Spring Boot", "Microservices", "Laravel", "PHP", 
+  "MySQL", "Prisma", "React Native", "Android Studio", "Firebase", 
+  "Framer Motion", "Git", "WordPress", "AWS"
 ];
 
 export default function Skills({ lang }: SkillsProps) {

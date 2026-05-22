@@ -9,7 +9,7 @@ export default function Experience({ lang = "es" }: { lang?: "es" | "en" }) {
   // 2. Accedemos al diccionario de traducciones
   const t = translations[lang];
 
-  // 3. Contenido localizado (idealmente esto debería vivir en data.ts)
+  // 3. Contenido localizado
   const experienceData = [
     {
       title: lang === "es" ? "Administrador y Programador Interno – SHCP / SFP" : "Internal Administrator & Programmer – SHCP / SFP",
@@ -47,15 +47,19 @@ export default function Experience({ lang = "es" }: { lang?: "es" | "en" }) {
       title: lang === "es" ? "Desarrollador Full-Stack Freelance" : "Freelance Full-Stack Developer",
       sub: lang === "es" ? "2024 – Actualidad" : "2024 – Present",
       items: lang === "es" ? [
-        "Desarrollo de plataforma SaaS Naxine con despliegue en AWS.",
-        "App móvil AstroMatch con Firebase y arquitectura escalable.",
-        "Plataforma médica DesignMedicine con enfoque en UX y SEO.",
-        "Optimización de servidores y modernización de sistemas."
+        // Añadido CompraNova con Java y Spring Boot
+        "Desarrollo de CompraNova utilizando arquitectura de microservicios distribuidos con Java 17 y Spring Boot.",
+        "Desarrollo de plataforma SaaS Naxine con despliegue en infraestructura AWS.",
+        "App móvil AstroMatch con Firebase, Kotlin y arquitectura escalable nativa.",
+        "Plataforma médica DesignMedicine con enfoque en alta disponibilidad, UX y SEO.",
+        "Optimización avanzada de bases de datos y modernización de sistemas heredados."
       ] : [
-        "Development of Naxine SaaS platform deployed on AWS.",
-        "AstroMatch mobile app with Firebase and scalable architecture.",
-        "DesignMedicine medical platform with UX and SEO focus.",
-        "Server optimization and system modernization."
+        // Added CompraNova with Java and Spring Boot
+        "Development of CompraNova utilizing a distributed microservices architecture with Java 17 and Spring Boot.",
+        "Development of Naxine SaaS platform deployed on AWS infrastructure.",
+        "AstroMatch mobile app with Firebase, Kotlin, and native scalable architecture.",
+        "DesignMedicine medical platform focused on high availability, UX, and SEO.",
+        "Advanced database optimization and legacy systems modernization."
       ]
     }
   ];
