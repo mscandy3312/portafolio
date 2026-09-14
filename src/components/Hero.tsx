@@ -21,8 +21,8 @@ export default function Hero({ lang }: HeroProps) {
 
   const stats = [
     {
-      value: "7+",
-      label: lang === "es" ? "Años de Experiencia" : "Years Experience",
+      value: "9+",
+      label: lang === "es" ? "Años de Experiencia (Desde 2017)" : "Years Experience (Since 2017)",
       icon: <Award className="w-5 h-5 text-blue-500" />,
     },
     {

@@ -6,12 +6,12 @@ const outfit = Outfit({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
   title: "Juan Carlos Hernández | Full Stack Engineer & Microservices Architect",
-  description: "Portafolio profesional de Juan Carlos Hernández - Ingeniero en Sistemas Computacionales con +7 años de experiencia en desarrollo Full Stack, Java 17, Spring Boot y Next.js.",
+  description: "Portafolio profesional de Juan Carlos Hernández - Ingeniero en Sistemas Computacionales egresado en 2017 con +9 años de experiencia en desarrollo Full Stack, Java 17, Spring Boot y Next.js.",
   keywords: ["Juan Carlos Hernández", "Full Stack Engineer", "Java", "Spring Boot", "Microservicios", "Next.js", "React", "TypeScript", "SHCP COMPRANET", "Portafolio"],
   authors: [{ name: "Juan Carlos Hernández" }],
   openGraph: {
     title: "Juan Carlos Hernández | Full Stack Engineer & Microservices Architect",
-    description: "Ingeniero en Sistemas Computacionales con +7 años de experiencia en arquitecturas escalables, Java 17, Spring Boot, Next.js y soluciones empresariales.",
+    description: "Ingeniero en Sistemas Computacionales egresado en 2017 con +9 años de experiencia en arquitecturas escalables, Java 17, Spring Boot, Next.js y soluciones empresariales.",
     url: "https://github.com/mscandy3312/portafolio",
     siteName: "Portafolio Juan Carlos Hernández",
     images: [

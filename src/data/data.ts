@@ -4,7 +4,7 @@ export const translations = {
       name: "Juan Carlos Andrés Hernández",
       title: "Ingeniero en Sistemas Computacionales",
       profile:
-        "Soy Ingeniero en Sistemas con más de 7 años de experiencia creando soluciones de software robustas y escalables. Mi trayectoria me ha enseñado a trabajar bajo presión, con estándares de calidad y a optimizar sistemas críticos. Ahora, como Full Stack y Freelance, aplico esa visión para ayudar a empresas y startups a construir productos digitales distribuídos y de alto impacto.",
+        "Soy Ingeniero en Sistemas Computacionales egresado en 2017, con más de 9 años de experiencia continua desarrollando soluciones de software robustas y escalables. Mi trayectoria me ha enseñado a trabajar bajo presión, aplicar altos estándares de calidad y optimizar sistemas críticos. Ahora, como Full Stack Developer y Arquitecto Freelance, aplico esa visión para ayudar a empresas y startups a construir productos digitales distribuidos y de alto impacto.",
       cta: "Ver Proyectos",
       email: "jcarlos61200@gmail.com",
     },
@@ -115,7 +115,7 @@ export const translations = {
       name: "Juan Carlos Andrés Hernández",
       title: "Computer Systems Engineer",
       profile:
-        "I am a Systems Engineer with over 7 years of experience building robust and scalable software solutions. My professional journey has taught me to work under pressure, meet rigorous quality standards, and optimize critical systems. Currently, as a Full Stack Developer and Freelancer, I apply that expertise to help companies and startups build distributed, high-impact digital products.",
+        "I am a Computer Systems Engineer who graduated in 2017, with over 9 years of continuous experience building robust and scalable software solutions. My professional journey has taught me to work under pressure, meet rigorous quality standards, and optimize critical systems. Currently, as a Full Stack Developer and Freelance Architect, I apply that expertise to help companies and startups build distributed, high-impact digital products.",
       cta: "View Projects",
       email: "jcarlos61200@gmail.com",
     },
