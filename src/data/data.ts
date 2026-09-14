@@ -6,7 +6,7 @@ export const translations = {
       profile:
         "Soy Ingeniero en Sistemas con más de 7 años de experiencia creando soluciones de software robustas y escalables. Mi trayectoria me ha enseñado a trabajar bajo presión, con estándares de calidad y a optimizar sistemas críticos. Ahora, como Full Stack y Freelance, aplico esa visión para ayudar a empresas y startups a construir productos digitales distribuídos y de alto impacto.",
       cta: "Ver Proyectos",
-      email: "tu-email@ejemplo.com",
+      email: "jcarlos61200@gmail.com",
     },
 
     experience: {
@@ -117,7 +117,7 @@ export const translations = {
       profile:
         "I am a Systems Engineer with over 7 years of experience building robust and scalable software solutions. My professional journey has taught me to work under pressure, meet rigorous quality standards, and optimize critical systems. Currently, as a Full Stack Developer and Freelancer, I apply that expertise to help companies and startups build distributed, high-impact digital products.",
       cta: "View Projects",
-      email: "tu-email@ejemplo.com",
+      email: "jcarlos61200@gmail.com",
     },
 
     experience: {
