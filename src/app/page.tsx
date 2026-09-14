@@ -7,6 +7,7 @@ import Skills from "@/components/Skills";
 import Projects from "@/components/Projects";
 import Experience from "@/components/Experience";
 import Contact from "@/components/Contact";
+import FloatingWhatsApp from "@/components/FloatingWhatsApp";
 
 export default function Home() {
   const [lang, setLang] = useState<"es" | "en">("es");
@@ -19,6 +20,7 @@ export default function Home() {
       <Projects lang={lang} />
       <Experience lang={lang} />
       <Contact lang={lang} />
+      <FloatingWhatsApp lang={lang} />
     </main>
   );
-}
+}
