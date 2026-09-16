@@ -34,6 +34,66 @@ export const translations = {
 
     projectsIntro: "Proyectos de desarrollo de software, sistemas empresariales, aplicaciones web y móviles, plataformas SaaS e interfaces digitales.",
 
+    recommendations: {
+      title: "Recomendaciones profesionales",
+      subtitle: "Reconocimientos y referencias que respaldan mi trayectoria profesional.",
+      items: [
+        {
+          id: "rec-1",
+          title: "Recomendación Profesional",
+          subtitle: "Documento de Referencia Laboral",
+          description: "Carta de recomendación profesional respaldando mi desempeño, responsabilidad y capacidad técnica en desarrollo de software y resolución de incidencias.",
+          link: "https://drive.google.com/file/d/1UNm8TKVXyT_t2F8abSa7fNw7TlPvxRF8/view?usp=drive_link",
+        },
+        {
+          id: "rec-2",
+          title: "Recomendación Profesional",
+          subtitle: "Documento de Referencia Laboral",
+          description: "Documento de referencia avalando mi compromiso profesional, cumplimiento de requerimientos y colaboración en entornos de TI.",
+          link: "https://drive.google.com/file/d/1Q4M8tT8DNSEgpABsqgFEl1OEtkBlnk4T/view?usp=drive_link",
+        },
+        {
+          id: "rec-3",
+          title: "Recomendación Profesional",
+          subtitle: "Documento de Referencia Laboral",
+          description: "Carta de referencia destacando mi rigor en soporte técnico-funcional, optimización de sistemas y comunicación profesional.",
+          link: "https://drive.google.com/file/d/1cg4yJgfqWJOc5flHrRcfOIXrpvsC8-2s/view?usp=drive_link",
+        },
+      ],
+      teaching: {
+        title: "Experiencia adicional",
+        subtitle: "Acompañamiento docente y formación técnica",
+        item: {
+          title: "Recomendación de Experiencia Docente",
+          subtitle: "Evidencia de Acompañamiento y Formación Técnica",
+          description: "Documento que respalda mi habilidad de comunicación efectiva, capacidad para explicar conceptos técnicos complejos, responsabilidad y formación técnica.",
+          link: "https://drive.google.com/file/d/1UNm8TKVXyT_t2F8abSa7fNw7TlPvxRF8/view?usp=drive_link",
+        }
+      },
+      certifications: {
+        title: "Certificaciones y Formación",
+        subtitle: "Acreditaciones y certificaciones profesionales",
+        items: [
+          {
+            id: "cert-1",
+            title: "Ingeniería en Sistemas Computacionales",
+            issuer: "Título Profesional Acreditado",
+            year: "Formación Universitaria",
+            description: "Acreditación profesional en desarrollo de software, bases de datos y arquitectura de sistemas.",
+            link: CV_LINK,
+          },
+          {
+            id: "cert-2",
+            title: "Certificación / Acreditación Técnica .NET & SQL Server",
+            issuer: "Formación Continua en Software",
+            year: "Acreditación Profesional",
+            description: "Acreditación en desarrollo .NET C#, diseño de bases de datos relacionales y optimización de consultas SQL Server.",
+            link: CV_LINK,
+          }
+        ]
+      }
+    },
+
     projects: [
       {
         id: "erp-nextjs",
@@ -226,6 +286,66 @@ export const translations = {
     },
 
     projectsIntro: "Software development projects, enterprise systems, web & mobile applications, SaaS platforms, and digital interfaces.",
+
+    recommendations: {
+      title: "Professional Recommendations",
+      subtitle: "Endorsements and references backing my professional career.",
+      items: [
+        {
+          id: "rec-1",
+          title: "Professional Recommendation",
+          subtitle: "Employment Reference Document",
+          description: "Professional recommendation letter backing my performance, accountability, and technical expertise in software development and incident resolution.",
+          link: "https://drive.google.com/file/d/1UNm8TKVXyT_t2F8abSa7fNw7TlPvxRF8/view?usp=drive_link",
+        },
+        {
+          id: "rec-2",
+          title: "Professional Recommendation",
+          subtitle: "Employment Reference Document",
+          description: "Reference letter endorsing my professional commitment, requirement delivery, and IT teamwork.",
+          link: "https://drive.google.com/file/d/1Q4M8tT8DNSEgpABsqgFEl1OEtkBlnk4T/view?usp=drive_link",
+        },
+        {
+          id: "rec-3",
+          title: "Professional Recommendation",
+          subtitle: "Employment Reference Document",
+          description: "Reference letter highlighting my rigor in technical support, system optimization, and professional communication.",
+          link: "https://drive.google.com/file/d/1cg4yJgfqWJOc5flHrRcfOIXrpvsC8-2s/view?usp=drive_link",
+        },
+      ],
+      teaching: {
+        title: "Additional Experience",
+        subtitle: "Teaching & Technical Training Support",
+        item: {
+          title: "Teaching Recommendation Letter",
+          subtitle: "Technical Training & Communication Evidence",
+          description: "Document attesting my effective communication skills, ability to explain complex technical concepts, professional responsibility, and technical guidance.",
+          link: "https://drive.google.com/file/d/1UNm8TKVXyT_t2F8abSa7fNw7TlPvxRF8/view?usp=drive_link",
+        }
+      },
+      certifications: {
+        title: "Certifications & Education",
+        subtitle: "Professional accreditations & certificates",
+        items: [
+          {
+            id: "cert-1",
+            title: "Computer Systems Engineering",
+            issuer: "Accredited University Degree",
+            year: "Academic Degree",
+            description: "Professional degree in software engineering, database design, and systems architecture.",
+            link: CV_LINK,
+          },
+          {
+            id: "cert-2",
+            title: ".NET & SQL Server Technical Accreditation",
+            issuer: "Continuous Software Training",
+            year: "Professional Certification",
+            description: "Technical qualification in .NET C# development, relational database engineering, and SQL Server query optimization.",
+            link: CV_LINK,
+          }
+        ]
+      }
+    },
 
     projects: [
       {

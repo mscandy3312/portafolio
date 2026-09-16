@@ -5,8 +5,9 @@ import Navbar from "@/components/Navbar";
 import Hero from "@/components/Hero";
 import Profile from "@/components/Profile";
 import Experience from "@/components/Experience";
-import Skills from "@/components/Skills";
 import Projects from "@/components/Projects";
+import Recommendations from "@/components/Recommendations";
+import Skills from "@/components/Skills";
 import RecruiterSection from "@/components/RecruiterSection";
 import Contact from "@/components/Contact";
 import FloatingWhatsApp from "@/components/FloatingWhatsApp";
@@ -20,8 +21,9 @@ export default function Home() {
       <Hero lang={lang} />
       <Profile lang={lang} />
       <Experience lang={lang} />
-      <Skills lang={lang} />
       <Projects lang={lang} />
+      <Recommendations lang={lang} />
+      <Skills lang={lang} />
       <RecruiterSection lang={lang} />
       <Contact lang={lang} />
       <FloatingWhatsApp lang={lang} />

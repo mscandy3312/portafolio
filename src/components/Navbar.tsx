@@ -36,8 +36,9 @@ export default function Navbar({ lang, setLang }: NavbarProps) {
     { name: lang === "es" ? "Inicio" : "Home", href: "#hero" },
     { name: lang === "es" ? "Perfil" : "Profile", href: "#perfil" },
     { name: lang === "es" ? "Experiencia" : "Experience", href: "#experiencia" },
-    { name: lang === "es" ? "Especialidades" : "Specialties", href: "#especialidades" },
     { name: lang === "es" ? "Proyectos" : "Projects", href: "#proyectos" },
+    { name: lang === "es" ? "Recomendaciones" : "Recommendations", href: "#recomendaciones" },
+    { name: lang === "es" ? "Especialidades" : "Specialties", href: "#especialidades" },
     { name: lang === "es" ? "Contacto" : "Contact", href: "#contacto" },
   ];
 
