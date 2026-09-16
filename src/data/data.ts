@@ -62,12 +62,13 @@ export const translations = {
       ],
       teaching: {
         title: "Experiencia adicional",
-        subtitle: "Acompañamiento docente y formación técnica",
+        subtitle: "Comprobante de experiencia docente",
         item: {
-          title: "Recomendación de Experiencia Docente",
-          subtitle: "Evidencia de Acompañamiento y Formación Técnica",
-          description: "Documento que respalda mi habilidad de comunicación efectiva, capacidad para explicar conceptos técnicos complejos, responsabilidad y formación técnica.",
-          link: "https://drive.google.com/file/d/1UNm8TKVXyT_t2F8abSa7fNw7TlPvxRF8/view?usp=drive_link",
+          title: "Experiencia docente",
+          subtitle: "Comprobante de experiencia docente",
+          description: "Documento que acredita experiencia relacionada con actividades de enseñanza y formación.",
+          link: "https://drive.google.com/file/d/1jAF2X693yilo7bMa91JmbfpUh34GbAf0/view?usp=drive_link",
+          buttonText: "Ver comprobante docente",
         }
       },
       certifications: {
@@ -317,12 +318,13 @@ export const translations = {
       ],
       teaching: {
         title: "Additional Experience",
-        subtitle: "Teaching & Technical Training Support",
+        subtitle: "Proof of Teaching Experience",
         item: {
-          title: "Teaching Recommendation Letter",
-          subtitle: "Technical Training & Communication Evidence",
-          description: "Document attesting my effective communication skills, ability to explain complex technical concepts, professional responsibility, and technical guidance.",
-          link: "https://drive.google.com/file/d/1UNm8TKVXyT_t2F8abSa7fNw7TlPvxRF8/view?usp=drive_link",
+          title: "Teaching Experience",
+          subtitle: "Proof of Teaching Experience",
+          description: "Document attesting experience related to teaching activities and training.",
+          link: "https://drive.google.com/file/d/1jAF2X693yilo7bMa91JmbfpUh34GbAf0/view?usp=drive_link",
+          buttonText: "View teaching certificate",
         }
       },
       certifications: {

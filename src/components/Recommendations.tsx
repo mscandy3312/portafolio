@@ -190,7 +190,7 @@ export default function Recommendations({ lang = "es" }: { lang?: "es" | "en" })
                 rel="noopener noreferrer"
                 className="inline-flex items-center justify-center gap-2 px-6 py-3 text-sm font-semibold rounded-xl bg-primary text-primary-foreground hover:bg-primary/90 transition-all shadow-md shadow-primary/10 w-full md:w-auto group/btn"
               >
-                <span>{lang === "es" ? "Ver recomendación docente" : "View teaching recommendation"}</span>
+                <span>{recs.teaching.item.buttonText || (lang === "es" ? "Ver comprobante docente" : "View teaching certificate")}</span>
                 <ExternalLink className="w-4 h-4 group-hover/btn:translate-x-0.5 group-hover/btn:-translate-y-0.5 transition-transform" />
               </a>
             </div>
