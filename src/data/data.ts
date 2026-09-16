@@ -50,7 +50,7 @@ export const translations = {
           title: "Recomendación Profesional",
           subtitle: "Documento de Referencia Laboral",
           description: "Documento de referencia avalando mi compromiso profesional, cumplimiento de requerimientos y colaboración en entornos de TI.",
-          link: "https://drive.google.com/file/d/1Q4M8tT8DNSEgpABsqgFEl1OEtkBlnk4T/view?usp=drive_link",
+          link: "https://drive.google.com/file/d/1DqyadLDrDO5RvQITQWRx5VmOKRFZdA4K/view?usp=drive_link",
         },
         {
           id: "rec-3",
@@ -84,11 +84,11 @@ export const translations = {
           },
           {
             id: "cert-2",
-            title: "Certificación / Acreditación Técnica .NET & SQL Server",
-            issuer: "Formación Continua en Software",
+            title: "Certificación / Acreditación Técnica",
+            issuer: "Diseño Web Avanzado",
             year: "Acreditación Profesional",
-            description: "Acreditación en desarrollo .NET C#, diseño de bases de datos relacionales y optimización de consultas SQL Server.",
-            link: CV_LINK,
+            description: "Formación y acreditación en diseño y desarrollo web avanzado.",
+            link: "https://drive.google.com/file/d/1DOQ9ECDOJNnOj70p2E3f6nWD4dIosY8t/view?usp=drive_link",
           }
         ]
       }
@@ -303,7 +303,7 @@ export const translations = {
           title: "Professional Recommendation",
           subtitle: "Employment Reference Document",
           description: "Reference letter endorsing my professional commitment, requirement delivery, and IT teamwork.",
-          link: "https://drive.google.com/file/d/1Q4M8tT8DNSEgpABsqgFEl1OEtkBlnk4T/view?usp=drive_link",
+          link: "https://drive.google.com/file/d/1DqyadLDrDO5RvQITQWRx5VmOKRFZdA4K/view?usp=drive_link",
         },
         {
           id: "rec-3",
@@ -337,11 +337,11 @@ export const translations = {
           },
           {
             id: "cert-2",
-            title: ".NET & SQL Server Technical Accreditation",
-            issuer: "Continuous Software Training",
-            year: "Professional Certification",
-            description: "Technical qualification in .NET C# development, relational database engineering, and SQL Server query optimization.",
-            link: CV_LINK,
+            title: "Technical Certification / Accreditation",
+            issuer: "Advanced Web Design",
+            year: "Professional Accreditation",
+            description: "Training and accreditation in advanced web design and development.",
+            link: "https://drive.google.com/file/d/1DOQ9ECDOJNnOj70p2E3f6nWD4dIosY8t/view?usp=drive_link",
           }
         ]
       }
