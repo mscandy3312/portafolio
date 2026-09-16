@@ -124,7 +124,7 @@ export default function RecruiterSection({ lang }: RecruiterSectionProps) {
             className="px-8 py-4 bg-gradient-to-r from-blue-600 to-indigo-600 hover:from-blue-500 hover:to-indigo-500 text-white rounded-full font-bold text-sm shadow-xl shadow-blue-500/25 hover:scale-[1.02] active:scale-[0.98] transition-all flex items-center gap-2.5 shrink-0 cursor-pointer"
           >
             <Download className="w-4 h-4" />
-            <span>{isEs ? "DESCARGAR CV 2026" : "DOWNLOAD CV 2026"}</span>
+            <span>{isEs ? "Ver CV 2026" : "View CV 2026"}</span>
             <ExternalLink className="w-3.5 h-3.5 opacity-80" />
           </a>
         </motion.div>

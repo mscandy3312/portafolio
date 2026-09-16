@@ -120,8 +120,8 @@ export default function Skills({ lang }: SkillsProps) {
           <div className="w-24 h-1 bg-gradient-to-r from-blue-500 to-indigo-500 mx-auto rounded-full mb-6" />
           <p className="text-slate-600 dark:text-slate-300 max-w-2xl mx-auto text-base md:text-lg">
             {isEs
-              ? "Reorganización clara en 3 niveles de dominio técnico para reflejar con precisión la experiencia profesional del CV 2026."
-              : "Clear 3-level reorganization matching verified experience in CV 2026."}
+              ? "Herramientas y tecnologías que utilizo para desarrollar sistemas empresariales, aplicaciones web y soluciones Full Stack."
+              : "Tools and technologies I use to develop enterprise software, web applications, and Full Stack solutions."}
           </p>
         </motion.div>
 

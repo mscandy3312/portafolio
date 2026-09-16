@@ -88,7 +88,7 @@ export default function Contact({ lang = "es" }: { lang?: "es" | "en" }) {
               <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
               <span className="relative inline-flex rounded-full h-2.5 w-2.5 bg-emerald-500"></span>
             </span>
-            {isEs ? "Abierto a Oportunidades Profesionales" : "Open to Professional Opportunities"}
+            {isEs ? "Disponible para nuevas oportunidades profesionales" : "Available for new professional opportunities"}
           </div>
 
           <h2 className="text-4xl sm:text-6xl md:text-7xl font-extrabold text-foreground mb-6 tracking-tight">
@@ -169,7 +169,7 @@ export default function Contact({ lang = "es" }: { lang?: "es" | "en" }) {
             className="px-7 py-4 rounded-full glass-card hover:border-emerald-500/40 text-foreground font-bold text-sm transition-all flex items-center gap-2 cursor-pointer"
           >
             <Download className="w-4 h-4 text-emerald-500" />
-            <span>{isEs ? "DESCARGAR CV 2026" : "DOWNLOAD CV 2026"}</span>
+            <span>{isEs ? "Ver CV 2026" : "View CV 2026"}</span>
             <ExternalLink className="w-3.5 h-3.5 opacity-60" />
           </a>
         </motion.div>
