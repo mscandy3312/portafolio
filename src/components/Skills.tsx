@@ -2,7 +2,7 @@
 
 import { motion } from "framer-motion";
 import { useState } from "react";
-import { Code2, Layers, Wrench, ShieldCheck, Database, Server, Terminal, Sparkles } from "lucide-react";
+import { Code2, Server, Wrench, Sparkles, Layers } from "lucide-react";
 
 interface SkillsProps {
   lang: "es" | "en";
@@ -13,73 +13,73 @@ export default function Skills({ lang }: SkillsProps) {
   const [activeCategory, setActiveCategory] = useState<string>("all");
 
   const categories = [
-    { id: "all", label: isEs ? "Todas las especialidades" : "All Specialties" },
+    { id: "all", label: isEs ? "Todas las tecnologías" : "All Stacks" },
     { id: "primary", label: isEs ? "Especialidad principal" : "Primary Specialty" },
+    { id: "fullstack", label: isEs ? "Desarrollo Full Stack" : "Full Stack Development" },
     { id: "complementary", label: isEs ? "Experiencia complementaria" : "Complementary Experience" },
-    { id: "tools", label: isEs ? "Herramientas" : "Tools" },
   ];
 
   const skillGroups = [
     {
       id: "primary",
-      categoryName: isEs ? "CATEGORÍA 1" : "CATEGORY 1",
-      title: isEs ? "Especialidad principal" : "Primary Specialty",
+      categoryName: isEs ? "NIVEL 1" : "LEVEL 1",
+      title: isEs ? "Especialidad Principal" : "Primary Specialty",
       description: isEs 
-        ? "Tecnologías y lenguajes centrales en los que se fundamenta mi arquitectura de desarrollo empresarial y backend/frontend."
-        : "Core technologies forming the backbone of my enterprise software architecture.",
+        ? "Tecnologías y lenguajes centrales en los que se fundamenta mi trayectoria en desarrollo de software empresarial y bases de datos relacionales."
+        : "Core technologies forming the backbone of my enterprise software engineering.",
       icon: <Code2 className="w-6 h-6 text-blue-500" />,
-      badgeColor: "bg-blue-500/10 text-blue-600 dark:text-blue-400 border-blue-500/20",
+      badgeColor: "bg-blue-500/10 text-blue-600 dark:text-blue-400 border-blue-500/30 font-bold",
       items: [
         "C#",
         ".NET",
         "ASP.NET Core",
         "MVC",
         "SQL Server",
+      ],
+    },
+    {
+      id: "fullstack",
+      categoryName: isEs ? "NIVEL 2" : "LEVEL 2",
+      title: isEs ? "Desarrollo Full Stack" : "Full Stack Development",
+      description: isEs
+        ? "Ecosistema de tecnologías web, lenguajes frontend/backend y servicios API utilizados para construir aplicaciones interactivas e integraciones."
+        : "Web ecosystem, frontend/backend languages, and API services used for modern applications.",
+      icon: <Server className="w-6 h-6 text-indigo-500" />,
+      badgeColor: "bg-indigo-500/10 text-indigo-600 dark:text-indigo-400 border-indigo-500/30 font-bold",
+      items: [
         "JavaScript",
         "React",
         "Next.js",
+        "Node.js",
+        "Laravel",
+        "PHP",
+        "HTML5",
+        "CSS",
+        "Tailwind CSS",
         "REST APIs",
       ],
     },
     {
       id: "complementary",
-      categoryName: isEs ? "CATEGORÍA 2" : "CATEGORY 2",
-      title: isEs ? "Experiencia complementaria" : "Complementary Experience",
+      categoryName: isEs ? "NIVEL 3" : "LEVEL 3",
+      title: isEs ? "Experiencia Complementaria" : "Complementary Experience",
       description: isEs
-        ? "Frameworks, plataformas cloud y entornos móviles trabajados en proyectos web, SaaS y desarrollos independientes."
-        : "Frameworks, cloud platforms, and mobile stacks used across web and SaaS projects.",
-      icon: <Server className="w-6 h-6 text-indigo-500" />,
-      badgeColor: "bg-indigo-500/10 text-indigo-600 dark:text-indigo-400 border-indigo-500/20",
+        ? "Herramientas de desarrollo, motores de datos, plataformas móviles, cloud y diseño trabajados en proyectos y soluciones independientes."
+        : "Development tools, database engines, mobile/cloud platforms, and design tools.",
+      icon: <Wrench className="w-6 h-6 text-purple-500" />,
+      badgeColor: "bg-purple-500/10 text-purple-600 dark:text-purple-400 border-purple-500/30 font-semibold",
       items: [
-        "Node.js",
-        "PHP",
-        "Laravel",
-        "MySQL",
         "React Native",
         "Kotlin",
         "Firebase / Firestore",
         "AWS",
+        "MySQL",
         "WordPress",
         "Elementor",
-        "Tailwind CSS",
-      ],
-    },
-    {
-      id: "tools",
-      categoryName: isEs ? "CATEGORÍA 3" : "CATEGORY 3",
-      title: isEs ? "Herramientas" : "Tools",
-      description: isEs
-        ? "Entornos de desarrollo, control de versiones, prototipado y herramientas de análisis de datos."
-        : "IDEs, version control, prototyping platforms, and data analytics tools.",
-      icon: <Wrench className="w-6 h-6 text-purple-500" />,
-      badgeColor: "bg-purple-500/10 text-purple-600 dark:text-purple-400 border-purple-500/20",
-      items: [
-        "Visual Studio",
-        "Visual Studio Code",
-        "Android Studio",
-        "Git / GitHub",
-        "Figma",
         "Power BI",
+        "Figma",
+        "Git / GitHub",
+        "Android Studio",
       ],
     },
   ];
@@ -101,7 +101,7 @@ export default function Skills({ lang }: SkillsProps) {
         >
           <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full glass border border-blue-500/20 text-blue-600 dark:text-blue-400 text-xs font-semibold mb-4">
             <Sparkles className="w-4 h-4 text-blue-500" />
-            <span>{isEs ? "Capacidad Técnica" : "Technical Capability"}</span>
+            <span>{isEs ? "Capacidad Técnica & Stacks" : "Technical Capability & Stacks"}</span>
           </div>
 
           <h2 className="text-4xl md:text-5xl font-extrabold text-foreground mb-4 tracking-tight">
@@ -113,8 +113,8 @@ export default function Skills({ lang }: SkillsProps) {
           <div className="w-24 h-1 bg-gradient-to-r from-blue-500 to-indigo-500 mx-auto rounded-full mb-6" />
           <p className="text-slate-600 dark:text-slate-300 max-w-2xl mx-auto text-base md:text-lg">
             {isEs
-              ? "Organización clara y profesional de mi stack tecnológico estructurado por categorías de experiencia real sin porcentajes arbitrarios."
-              : "Clear and professional organization of my tech stack structured by real experience categories without arbitrary percentages."}
+              ? "Reorganización transparente del dominio tecnológico alineada con la experiencia demostrable del CV 2026."
+              : "Clear reorganization of tech stack matching verified experience in CV 2026."}
           </p>
         </motion.div>
 
@@ -169,7 +169,7 @@ export default function Skills({ lang }: SkillsProps) {
                   <motion.div
                     key={skill}
                     whileHover={{ scale: 1.05, y: -2 }}
-                    className={`px-4 py-2.5 rounded-xl border text-sm font-bold transition-all flex items-center gap-2 cursor-default ${group.badgeColor}`}
+                    className={`px-4 py-2.5 rounded-xl border text-sm transition-all flex items-center gap-2 cursor-default ${group.badgeColor}`}
                   >
                     <span className="w-2 h-2 rounded-full bg-current opacity-70" />
                     <span>{skill}</span>

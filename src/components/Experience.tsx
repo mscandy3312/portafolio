@@ -2,7 +2,7 @@
 
 import { motion } from "framer-motion";
 import { translations } from "@/data/data";
-import { Briefcase, Calendar, CheckCircle2, Building2, ShieldAlert, Award, Star, Flame } from "lucide-react";
+import { Briefcase, Calendar, CheckCircle2, Building2, Award, Star, Flame } from "lucide-react";
 
 export default function Experience({ lang = "es" }: { lang?: "es" | "en" }) {
   const t = translations[lang] || translations["es"];
@@ -12,89 +12,85 @@ export default function Experience({ lang = "es" }: { lang?: "es" | "en" }) {
       id: "compranet",
       featured: true,
       company: "SHCP / SFP",
-      system: "Sistema de Contrataciones Públicas – COMPRANET",
+      system: "Sistema de Contrataciones Públicas COMPRANET",
       title: lang === "es" ? "Administrador y programador interno" : "Internal Administrator & Programmer",
-      sub: "SHCP / SFP | COMPRANET",
+      sub: "SHCP / SFP – Sistema de Contrataciones Públicas COMPRANET",
       period: "2020 – 2024",
       highlightMetric: "+100 incidencias técnicas mensuales",
       highlightText: lang === "es" 
         ? "Resolución de más de 100 incidencias técnicas mensuales, contribuyendo a la continuidad operativa de COMPRANET."
         : "Resolution of over 100 monthly technical incidents, contributing to COMPRANET's operational continuity.",
-      tags: ["SQL Server", ".NET / C#", "Soporte Nivel 2", "Mesa de Ayuda", "Pruebas Funcionales", "Validación de Lógica"],
+      tags: ["SQL Server", ".NET / C#", "Soporte Nivel 2", "Mesa de Ayuda", "Pruebas Funcionales", "Lógica de Negocio"],
       items: lang === "es" ? [
-        "Administración técnica y funcional del Sistema de Contrataciones Públicas COMPRANET.",
-        "Participación activa en operación, monitoreo, mantenimiento y mejora continua de la plataforma.",
-        "Soporte técnico-funcional de segundo nivel y atención a dependencias y entidades usuarias.",
+        "Administración técnica y funcional del Sistema de Contrataciones Públicas COMPRANET a nivel federal.",
+        "Participación en la operación, monitoreo, mantenimiento y mejora continua del sistema.",
+        "Soporte técnico-funcional de segundo nivel y atención especializada a dependencias y entidades usuarias.",
         "Atención de requerimientos mediante mesa de ayuda, atención telefónica y correo electrónico.",
-        "Análisis, atención y resolución oportuna de incidencias técnicas y funcionales críticas.",
-        "Validación de procesos, seguimiento de requerimientos internos y ejecución de pruebas funcionales.",
-        "Uso, consulta y validación rigurosa de información y lógica de negocio en bases de datos SQL Server.",
-        "Colaboración estrecha con equipos internos de TI para garantizar la alta disponibilidad del sistema."
+        "Análisis, atención y resolución oportuna de incidencias técnicas y funcionales.",
+        "Validación de procesos, seguimiento de requerimientos internos y pruebas funcionales.",
+        "Uso, consulta y validación rigurosa de información y lógica de negocio en SQL Server.",
+        "Colaboración directa con equipos internos de TI para mantener la continuidad operativa."
       ] : [
-        "Technical and functional administration of the Federal Procurement System COMPRANET.",
-        "Active participation in operations, monitoring, maintenance, and continuous platform improvement.",
-        "Second-level technical-functional support for federal agencies and public entities.",
-        "Help desk ticket resolution, phone support, and email inquiry management.",
-        "Analysis, investigation, and resolution of critical technical and functional incidents.",
+        "Technical and functional administration of the COMPRANET Federal Procurement System.",
+        "Participation in operations, monitoring, maintenance, and continuous platform improvement.",
+        "Second-level technical-functional support and specialized assistance for federal agencies.",
+        "Help desk, telephone, and email incident management and ticket resolution.",
+        "Analysis, investigation, and resolution of technical and functional incidents.",
         "Process validation, internal requirement tracking, and functional test execution.",
-        "Rigorously querying and validating business logic and data inside SQL Server databases.",
-        "Close collaboration with internal IT teams to maintain maximum service continuity."
+        "Use, querying, and data validation in SQL Server to verify business logic.",
+        "Direct collaboration with internal IT teams to maintain operation continuity."
       ]
     },
     {
       id: "valora",
       featured: false,
       company: "Valora IT",
-      system: "Sistemas Administrativos & Afores",
+      system: "Desarrollo .NET & SQL Server",
       title: lang === "es" ? "Programador .NET" : ".NET Programmer",
-      sub: "Valora IT | Ciudad de México",
+      sub: "Valora IT | 2019 – 2020",
       period: "2019 – 2020",
       highlightMetric: "Optimización SQL 70%",
       highlightText: lang === "es"
         ? "Optimización de consultas en SQL Server que redujeron los tiempos de respuesta del sistema en un 70%."
         : "SQL Server query optimization that reduced system response times by 70%.",
-      tags: [".NET", "C#", "ASP.NET Core", "MVC", "SQL Server", "Procedimientos Almacenados"],
+      tags: [".NET / C#", "ASP.NET Core", "Arquitectura MVC", "SQL Server", "Procedimientos Almacenados"],
       items: lang === "es" ? [
-        "Desarrollo de aplicaciones web y de escritorio utilizando .NET con C# y ASP.NET Core.",
-        "Implementación de soluciones robustas bajo el patrón de arquitectura MVC.",
-        "Desarrollo de aplicaciones web orientadas al área de Marketing y desarrollo del sistema 'Afores'.",
-        "Desarrollo de sistemas administrativos internos para control de horarios e incidencias de personal.",
-        "Diseño, conexión, administración y validación de datos en bases de datos relacionales SQL Server.",
-        "Creación y optimización de consultas complejas y procedimientos almacenados (Stored Procedures)."
+        "Desarrollo de aplicaciones web y de escritorio utilizando .NET / C# y ASP.NET Core bajo arquitectura MVC.",
+        "Desarrollo de aplicaciones web para el área de Marketing y desarrollo del sistema 'Afores'.",
+        "Desarrollo de sistemas administrativos para control de horarios e incidencias de personal.",
+        "Diseño, conexión y administración de bases de datos relacionales SQL Server.",
+        "Creación de consultas complejas, procedimientos almacenados y validación de datos."
       ] : [
-        "Development of web and desktop applications using .NET with C# and ASP.NET Core.",
-        "Implementation of robust solutions following MVC architecture design patterns.",
-        "Development of web applications for Marketing departments and core 'Afores' system.",
-        "Development of administrative systems for schedule control and personnel incident tracking.",
-        "Design, connection, administration, and data validation in relational SQL Server databases.",
-        "Creation and optimization of complex SQL queries and Stored Procedures."
+        "Development of web and desktop applications using .NET / C# and ASP.NET Core under MVC architecture.",
+        "Development of web applications for Marketing and core 'Afores' system.",
+        "Development of administrative systems for schedule control and incident tracking.",
+        "Design, connection, and administration of relational SQL Server databases.",
+        "Creation of complex queries, stored procedures, and data validation."
       ]
     },
     {
       id: "freelance",
       featured: false,
       company: "Freelance",
-      system: "Soluciones Web, Móviles & Cloud",
-      title: lang === "es" ? "Desarrollador Full Stack Freelance" : "Full Stack Developer Freelance",
-      sub: "Freelance | Proyectos Web & Móviles",
+      system: "Proyectos Web, Móviles & Empresariales",
+      title: lang === "es" ? "Desarrollador Full-Stack Freelance" : "Full-Stack Developer Freelance",
+      sub: "Proyectos Independientes | 2024 – Actualidad",
       period: "2024 – Actualidad",
-      highlightMetric: "Full Stack & Cloud",
+      highlightMetric: "Desarrollo Full-Stack",
       highlightText: lang === "es"
-        ? "Desarrollo independiente de soluciones web, aplicaciones móviles, modernización de sistemas y AWS."
-        : "Independent engineering of web solutions, mobile apps, system modernizations, and AWS cloud.",
-      tags: ["Next.js", "React Native", "Kotlin", "AWS", "Naxine SaaS", "AstroMatch", "Design Medicine"],
+        ? "Desarrollo de soluciones web, móviles y empresariales para proyectos independientes, incluyendo modernización de sistemas, optimización de servidores y desarrollo de aplicaciones."
+        : "Development of web, mobile, and enterprise solutions for independent ventures, including system modernization, server optimization, and app development.",
+      tags: ["Next.js", "React Native", "Kotlin", "AWS", "Naxine", "AstroMatch", "Design Medicine"],
       items: lang === "es" ? [
-        "Desarrollo de soluciones web modernas utilizando React y Next.js.",
-        "Desarrollo de aplicaciones móviles con React Native (ERP Mobile) y Kotlin (AstroMatch).",
-        "Modernización de sistemas heredados, integración de servicios e infraestructura en AWS (Naxine).",
-        "Soporte técnico, optimización de servidores y desarrollo de plataformas a medida (Design Medicine).",
-        "Optimización de bases de datos relacionales y soluciones en tiempo real con Firebase."
+        "Desarrollo de soluciones web modernas (Next.js, React, Tailwind CSS).",
+        "Desarrollo de aplicaciones móviles independientes (React Native / Kotlin).",
+        "Modernización de sistemas empresariales, optimización de servidores e integración con AWS.",
+        "Desarrollo de plataformas destacadas: Naxine Enterprise SaaS, AstroMatch y Design Medicine."
       ] : [
-        "Modern web development using React and Next.js framework.",
-        "Mobile app development with React Native (ERP Mobile) and native Kotlin (AstroMatch).",
-        "Legacy system modernization, API integrations, and AWS cloud deployment (Naxine).",
-        "Technical support, server optimization, and custom software architecture (Design Medicine).",
-        "Relational database optimization and real-time backend sync with Firebase."
+        "Development of modern web solutions (Next.js, React, Tailwind CSS).",
+        "Independent mobile app engineering (React Native / Kotlin).",
+        "Enterprise system modernization, server tuning, and AWS cloud setup.",
+        "Featured project developments: Naxine Enterprise SaaS, AstroMatch, and Design Medicine."
       ]
     }
   ];
@@ -112,7 +108,7 @@ export default function Experience({ lang = "es" }: { lang?: "es" | "en" }) {
         >
           <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full glass border border-blue-500/20 text-blue-600 dark:text-blue-400 text-xs font-semibold mb-4">
             <Award className="w-4 h-4 text-blue-500" />
-            <span>{lang === "es" ? "Historial de Trabajo" : "Work History"}</span>
+            <span>{lang === "es" ? "Historial Profesional" : "Work History"}</span>
           </div>
 
           <h2 className="text-4xl md:text-5xl font-extrabold text-foreground mb-4 tracking-tight">

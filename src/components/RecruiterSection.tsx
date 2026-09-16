@@ -2,7 +2,7 @@
 
 import { motion } from "framer-motion";
 import { CV_LINK } from "@/data/data";
-import { Briefcase, Download, ExternalLink, ShieldCheck, CheckCircle2, Building, Database, Code2 } from "lucide-react";
+import { Briefcase, Download, ExternalLink, ShieldCheck, Building, Database, Code2 } from "lucide-react";
 
 interface RecruiterSectionProps {
   lang: "es" | "en";
@@ -15,7 +15,7 @@ export default function RecruiterSection({ lang }: RecruiterSectionProps) {
     {
       stat: "+7",
       label: isEs ? "Años de experiencia" : "Years of experience",
-      sub: isEs ? "Desarrollo y soporte técnico" : "Development & support",
+      sub: isEs ? "Desarrollo de software y soporte" : "Software dev & support",
       icon: <Briefcase className="w-5 h-5 text-blue-500" />,
     },
     {
@@ -31,22 +31,16 @@ export default function RecruiterSection({ lang }: RecruiterSectionProps) {
       icon: <Building className="w-5 h-5 text-indigo-500" />,
     },
     {
-      stat: ".NET / C#",
-      label: isEs ? "Desarrollo Backend & MVC" : "Backend & MVC Development",
-      sub: isEs ? "ASP.NET Core y C# profesional" : "Professional C# & ASP.NET Core",
-      icon: <Code2 className="w-5 h-5 text-purple-500" />,
-    },
-    {
-      stat: "SQL Server",
-      label: isEs ? "Bases de Datos Relacionales" : "Relational Databases",
-      sub: isEs ? "Optimización de consultas y SPs" : "Query tuning & stored procedures",
-      icon: <Database className="w-5 h-5 text-emerald-500" />,
+      stat: "C# / .NET",
+      label: isEs ? "SQL Server" : "SQL Server",
+      sub: isEs ? "Desarrollo de sistemas empresariales" : "Enterprise software engineering",
+      icon: <Database className="w-5 h-5 text-purple-500" />,
     },
     {
       stat: "React / Next.js",
-      label: isEs ? "Frontend & Full Stack" : "Frontend & Full Stack",
-      sub: isEs ? "Interfaces modernas e interactivas" : "Modern interactive interfaces",
-      icon: <Code2 className="w-5 h-5 text-amber-500" />,
+      label: isEs ? "Full Stack" : "Full Stack",
+      sub: isEs ? "Desarrollo web interactivo y moderno" : "Modern interactive web dev",
+      icon: <Code2 className="w-5 h-5 text-emerald-500" />,
     },
   ];
 
@@ -71,13 +65,13 @@ export default function RecruiterSection({ lang }: RecruiterSectionProps) {
           
           <p className="max-w-3xl mx-auto text-slate-600 dark:text-slate-300 text-base md:text-lg leading-relaxed font-normal">
             {isEs
-              ? "Soy Ingeniero en Sistemas Computacionales con experiencia en desarrollo de software, sistemas empresariales, soporte técnico-funcional y bases de datos."
-              : "I am a Computer Systems Engineer with experience in software development, enterprise systems, technical-functional support, and databases."}
+              ? "Ingeniero en Sistemas Computacionales con experiencia en desarrollo de software, administración de sistemas empresariales, soporte técnico-funcional y bases de datos."
+              : "Computer Systems Engineer with experience in software development, enterprise systems, technical-functional support, and databases."}
           </p>
         </motion.div>
 
         {/* CARDS GRID */}
-        <div className="grid grid-cols-2 md:grid-cols-3 gap-4 md:gap-6 mb-12">
+        <div className="grid grid-cols-2 md:grid-cols-5 gap-4 md:gap-4 mb-12">
           {cards.map((item, idx) => (
             <motion.div
               key={idx}
@@ -85,19 +79,19 @@ export default function RecruiterSection({ lang }: RecruiterSectionProps) {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.4, delay: idx * 0.08 }}
-              className="glass-card p-6 rounded-3xl border border-border hover:border-blue-500/30 transition-all flex flex-col justify-between group"
+              className="glass-card p-5 rounded-3xl border border-border hover:border-blue-500/30 transition-all flex flex-col justify-between group text-center items-center"
             >
-              <div className="p-2.5 rounded-2xl bg-blue-500/10 w-fit mb-4 group-hover:scale-110 transition-transform">
+              <div className="p-2.5 rounded-2xl bg-blue-500/10 mb-3 group-hover:scale-110 transition-transform">
                 {item.icon}
               </div>
               <div>
-                <div className="text-2xl sm:text-3xl font-black text-foreground tracking-tight mb-1">
+                <div className="text-xl sm:text-2xl font-black text-foreground tracking-tight mb-1">
                   {item.stat}
                 </div>
-                <div className="text-sm font-bold text-slate-700 dark:text-slate-200">
+                <div className="text-xs font-bold text-slate-700 dark:text-slate-200">
                   {item.label}
                 </div>
-                <div className="text-xs text-slate-500 dark:text-slate-400 font-medium mt-0.5">
+                <div className="text-[11px] text-slate-500 dark:text-slate-400 font-medium mt-0.5">
                   {item.sub}
                 </div>
               </div>
@@ -118,8 +112,8 @@ export default function RecruiterSection({ lang }: RecruiterSectionProps) {
             </h3>
             <p className="text-sm text-slate-600 dark:text-slate-300">
               {isEs 
-                ? "Consulta mi trayectoria detallada, habilidades técnicas y experiencia comprobable." 
-                : "Review my detailed background, technical skills, and verified experience."}
+                ? "Consulta mi trayectoria detallada, habilidades técnicas y experiencia comprobable en el CV 2026." 
+                : "Review my detailed background, technical skills, and verified experience in CV 2026."}
             </p>
           </div>
 

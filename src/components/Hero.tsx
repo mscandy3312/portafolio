@@ -55,8 +55,8 @@ export default function Hero({ lang }: HeroProps) {
       icon: <Cpu className="w-5 h-5 text-indigo-500" />,
     },
     {
-      value: ".NET & SQL",
-      label: lang === "es" ? "Especialidad en Sistemas" : "Systems Specialty",
+      value: "C# / .NET & SQL",
+      label: lang === "es" ? "Desarrollo de Sistemas Empresariales" : "Enterprise Software Specialty",
       icon: <Database className="w-5 h-5 text-purple-500" />,
     },
   ];
@@ -93,13 +93,13 @@ export default function Hero({ lang }: HeroProps) {
         transition={{ duration: 0.8, delay: 0.1 }}
         className="text-3xl sm:text-5xl md:text-6xl lg:text-7xl font-black text-foreground z-10 tracking-tight leading-[1.1]"
       >
-        <span>JUAN CARLOS</span>
+        <span>Juan Carlos Andrés</span>
         <span className="block text-gradient mt-1 font-extrabold">
-          ANDRÉS HERNÁNDEZ
+          Hernández
         </span>
       </motion.h1>
 
-      {/* POSITION & TECH SUBTITLE */}
+      {/* SUBTITLE & HEADLINE */}
       <motion.div
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
@@ -109,7 +109,7 @@ export default function Hero({ lang }: HeroProps) {
         {t.personalData.subtitle}
       </motion.div>
 
-      {/* SUBTITLE PHRASES */}
+      {/* DESCRIPTIVE PHRASES */}
       <motion.div
         initial={{ opacity: 0, y: 30 }}
         animate={{ opacity: 1, y: 0 }}
@@ -131,7 +131,7 @@ export default function Hero({ lang }: HeroProps) {
         transition={{ duration: 0.5, delay: 0.45 }}
         className="mt-8 z-10 flex flex-wrap justify-center items-center gap-4"
       >
-        {/* DESCARGAR CV */}
+        {/* DESCARGAR CV 2026 */}
         <a
           href={CV_LINK}
           target="_blank"
@@ -169,7 +169,7 @@ export default function Hero({ lang }: HeroProps) {
         </button>
       </motion.div>
 
-      {/* VISIBLE SOCIAL & CONTACT LINKS */}
+      {/* VISIBLE SOCIAL LINKS */}
       <motion.div
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}

@@ -3,7 +3,7 @@
 import { motion } from "framer-motion";
 import { useState } from "react";
 import { translations, CV_LINK } from "@/data/data";
-import { Mail, Phone, Send, Copy, Check, ArrowUp, MessageSquare, Sparkles, Download, ExternalLink, Briefcase } from "lucide-react";
+import { Mail, Phone, Send, Copy, Check, ArrowUp, MessageSquare, Sparkles, Download, ExternalLink, Briefcase, MapPin } from "lucide-react";
 
 function GithubIcon(props: React.SVGProps<SVGSVGElement>) {
   return (
@@ -26,14 +26,15 @@ function LinkedinIcon(props: React.SVGProps<SVGSVGElement>) {
 
 export default function Contact({ lang = "es" }: { lang?: "es" | "en" }) {
   const isEs = lang === "es";
+  const { personalData } = translations[lang] || translations["es"];
   const [copied, setCopied] = useState(false);
   const [formState, setFormState] = useState({ name: "", email: "", message: "" });
   const [sentSuccess, setSentSuccess] = useState(false);
 
   const phoneNumber = "525663852677";
   const defaultWhatsAppMsg = isEs 
-    ? "Hola Juan Carlos, estuve viendo tu portafolio profesional y me gustaría platicar sobre una oportunidad laboral o proyecto." 
-    : "Hello Juan Carlos, I reviewed your professional portfolio and would like to discuss a job opportunity or project.";
+    ? "Hola Juan Carlos, estuve viendo tu portafolio profesional y me gustaría platicar sobre una oportunidad laboral." 
+    : "Hello Juan Carlos, I reviewed your professional portfolio and would like to discuss a job opportunity.";
   
   const whatsappUrl = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(defaultWhatsAppMsg)}`;
 
@@ -56,7 +57,7 @@ export default function Contact({ lang = "es" }: { lang?: "es" | "en" }) {
     e.preventDefault();
     if (!formState.email || !formState.message) return;
     
-    const mailtoSubject = encodeURIComponent(`Contacto Portafolio: Oportunidad de ${formState.name || "Reclutador"}`);
+    const mailtoSubject = encodeURIComponent(`Contacto Portafolio: Propuesta Laboral de ${formState.name || "Reclutador"}`);
     const mailtoBody = encodeURIComponent(`Nombre: ${formState.name}\nCorreo: ${formState.email}\n\nMensaje:\n${formState.message}`);
     window.location.href = `mailto:jcarlos61200@gmail.com?subject=${mailtoSubject}&body=${mailtoBody}`;
     
@@ -80,14 +81,14 @@ export default function Contact({ lang = "es" }: { lang?: "es" | "en" }) {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, margin: "-100px" }}
           transition={{ duration: 0.8 }}
-          className="text-center mb-16"
+          className="text-center mb-12"
         >
           <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full glass border border-blue-500/20 text-blue-600 dark:text-blue-400 text-xs font-semibold mb-6">
             <span className="relative flex h-2.5 w-2.5">
               <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
               <span className="relative inline-flex rounded-full h-2.5 w-2.5 bg-emerald-500"></span>
             </span>
-            {isEs ? "Disponible para contratación inmediata & proyectos" : "Available for immediate hire & projects"}
+            {isEs ? "Abierto a Oportunidades Profesionales" : "Open to Professional Opportunities"}
           </div>
 
           <h2 className="text-4xl sm:text-6xl md:text-7xl font-extrabold text-foreground mb-6 tracking-tight">
@@ -97,11 +98,15 @@ export default function Contact({ lang = "es" }: { lang?: "es" | "en" }) {
             </span>
           </h2>
 
+          <p className="max-w-3xl mx-auto text-slate-700 dark:text-slate-300 text-base md:text-lg leading-relaxed mb-6 font-medium">
+            "{personalData.jobAvailability}"
+          </p>
+
           {/* TARGET POSITIONS BADGES */}
           <div className="max-w-3xl mx-auto mb-8">
-            <p className="text-sm font-bold uppercase tracking-wider text-slate-500 dark:text-slate-400 mb-3 flex items-center justify-center gap-2">
+            <p className="text-xs font-bold uppercase tracking-wider text-slate-500 dark:text-slate-400 mb-3 flex items-center justify-center gap-2">
               <Briefcase className="w-4 h-4 text-blue-500" />
-              {isEs ? "Estoy interesado en oportunidades como:" : "I am interested in roles as:"}
+              {isEs ? "Interesado en puestos como:" : "Interested in roles like:"}
             </p>
             <div className="flex flex-wrap justify-center gap-2">
               {targetedPositions.map((pos, idx) => (
@@ -156,7 +161,7 @@ export default function Contact({ lang = "es" }: { lang?: "es" | "en" }) {
             <ExternalLink className="w-3.5 h-3.5 opacity-60" />
           </a>
 
-          {/* DESCARGAR CV */}
+          {/* DESCARGAR CV 2026 */}
           <a
             href={CV_LINK}
             target="_blank"
@@ -164,12 +169,12 @@ export default function Contact({ lang = "es" }: { lang?: "es" | "en" }) {
             className="px-7 py-4 rounded-full glass-card hover:border-emerald-500/40 text-foreground font-bold text-sm transition-all flex items-center gap-2 cursor-pointer"
           >
             <Download className="w-4 h-4 text-emerald-500" />
-            <span>{isEs ? "Descargar CV 2026" : "Download CV 2026"}</span>
+            <span>{isEs ? "DESCARGAR CV 2026" : "DOWNLOAD CV 2026"}</span>
             <ExternalLink className="w-3.5 h-3.5 opacity-60" />
           </a>
         </motion.div>
 
-        {/* MAIN CONTACT GRID: CARDS AND DIRECT FORM */}
+        {/* MAIN CONTACT GRID */}
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 mb-20">
           
           {/* CONTACT CARDS (5 COLUMNS) */}
@@ -202,7 +207,7 @@ export default function Contact({ lang = "es" }: { lang?: "es" | "en" }) {
               </button>
             </motion.div>
 
-            {/* WHATSAPP CARD */}
+            {/* PHONE / WHATSAPP CARD */}
             <motion.a
               initial={{ opacity: 0, x: -20 }}
               whileInView={{ opacity: 1, x: 0 }}
@@ -214,12 +219,12 @@ export default function Contact({ lang = "es" }: { lang?: "es" | "en" }) {
               className="glass-card p-6 rounded-3xl border border-border hover:border-emerald-500/40 transition-all group flex items-center gap-4"
             >
               <div className="w-12 h-12 rounded-2xl bg-emerald-500/10 flex items-center justify-center text-emerald-500 group-hover:scale-110 transition-transform">
-                <MessageSquare className="w-6 h-6" />
+                <Phone className="w-6 h-6" />
               </div>
               <div>
-                <h3 className="text-xs uppercase font-extrabold tracking-wider text-slate-400">WhatsApp</h3>
+                <h3 className="text-xs uppercase font-extrabold tracking-wider text-slate-400">Teléfono / WhatsApp</h3>
                 <p className="text-sm sm:text-base font-bold text-foreground group-hover:text-emerald-500 transition-colors">
-                  +52 56 6385 2677
+                  5663852677
                 </p>
               </div>
             </motion.a>
@@ -283,8 +288,8 @@ export default function Contact({ lang = "es" }: { lang?: "es" | "en" }) {
               </h3>
               <p className="text-slate-500 text-sm mb-6">
                 {isEs 
-                  ? "Escribe tus detalles y se abrirá tu cliente de correo listo para enviar a jcarlos61200@gmail.com."
-                  : "Fill in your details and it will launch your email client ready to send to jcarlos61200@gmail.com."}
+                  ? "Ingresa tus datos y se abrirá tu cliente de correo listo para redactar a jcarlos61200@gmail.com."
+                  : "Fill in your details to launch your email client pre-addressed to jcarlos61200@gmail.com."}
               </p>
 
               <form onSubmit={handleFormSubmit} className="space-y-4">
@@ -318,12 +323,12 @@ export default function Contact({ lang = "es" }: { lang?: "es" | "en" }) {
 
                 <div>
                   <label className="block text-xs font-semibold uppercase text-slate-400 mb-1.5">
-                    {isEs ? "Detalles de la Vacante o Proyecto" : "Job Role or Project Details"}
+                    {isEs ? "Propuesta Laboral o Mensaje" : "Job Proposal or Message"}
                   </label>
                   <textarea
                     rows={4}
                     required
-                    placeholder={isEs ? "Detalla el puesto, requerimientos o propuesta laboral..." : "Describe the role, tech stack or project..."}
+                    placeholder={isEs ? "Escribe detalles de la vacante o propuesta laboral..." : "Details about the job role or proposal..."}
                     value={formState.message}
                     onChange={(e) => setFormState({ ...formState, message: e.target.value })}
                     className="w-full px-4 py-3 rounded-xl glass border border-border text-sm text-foreground focus:outline-none focus:border-blue-500 transition-all resize-none"

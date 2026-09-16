@@ -7,27 +7,29 @@ export const translations = {
       shortName: "Juan Carlos",
       title: "Ingeniero en Sistemas Computacionales",
       subtitle: ".NET / C# | SQL Server | React / Next.js | Full Stack",
-      description1: "Más de 7 años de experiencia en desarrollo de software, administración de sistemas empresariales, soporte técnico-funcional y resolución de incidencias.",
-      description2: "Experiencia profesional en SHCP/SFP – COMPRANET y desarrollo de soluciones web, empresariales y móviles.",
-      profileText1: "Ingeniero en Sistemas Computacionales con más de 7 años de experiencia en desarrollo de software y administración de plataformas críticas. Experiencia con .NET/C#, SQL Server, desarrollo web, soporte técnico-funcional, análisis y resolución de incidencias, pruebas funcionales y mantenimiento de sistemas empresariales.",
+      description1: "Ingeniero en Sistemas Computacionales con más de 7 años de experiencia en desarrollo de software, administración de sistemas empresariales, soporte técnico-funcional y resolución de incidencias.",
+      description2: "Experiencia profesional en Valora IT y en la administración y soporte del Sistema de Contrataciones Públicas COMPRANET.",
+      profileText1: "Ingeniero en Sistemas Computacionales con más de 7 años de experiencia en desarrollo de software y administración de plataformas críticas. Experiencia en .NET/C#, SQL Server, desarrollo web, soporte técnico-funcional, análisis y resolución de incidencias, pruebas funcionales y mantenimiento de sistemas empresariales.",
       profileText2: "Mi experiencia combina desarrollo de software con operación y soporte de sistemas, permitiéndome participar tanto en la construcción de soluciones como en el diagnóstico y resolución de problemas.",
+      jobAvailability: "Actualmente busco nuevas oportunidades profesionales donde pueda aportar mi experiencia en desarrollo de software, .NET/C#, SQL Server, sistemas empresariales y desarrollo Full Stack. Interesado en oportunidades remoto, híbrido o presencial.",
       ctaProjects: "Ver Proyectos",
       ctaContact: "Contactarme",
-      ctaCv: "Descargar CV 2026",
+      ctaCv: "DESCARGAR CV 2026",
       email: "jcarlos61200@gmail.com",
       github: "https://github.com/mscandy3312",
       linkedin: "https://www.linkedin.com/in/juan-carlos-andrés-hernández-8850b136a",
       phone: "+52 56 6385 2677",
+      phoneRaw: "5663852677",
     },
 
     experience: {
       title: "Experiencia profesional",
-      subtitle: "Trayectoria sólida en administración de plataformas críticas gubernamentales, desarrollo .NET y soluciones Full Stack.",
+      subtitle: "Trayectoria comprobable en administración de plataformas críticas gubernamentales, desarrollo .NET y soluciones Full Stack.",
     },
 
     skills: {
       title: "Especialidades técnicas",
-      subtitle: "Dominio de tecnologías para desarrollo empresarial, bases de datos relacionales, arquitectura web y soluciones móviles.",
+      subtitle: "Reorganizadas según dominio técnico real y experiencia laboral acreditada en el CV 2026.",
     },
 
     projects: [
@@ -196,27 +198,29 @@ export const translations = {
       shortName: "Juan Carlos",
       title: "Computer Systems Engineer",
       subtitle: ".NET / C# | SQL Server | React / Next.js | Full Stack",
-      description1: "Over 7 years of experience in software development, enterprise systems administration, technical-functional support, and incident resolution.",
-      description2: "Professional experience at SHCP/SFP – COMPRANET and development of web, enterprise, and mobile solutions.",
+      description1: "Computer Systems Engineer with over 7 years of experience in software development, enterprise systems administration, technical-functional support, and incident resolution.",
+      description2: "Professional experience at Valora IT and in administration and support of the COMPRANET Federal Procurement System.",
       profileText1: "Computer Systems Engineer with over 7 years of experience in software development and critical platform administration. Expertise in .NET/C#, SQL Server, web development, technical-functional support, incident analysis and resolution, functional testing, and enterprise systems maintenance.",
       profileText2: "My background combines software development with systems operations and support, allowing me to participate in both building solutions and troubleshooting complex issues.",
+      jobAvailability: "Currently seeking new professional opportunities to contribute my experience in software development, .NET/C#, SQL Server, enterprise systems, and Full Stack development. Open to remote, hybrid, or on-site roles.",
       ctaProjects: "View Projects",
       ctaContact: "Contact Me",
-      ctaCv: "Download CV 2026",
+      ctaCv: "DOWNLOAD CV 2026",
       email: "jcarlos61200@gmail.com",
       github: "https://github.com/mscandy3312",
       linkedin: "https://www.linkedin.com/in/juan-carlos-andrés-hernández-8850b136a",
       phone: "+52 56 6385 2677",
+      phoneRaw: "5663852677",
     },
 
     experience: {
       title: "Professional Experience",
-      subtitle: "Solid track record in critical government platform administration, .NET development, and Full Stack solutions.",
+      subtitle: "Proven track record in critical government platform administration, .NET development, and Full Stack solutions.",
     },
 
     skills: {
       title: "Technical Specialties",
-      subtitle: "Mastery of technologies for enterprise software, relational databases, web architecture, and mobile applications.",
+      subtitle: "Reorganized according to real technical mastery and verified experience in CV 2026.",
     },
 
     projects: [
