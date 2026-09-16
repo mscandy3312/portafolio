@@ -5,21 +5,42 @@ import { Metadata } from "next";
 const outfit = Outfit({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  title: "Juan Carlos Hernández | Full Stack Engineer & Microservices Architect",
-  description: "Portafolio profesional de Juan Carlos Hernández - Ingeniero en Sistemas Computacionales egresado en 2017 con +9 años de experiencia en desarrollo Full Stack, Java 17, Spring Boot y Next.js.",
-  keywords: ["Juan Carlos Hernández", "Full Stack Engineer", "Java", "Spring Boot", "Microservicios", "Next.js", "React", "TypeScript", "SHCP COMPRANET", "Portafolio"],
-  authors: [{ name: "Juan Carlos Hernández" }],
+  metadataBase: new URL("https://github.com/mscandy3312/portafolio"),
+  title: "Juan Carlos Andrés Hernández | Ingeniero en Sistemas | .NET C# | SQL Server",
+  description: "Ingeniero en Sistemas Computacionales con más de 7 años de experiencia en desarrollo .NET/C#, SQL Server, React, Next.js, sistemas empresariales y soporte técnico-funcional.",
+  keywords: [
+    "Ingeniero en Sistemas",
+    "Desarrollador .NET",
+    "C#",
+    "SQL Server",
+    "ASP.NET Core",
+    "React",
+    "Next.js",
+    "Full Stack Developer",
+    "Analista de Sistemas",
+    "Desarrollador Web",
+    "COMPRANET",
+    "México",
+  ],
+  authors: [{ name: "Juan Carlos Andrés Hernández" }],
+  creator: "Juan Carlos Andrés Hernández",
+  publisher: "Juan Carlos Andrés Hernández",
+  formatDetection: {
+    email: false,
+    address: false,
+    telephone: false,
+  },
   openGraph: {
-    title: "Juan Carlos Hernández | Full Stack Engineer & Microservices Architect",
-    description: "Ingeniero en Sistemas Computacionales egresado en 2017 con +9 años de experiencia en arquitecturas escalables, Java 17, Spring Boot, Next.js y soluciones empresariales.",
+    title: "Juan Carlos Andrés Hernández | Ingeniero en Sistemas | .NET C# | SQL Server",
+    description: "Ingeniero en Sistemas Computacionales con más de 7 años de experiencia en desarrollo .NET/C#, SQL Server, React, Next.js, sistemas empresariales y soporte técnico-funcional.",
     url: "https://github.com/mscandy3312/portafolio",
-    siteName: "Portafolio Juan Carlos Hernández",
+    siteName: "Portafolio Profesional Juan Carlos Andrés Hernández",
     images: [
       {
-        url: "/projects/comprasnova.png",
+        url: "/projects/erp-web.png",
         width: 1200,
         height: 630,
-        alt: "Juan Carlos Hernández - Portafolio Profesional",
+        alt: "Juan Carlos Andrés Hernández - Ingeniero en Sistemas .NET C# SQL Server",
       },
     ],
     locale: "es_MX",
@@ -27,9 +48,20 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Juan Carlos Hernández | Full Stack Engineer",
-    description: "Portafolio profesional de desarrollo de software, microservicios y soluciones Web/Mobile.",
-    images: ["/projects/comprasnova.png"],
+    title: "Juan Carlos Andrés Hernández | Ingeniero en Sistemas",
+    description: "Desarrollo .NET/C#, SQL Server, React, Next.js, sistemas empresariales y administración COMPRANET.",
+    images: ["/projects/erp-web.png"],
+  },
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      "max-video-preview": -1,
+      "max-image-preview": "large",
+      "max-snippet": -1,
+    },
   },
 };
 
@@ -46,4 +78,3 @@ export default function RootLayout({
     </html>
   );
 }
-

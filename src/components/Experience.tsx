@@ -2,74 +2,105 @@
 
 import { motion } from "framer-motion";
 import { translations } from "@/data/data";
-import { Briefcase, Calendar, CheckCircle2, Building2 } from "lucide-react";
+import { Briefcase, Calendar, CheckCircle2, Building2, ShieldAlert, Award, Star, Flame } from "lucide-react";
 
 export default function Experience({ lang = "es" }: { lang?: "es" | "en" }) {
   const t = translations[lang] || translations["es"];
 
   const experienceData = [
     {
+      id: "compranet",
+      featured: true,
       company: "SHCP / SFP",
-      title: lang === "es" ? "Administrador y Programador Interno – SHCP / SFP" : "Internal Administrator & Programmer – SHCP / SFP",
-      sub: lang === "es" ? "Sistema de Contrataciones Públicas COMPRANET | 2020 – 2024" : "Federal Procurement System COMPRANET | 2020 – 2024",
+      system: "Sistema de Contrataciones Públicas – COMPRANET",
+      title: lang === "es" ? "Administrador y programador interno" : "Internal Administrator & Programmer",
+      sub: "SHCP / SFP | COMPRANET",
       period: "2020 – 2024",
-      tags: [".NET", "C#", "SQL Server", "Arquitectura MVC", "Soporte Nivel 2"],
+      highlightMetric: "+100 incidencias técnicas mensuales",
+      highlightText: lang === "es" 
+        ? "Resolución de más de 100 incidencias técnicas mensuales, contribuyendo a la continuidad operativa de COMPRANET."
+        : "Resolution of over 100 monthly technical incidents, contributing to COMPRANET's operational continuity.",
+      tags: ["SQL Server", ".NET / C#", "Soporte Nivel 2", "Mesa de Ayuda", "Pruebas Funcionales", "Validación de Lógica"],
       items: lang === "es" ? [
-        "Administración técnica y funcional del sistema de contrataciones públicas federal COMPRANET.",
-        "Resolución efectiva de más de 100 incidencias técnicas complejas mensuales asegurando continuidad operativa.",
-        "Validación, diseño y optimización de consultas SQL Server para alto volumen de transacciones.",
-        "Atención y soporte técnico especializado a dependencias gubernamentales e instituciones federales.",
-        "Pruebas funcionales, depuración y mantenimiento en entorno .NET y SQL Server."
+        "Administración técnica y funcional del Sistema de Contrataciones Públicas COMPRANET.",
+        "Participación activa en operación, monitoreo, mantenimiento y mejora continua de la plataforma.",
+        "Soporte técnico-funcional de segundo nivel y atención a dependencias y entidades usuarias.",
+        "Atención de requerimientos mediante mesa de ayuda, atención telefónica y correo electrónico.",
+        "Análisis, atención y resolución oportuna de incidencias técnicas y funcionales críticas.",
+        "Validación de procesos, seguimiento de requerimientos internos y ejecución de pruebas funcionales.",
+        "Uso, consulta y validación rigurosa de información y lógica de negocio en bases de datos SQL Server.",
+        "Colaboración estrecha con equipos internos de TI para garantizar la alta disponibilidad del sistema."
       ] : [
-        "Technical and functional administration of the federal procurement system COMPRANET.",
-        "Resolution of +100 monthly complex technical incidents ensuring uninterrupted operation.",
-        "Validation, design, and optimization of SQL Server queries for high-volume transactions.",
-        "Specialized technical support for federal agencies and public entities.",
-        "Functional testing, debugging, and maintenance in .NET and SQL Server environments."
+        "Technical and functional administration of the Federal Procurement System COMPRANET.",
+        "Active participation in operations, monitoring, maintenance, and continuous platform improvement.",
+        "Second-level technical-functional support for federal agencies and public entities.",
+        "Help desk ticket resolution, phone support, and email inquiry management.",
+        "Analysis, investigation, and resolution of critical technical and functional incidents.",
+        "Process validation, internal requirement tracking, and functional test execution.",
+        "Rigorously querying and validating business logic and data inside SQL Server databases.",
+        "Close collaboration with internal IT teams to maintain maximum service continuity."
       ]
     },
     {
+      id: "valora",
+      featured: false,
       company: "Valora IT",
-      title: lang === "es" ? "Programador .NET – Valora IT" : ".NET Programmer – Valora IT",
-      sub: lang === "es" ? "2019 – 2020 | Ciudad de México" : "2019 – 2020 | Mexico City",
+      system: "Sistemas Administrativos & Afores",
+      title: lang === "es" ? "Programador .NET" : ".NET Programmer",
+      sub: "Valora IT | Ciudad de México",
       period: "2019 – 2020",
-      tags: ["ASP.NET Core", "C#", "SQL Server", "MVC", "Optimización SQL"],
+      highlightMetric: "Optimización SQL 70%",
+      highlightText: lang === "es"
+        ? "Optimización de consultas en SQL Server que redujeron los tiempos de respuesta del sistema en un 70%."
+        : "SQL Server query optimization that reduced system response times by 70%.",
+      tags: [".NET", "C#", "ASP.NET Core", "MVC", "SQL Server", "Procedimientos Almacenados"],
       items: lang === "es" ? [
-        "Desarrollo de aplicaciones web y de escritorio en entorno .NET (C#, ASP.NET Core, MVC).",
-        "Optimización de consultas SQL en bases de datos relacionales, logrando reducir tiempos de respuesta en un 70%.",
-        "Diseño e implementación de sistemas de control administrativo y gestión de horarios.",
-        "Implementación rigurosa de patrones de arquitectura MVC y código mantenible."
+        "Desarrollo de aplicaciones web y de escritorio utilizando .NET con C# y ASP.NET Core.",
+        "Implementación de soluciones robustas bajo el patrón de arquitectura MVC.",
+        "Desarrollo de aplicaciones web orientadas al área de Marketing y desarrollo del sistema 'Afores'.",
+        "Desarrollo de sistemas administrativos internos para control de horarios e incidencias de personal.",
+        "Diseño, conexión, administración y validación de datos en bases de datos relacionales SQL Server.",
+        "Creación y optimización de consultas complejas y procedimientos almacenados (Stored Procedures)."
       ] : [
-        "Development of web and desktop applications using .NET (C#, ASP.NET Core, MVC).",
-        "SQL query optimization reducing database response times by 70%.",
-        "Design and implementation of administrative control and schedule management systems.",
-        "Rigorous implementation of MVC patterns and clean code standards."
+        "Development of web and desktop applications using .NET with C# and ASP.NET Core.",
+        "Implementation of robust solutions following MVC architecture design patterns.",
+        "Development of web applications for Marketing departments and core 'Afores' system.",
+        "Development of administrative systems for schedule control and personnel incident tracking.",
+        "Design, connection, administration, and data validation in relational SQL Server databases.",
+        "Creation and optimization of complex SQL queries and Stored Procedures."
       ]
     },
     {
-      company: "Freelance & Enterprise",
-      title: lang === "es" ? "Desarrollador Full-Stack & Arquitecto Freelance" : "Full-Stack Developer & Freelance Architect",
-      sub: lang === "es" ? "2024 – Actualidad | Remoto / Global" : "2024 – Present | Remote / Global",
+      id: "freelance",
+      featured: false,
+      company: "Freelance",
+      system: "Soluciones Web, Móviles & Cloud",
+      title: lang === "es" ? "Desarrollador Full Stack Freelance" : "Full Stack Developer Freelance",
+      sub: "Freelance | Proyectos Web & Móviles",
       period: "2024 – Actualidad",
-      tags: ["Java 17+", "Spring Boot", "Microservicios", "Next.js", "React Native", "Kotlin", "AWS"],
+      highlightMetric: "Full Stack & Cloud",
+      highlightText: lang === "es"
+        ? "Desarrollo independiente de soluciones web, aplicaciones móviles, modernización de sistemas y AWS."
+        : "Independent engineering of web solutions, mobile apps, system modernizations, and AWS cloud.",
+      tags: ["Next.js", "React Native", "Kotlin", "AWS", "Naxine SaaS", "AstroMatch", "Design Medicine"],
       items: lang === "es" ? [
-        "Desarrollo del Dashboard CompraNova implementando una arquitectura distribuida de microservicios con Java 17, Spring Boot y Spring Cloud Eureka.",
-        "Creación de la plataforma SaaS Naxine Enterprise con procesamiento recurrente Stripe e infraestructura escalable en AWS.",
-        "Desarrollo de la app móvil AstroMatch utilizando Kotlin, Jetpack Compose y Firebase en tiempo real.",
-        "Diseño de la plataforma científica y médica DesignMedicine enfocado en rendimiento, accesibilidad y experiencia UX.",
-        "Modernización de sistemas heredados, integración de pasarelas de pago y optimización avanzada de bases de datos."
+        "Desarrollo de soluciones web modernas utilizando React y Next.js.",
+        "Desarrollo de aplicaciones móviles con React Native (ERP Mobile) y Kotlin (AstroMatch).",
+        "Modernización de sistemas heredados, integración de servicios e infraestructura en AWS (Naxine).",
+        "Soporte técnico, optimización de servidores y desarrollo de plataformas a medida (Design Medicine).",
+        "Optimización de bases de datos relacionales y soluciones en tiempo real con Firebase."
       ] : [
-        "Engineered CompraNova Dashboard using a distributed microservices architecture with Java 17, Spring Boot, and Spring Cloud Eureka.",
-        "Built Naxine Enterprise SaaS platform featuring Stripe recurring billing on AWS infrastructure.",
-        "Developed AstroMatch mobile app with native Kotlin, Jetpack Compose, and real-time Firebase.",
-        "Designed scientific & medical portal DesignMedicine focusing on top performance, UX, and accessibility.",
-        "Modernized legacy systems, integrated payment gateways, and performed high-level database tuning."
+        "Modern web development using React and Next.js framework.",
+        "Mobile app development with React Native (ERP Mobile) and native Kotlin (AstroMatch).",
+        "Legacy system modernization, API integrations, and AWS cloud deployment (Naxine).",
+        "Technical support, server optimization, and custom software architecture (Design Medicine).",
+        "Relational database optimization and real-time backend sync with Firebase."
       ]
     }
   ];
 
   return (
-    <section id="experience" className="py-24 px-6 relative bg-background border-b border-border">
+    <section id="experiencia" className="py-24 px-6 relative bg-background border-b border-border">
       <div className="max-w-5xl mx-auto">
         {/* HEADER */}
         <motion.div
@@ -79,80 +110,109 @@ export default function Experience({ lang = "es" }: { lang?: "es" | "en" }) {
           transition={{ duration: 0.6 }}
           className="text-center mb-16"
         >
+          <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full glass border border-blue-500/20 text-blue-600 dark:text-blue-400 text-xs font-semibold mb-4">
+            <Award className="w-4 h-4 text-blue-500" />
+            <span>{lang === "es" ? "Historial de Trabajo" : "Work History"}</span>
+          </div>
+
           <h2 className="text-4xl md:text-5xl font-extrabold text-foreground mb-4 tracking-tight">
-            {t.experience.title.split(" ")[0]} {" "}
+            {lang === "es" ? "Experiencia " : "Professional "}
             <span className="text-gradient">
-              {t.experience.title.split(" ").slice(1).join(" ")}
+              {lang === "es" ? "Profesional" : "Experience"}
             </span>
           </h2>
           <div className="w-24 h-1 bg-gradient-to-r from-blue-500 to-indigo-500 mx-auto rounded-full mb-4" />
-          <p className="text-slate-600 dark:text-slate-300 max-w-xl mx-auto text-base">
-            {lang === "es" 
-              ? "Trayectoria sólida respaldada por años en el sector público federal y proyectos de alto impacto digital." 
-              : "Solid track record backed by years in federal public sector and high-impact digital ventures."}
+          <p className="text-slate-600 dark:text-slate-300 max-w-2xl mx-auto text-base">
+            {t.experience.subtitle}
           </p>
         </motion.div>
 
-        {/* TIMELINE CONTAINER */}
-        <div className="relative space-y-10 before:absolute before:inset-0 before:ml-5 before:-translate-x-px md:before:mx-auto md:before:translate-x-0 before:h-full before:w-0.5 before:bg-gradient-to-b before:from-blue-600 before:via-indigo-500 before:to-transparent">
+        {/* CARDS LIST */}
+        <div className="space-y-10">
           {experienceData.map((exp, index) => (
-            <div key={index} className="relative flex items-center justify-between md:justify-normal md:odd:flex-row-reverse group">
-              {/* TIMELINE ICON NODE */}
-              <div className="flex items-center justify-center w-10 h-10 rounded-full border-4 border-background bg-gradient-to-tr from-blue-600 to-indigo-600 shadow-lg shadow-blue-500/30 shrink-0 md:order-1 md:group-odd:-translate-x-1/2 md:group-even:translate-x-1/2 z-10">
-                <Briefcase className="w-4 h-4 text-white" />
-              </div>
-              
-              {/* CARD CONTENT */}
-              <motion.div 
-                initial={{ opacity: 0, y: 30 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true, margin: "-50px" }}
-                transition={{ duration: 0.5, delay: index * 0.1 }}
-                className="w-[calc(100%-4rem)] md:w-[calc(50%-3rem)] glass-card p-7 sm:p-8 rounded-3xl border border-border hover:border-blue-500/40 transition-all duration-300 relative"
-              >
-                <div className="flex flex-wrap items-center justify-between gap-2 mb-3">
-                  <span className="px-3 py-1 rounded-full bg-blue-500/10 text-blue-600 dark:text-blue-400 text-xs font-bold uppercase tracking-wider flex items-center gap-1.5">
-                    <Building2 className="w-3.5 h-3.5" />
-                    {exp.company}
-                  </span>
-                  <span className="text-xs font-semibold text-slate-500 flex items-center gap-1">
-                    <Calendar className="w-3.5 h-3.5" />
-                    {exp.period}
-                  </span>
+            <motion.div
+              key={exp.id}
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, margin: "-50px" }}
+              transition={{ duration: 0.5, delay: index * 0.1 }}
+              className={`glass-card rounded-3xl p-7 sm:p-10 border transition-all duration-300 relative ${
+                exp.featured
+                  ? "border-blue-500/60 shadow-2xl shadow-blue-500/10 ring-1 ring-blue-500/20 bg-gradient-to-br from-blue-500/5 via-transparent to-indigo-500/5"
+                  : "border-border hover:border-blue-500/40"
+              }`}
+            >
+              {/* FEATURED BADGE */}
+              {exp.featured && (
+                <div className="mb-4 inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-blue-600 text-white text-xs font-bold shadow-md shadow-blue-500/30">
+                  <Star className="w-3.5 h-3.5 fill-white text-white" />
+                  <span>{lang === "es" ? "Experiencia Destacada — Plataforma Crítica Federal" : "Featured Experience — Federal Critical Platform"}</span>
                 </div>
+              )}
 
-                <h3 className="text-xl sm:text-2xl font-bold text-foreground mb-2">
-                  {exp.title}
-                </h3>
-                <div className="text-xs font-semibold text-indigo-600 dark:text-indigo-400 uppercase tracking-wide mb-5">
-                  {exp.sub}
-                </div>
-
-                <ul className="text-slate-600 dark:text-slate-300 space-y-2.5 text-sm leading-relaxed mb-6">
-                  {exp.items.map((item, i) => (
-                    <li key={i} className="flex items-start gap-2.5">
-                      <CheckCircle2 className="w-4 h-4 text-blue-500 shrink-0 mt-0.5" />
-                      <span>{item}</span>
-                    </li>
-                  ))}
-                </ul>
-
-                {/* TECH TAGS */}
-                <div className="flex flex-wrap gap-1.5 pt-4 border-t border-border/40">
-                  {exp.tags.map((tag, i) => (
-                    <span
-                      key={i}
-                      className="px-2.5 py-0.5 rounded-md text-[11px] font-semibold bg-slate-200/60 dark:bg-slate-800/60 text-slate-700 dark:text-slate-300"
-                    >
-                      {tag}
+              {/* CARD TOP INFO */}
+              <div className="flex flex-wrap items-start justify-between gap-4 mb-4">
+                <div>
+                  <div className="flex items-center gap-2 mb-1">
+                    <span className="px-3 py-1 rounded-lg bg-blue-500/10 text-blue-600 dark:text-blue-400 text-xs font-extrabold uppercase tracking-wider flex items-center gap-1.5">
+                      <Building2 className="w-3.5 h-3.5" />
+                      {exp.company}
                     </span>
-                  ))}
+                    <span className="text-xs font-semibold text-slate-500 dark:text-slate-400">
+                      • {exp.system}
+                    </span>
+                  </div>
+                  <h3 className="text-2xl sm:text-3xl font-extrabold text-foreground mt-1">
+                    {exp.title}
+                  </h3>
                 </div>
-              </motion.div>
-            </div>
+
+                <div className="flex items-center gap-2 px-3.5 py-1.5 rounded-full glass border border-border text-xs font-bold text-slate-600 dark:text-slate-300">
+                  <Calendar className="w-3.5 h-3.5 text-blue-500" />
+                  <span>{exp.period}</span>
+                </div>
+              </div>
+
+              {/* HIGHLIGHT BOX */}
+              <div className="my-5 p-4 rounded-2xl bg-blue-500/10 border border-blue-500/30 flex items-start gap-3">
+                <div className="p-2 rounded-xl bg-blue-600 text-white shrink-0 mt-0.5">
+                  <Flame className="w-4 h-4" />
+                </div>
+                <div>
+                  <div className="text-xs uppercase font-extrabold tracking-wider text-blue-600 dark:text-blue-400">
+                    {lang === "es" ? "Logro / Impacto Clave" : "Key Achievement / Impact"} ({exp.highlightMetric})
+                  </div>
+                  <div className="text-sm font-semibold text-foreground mt-0.5">
+                    {exp.highlightText}
+                  </div>
+                </div>
+              </div>
+
+              {/* DUTIES BULLETS */}
+              <ul className="text-slate-700 dark:text-slate-300 space-y-2.5 text-sm leading-relaxed mb-6 font-normal">
+                {exp.items.map((item, i) => (
+                  <li key={i} className="flex items-start gap-3">
+                    <CheckCircle2 className="w-4 h-4 text-blue-500 shrink-0 mt-1" />
+                    <span>{item}</span>
+                  </li>
+                ))}
+              </ul>
+
+              {/* TECH TAGS */}
+              <div className="flex flex-wrap gap-2 pt-4 border-t border-border/40">
+                {exp.tags.map((tag, i) => (
+                  <span
+                    key={i}
+                    className="px-3 py-1 rounded-lg text-xs font-semibold bg-slate-200/80 dark:bg-slate-800/80 text-slate-700 dark:text-slate-200 border border-border/50"
+                  >
+                    {tag}
+                  </span>
+                ))}
+              </div>
+            </motion.div>
           ))}
         </div>
       </div>
     </section>
   );
-}
+}

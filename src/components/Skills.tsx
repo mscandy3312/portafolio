@@ -2,104 +2,119 @@
 
 import { motion } from "framer-motion";
 import { useState } from "react";
-import { Layout, Server, Database, Wrench } from "lucide-react";
+import { Code2, Layers, Wrench, ShieldCheck, Database, Server, Terminal, Sparkles } from "lucide-react";
 
 interface SkillsProps {
   lang: "es" | "en";
 }
 
 export default function Skills({ lang }: SkillsProps) {
+  const isEs = lang === "es";
   const [activeCategory, setActiveCategory] = useState<string>("all");
 
   const categories = [
-    { id: "all", label: lang === "es" ? "Todas" : "All" },
-    { id: "frontend", label: lang === "es" ? "Frontend & Mobile" : "Frontend & Mobile" },
-    { id: "backend", label: lang === "es" ? "Backend & Cloud" : "Backend & Cloud" },
-    { id: "database", label: lang === "es" ? "Bases de Datos" : "Databases" },
-    { id: "tools", label: lang === "es" ? "Herramientas & CMS" : "Tools & CMS" },
+    { id: "all", label: isEs ? "Todas las especialidades" : "All Specialties" },
+    { id: "primary", label: isEs ? "Especialidad principal" : "Primary Specialty" },
+    { id: "complementary", label: isEs ? "Experiencia complementaria" : "Complementary Experience" },
+    { id: "tools", label: isEs ? "Herramientas" : "Tools" },
   ];
 
   const skillGroups = [
     {
-      title: "Frontend & Mobile",
-      category: "frontend",
-      icon: <Layout className="w-5 h-5 text-blue-500" />,
+      id: "primary",
+      categoryName: isEs ? "CATEGORÍA 1" : "CATEGORY 1",
+      title: isEs ? "Especialidad principal" : "Primary Specialty",
+      description: isEs 
+        ? "Tecnologías y lenguajes centrales en los que se fundamenta mi arquitectura de desarrollo empresarial y backend/frontend."
+        : "Core technologies forming the backbone of my enterprise software architecture.",
+      icon: <Code2 className="w-6 h-6 text-blue-500" />,
+      badgeColor: "bg-blue-500/10 text-blue-600 dark:text-blue-400 border-blue-500/20",
       items: [
-        { name: "Next.js", level: "Avanzado" },
-        { name: "React", level: "Avanzado" },
-        { name: "TypeScript", level: "Avanzado" },
-        { name: "Tailwind CSS", level: "Avanzado" },
-        { name: "Framer Motion", level: "Intermedio" },
-        { name: "React Native", level: "Intermedio" },
-        { name: "Kotlin (Android)", level: "Intermedio" },
+        "C#",
+        ".NET",
+        "ASP.NET Core",
+        "MVC",
+        "SQL Server",
+        "JavaScript",
+        "React",
+        "Next.js",
+        "REST APIs",
       ],
     },
     {
-      title: "Backend & Cloud",
-      category: "backend",
-      icon: <Server className="w-5 h-5 text-indigo-500" />,
+      id: "complementary",
+      categoryName: isEs ? "CATEGORÍA 2" : "CATEGORY 2",
+      title: isEs ? "Experiencia complementaria" : "Complementary Experience",
+      description: isEs
+        ? "Frameworks, plataformas cloud y entornos móviles trabajados en proyectos web, SaaS y desarrollos independientes."
+        : "Frameworks, cloud platforms, and mobile stacks used across web and SaaS projects.",
+      icon: <Server className="w-6 h-6 text-indigo-500" />,
+      badgeColor: "bg-indigo-500/10 text-indigo-600 dark:text-indigo-400 border-indigo-500/20",
       items: [
-        { name: "Java 17+", level: "Avanzado" },
-        { name: "Spring Boot", level: "Avanzado" },
-        { name: "Microservicios", level: "Avanzado" },
-        { name: "Node.js", level: "Intermedio" },
-        { name: "Laravel / PHP", level: "Avanzado" },
-        { name: ".NET / C#", level: "Experiencia SHCP" },
-        { name: "AWS", level: "Cloud SaaS" },
+        "Node.js",
+        "PHP",
+        "Laravel",
+        "MySQL",
+        "React Native",
+        "Kotlin",
+        "Firebase / Firestore",
+        "AWS",
+        "WordPress",
+        "Elementor",
+        "Tailwind CSS",
       ],
     },
     {
-      title: "Bases de Datos & Data",
-      category: "database",
-      icon: <Database className="w-5 h-5 text-cyan-500" />,
+      id: "tools",
+      categoryName: isEs ? "CATEGORÍA 3" : "CATEGORY 3",
+      title: isEs ? "Herramientas" : "Tools",
+      description: isEs
+        ? "Entornos de desarrollo, control de versiones, prototipado y herramientas de análisis de datos."
+        : "IDEs, version control, prototyping platforms, and data analytics tools.",
+      icon: <Wrench className="w-6 h-6 text-purple-500" />,
+      badgeColor: "bg-purple-500/10 text-purple-600 dark:text-purple-400 border-purple-500/20",
       items: [
-        { name: "MySQL", level: "Avanzado" },
-        { name: "SQL Server", level: "Optimización" },
-        { name: "Prisma ORM", level: "Avanzado" },
-        { name: "Firebase", level: "Real-time" },
-        { name: "H2 Database", level: "Dev & Test" },
-      ],
-    },
-    {
-      title: "Herramientas & CMS",
-      category: "tools",
-      icon: <Wrench className="w-5 h-5 text-purple-500" />,
-      items: [
-        { name: "Git / GitHub", level: "Control de versiones" },
-        { name: "Figma", level: "UI/UX Design" },
-        { name: "WordPress / Elementor", level: "Custom CSS" },
-        { name: "REST APIs", level: "Arquitectura" },
-        { name: "ApexCharts", level: "Visualización" },
+        "Visual Studio",
+        "Visual Studio Code",
+        "Android Studio",
+        "Git / GitHub",
+        "Figma",
+        "Power BI",
       ],
     },
   ];
 
   const filteredGroups = activeCategory === "all"
     ? skillGroups
-    : skillGroups.filter((g) => g.category === activeCategory);
+    : skillGroups.filter((g) => g.id === activeCategory);
 
   return (
-    <section id="skills" className="py-24 px-6 relative bg-card-bg border-y border-border">
+    <section id="especialidades" className="py-24 px-6 relative bg-card-bg border-y border-border">
       <div className="max-w-6xl mx-auto">
         {/* HEADER */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, margin: "-100px" }}
-          transition={{ duration: 0.8 }}
+          transition={{ duration: 0.6 }}
           className="text-center mb-12"
         >
+          <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full glass border border-blue-500/20 text-blue-600 dark:text-blue-400 text-xs font-semibold mb-4">
+            <Sparkles className="w-4 h-4 text-blue-500" />
+            <span>{isEs ? "Capacidad Técnica" : "Technical Capability"}</span>
+          </div>
+
           <h2 className="text-4xl md:text-5xl font-extrabold text-foreground mb-4 tracking-tight">
-            {lang === "es" ? "Stack Tecnológico & " : "Tech Stack & "}
+            {isEs ? "Especialidades " : "Technical "}
             <span className="text-gradient">
-              {lang === "es" ? "Habilidades" : "Skills"}
+              {isEs ? "técnicas" : "Specialties"}
             </span>
           </h2>
           <div className="w-24 h-1 bg-gradient-to-r from-blue-500 to-indigo-500 mx-auto rounded-full mb-6" />
           <p className="text-slate-600 dark:text-slate-300 max-w-2xl mx-auto text-base md:text-lg">
-            {lang === "es"
-              ? "Herramientas y tecnologías que utilizo para construir arquitecturas de microservicios, ERPs empresariales y aplicaciones web/móviles."
-              : "Tools and technologies I use to build microservices architectures, enterprise ERPs, and web/mobile apps."}
+            {isEs
+              ? "Organización clara y profesional de mi stack tecnológico estructurado por categorías de experiencia real sin porcentajes arbitrarios."
+              : "Clear and professional organization of my tech stack structured by real experience categories without arbitrary percentages."}
           </p>
         </motion.div>
 
@@ -109,7 +124,7 @@ export default function Skills({ lang }: SkillsProps) {
             <button
               key={cat.id}
               onClick={() => setActiveCategory(cat.id)}
-              className={`px-5 py-2 rounded-full text-sm font-semibold transition-all cursor-pointer ${
+              className={`px-5 py-2.5 rounded-full text-xs sm:text-sm font-bold transition-all cursor-pointer ${
                 activeCategory === cat.id
                   ? "bg-blue-600 text-white shadow-lg shadow-blue-500/25"
                   : "glass text-slate-600 dark:text-slate-300 hover:border-blue-500/40"
@@ -120,37 +135,44 @@ export default function Skills({ lang }: SkillsProps) {
           ))}
         </div>
 
-        {/* SKILLS GRID */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+        {/* SKILLS GROUPS */}
+        <div className="space-y-8">
           {filteredGroups.map((group, groupIdx) => (
             <motion.div
-              key={group.title}
-              initial={{ opacity: 0, y: 20 }}
+              key={group.id}
+              initial={{ opacity: 0, y: 25 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.5, delay: groupIdx * 0.1 }}
-              className="glass-card p-7 rounded-3xl border border-border hover:border-blue-500/30 transition-all"
+              className="glass-card p-8 rounded-3xl border border-border hover:border-blue-500/30 transition-all shadow-lg"
             >
-              <div className="flex items-center gap-3 mb-6">
-                <div className="p-3 rounded-2xl bg-blue-500/10 border border-blue-500/20">
-                  {group.icon}
+              <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 mb-6 pb-6 border-b border-border/50">
+                <div className="flex items-center gap-4">
+                  <div className="p-3 rounded-2xl bg-blue-500/10 border border-blue-500/20 shrink-0">
+                    {group.icon}
+                  </div>
+                  <div>
+                    <span className="text-[11px] font-extrabold tracking-widest uppercase text-blue-600 dark:text-blue-400">
+                      {group.categoryName}
+                    </span>
+                    <h3 className="text-2xl font-bold text-foreground">{group.title}</h3>
+                  </div>
                 </div>
-                <h3 className="text-xl font-bold text-foreground">{group.title}</h3>
+                <p className="text-xs sm:text-sm text-slate-500 dark:text-slate-400 max-w-md">
+                  {group.description}
+                </p>
               </div>
 
+              {/* BADGES GRID */}
               <div className="flex flex-wrap gap-3">
-                {group.items.map((item) => (
+                {group.items.map((skill) => (
                   <motion.div
-                    key={item.name}
+                    key={skill}
                     whileHover={{ scale: 1.05, y: -2 }}
-                    className="px-4 py-2 rounded-xl glass border border-border hover:border-blue-500/40 hover:bg-blue-500/5 transition-all flex items-center justify-between gap-3 group cursor-default"
+                    className={`px-4 py-2.5 rounded-xl border text-sm font-bold transition-all flex items-center gap-2 cursor-default ${group.badgeColor}`}
                   >
-                    <span className="font-semibold text-foreground text-sm group-hover:text-blue-500 transition-colors">
-                      {item.name}
-                    </span>
-                    <span className="text-[10px] uppercase font-extrabold tracking-wider px-2 py-0.5 rounded-full bg-blue-500/10 text-blue-600 dark:text-blue-400">
-                      {item.level}
-                    </span>
+                    <span className="w-2 h-2 rounded-full bg-current opacity-70" />
+                    <span>{skill}</span>
                   </motion.div>
                 ))}
               </div>
@@ -160,4 +182,4 @@ export default function Skills({ lang }: SkillsProps) {
       </div>
     </section>
   );
-}
+}
