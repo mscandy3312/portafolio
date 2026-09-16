@@ -2,7 +2,7 @@
 
 import { motion } from "framer-motion";
 import { useState } from "react";
-import { Code2, Server, Wrench, Sparkles, Layers } from "lucide-react";
+import { Code2, Server, Wrench, Sparkles } from "lucide-react";
 
 interface SkillsProps {
   lang: "es" | "en";
@@ -14,19 +14,19 @@ export default function Skills({ lang }: SkillsProps) {
 
   const categories = [
     { id: "all", label: isEs ? "Todas las tecnologías" : "All Stacks" },
-    { id: "primary", label: isEs ? "Especialidad principal" : "Primary Specialty" },
-    { id: "fullstack", label: isEs ? "Desarrollo Full Stack" : "Full Stack Development" },
-    { id: "complementary", label: isEs ? "Experiencia complementaria" : "Complementary Experience" },
+    { id: "primary", label: isEs ? "Especialidad Principal" : "Primary Specialty" },
+    { id: "experience", label: isEs ? "Experiencia" : "Experience" },
+    { id: "complementary", label: isEs ? "Complementario / Proyectos" : "Complementary / Projects" },
   ];
 
   const skillGroups = [
     {
       id: "primary",
       categoryName: isEs ? "NIVEL 1" : "LEVEL 1",
-      title: isEs ? "Especialidad Principal" : "Primary Specialty",
+      title: isEs ? "ESPECIALIDAD PRINCIPAL" : "PRIMARY SPECIALTY",
       description: isEs 
-        ? "Tecnologías y lenguajes centrales en los que se fundamenta mi trayectoria en desarrollo de software empresarial y bases de datos relacionales."
-        : "Core technologies forming the backbone of my enterprise software engineering.",
+        ? "Tecnologías y competencias centrales respaldadas por trayectoria profesional comprobable en desarrollo de sistemas empresariales y administración de bases de datos."
+        : "Core technologies and competencies backed by verified enterprise software experience.",
       icon: <Code2 className="w-6 h-6 text-blue-500" />,
       badgeColor: "bg-blue-500/10 text-blue-600 dark:text-blue-400 border-blue-500/30 font-bold",
       items: [
@@ -35,51 +35,58 @@ export default function Skills({ lang }: SkillsProps) {
         "ASP.NET Core",
         "MVC",
         "SQL Server",
+        "SQL / optimización de consultas",
+        "Soporte técnico y funcional",
       ],
     },
     {
-      id: "fullstack",
+      id: "experience",
       categoryName: isEs ? "NIVEL 2" : "LEVEL 2",
-      title: isEs ? "Desarrollo Full Stack" : "Full Stack Development",
+      title: isEs ? "EXPERIENCIA" : "EXPERIENCE",
       description: isEs
-        ? "Ecosistema de tecnologías web, lenguajes frontend/backend y servicios API utilizados para construir aplicaciones interactivas e integraciones."
-        : "Web ecosystem, frontend/backend languages, and API services used for modern applications.",
+        ? "Tecnologías de desarrollo web Full Stack, maquetación, motores relacionales y servicios web aplicados en proyectos corporativos."
+        : "Full Stack web technologies, layout, relational engines, and web services used in corporate applications.",
       icon: <Server className="w-6 h-6 text-indigo-500" />,
-      badgeColor: "bg-indigo-500/10 text-indigo-600 dark:text-indigo-400 border-indigo-500/30 font-bold",
+      badgeColor: "bg-indigo-500/10 text-indigo-600 dark:text-indigo-400 border-indigo-500/30 font-semibold",
       items: [
+        "HTML",
+        "CSS",
         "JavaScript",
         "React",
         "Next.js",
         "Node.js",
-        "Laravel",
-        "PHP",
-        "HTML5",
-        "CSS",
-        "Tailwind CSS",
+        "Laravel / PHP",
+        "MySQL",
+        "WordPress / Elementor",
         "REST APIs",
+        "Git / GitHub",
+        "Figma",
       ],
     },
     {
       id: "complementary",
       categoryName: isEs ? "NIVEL 3" : "LEVEL 3",
-      title: isEs ? "Experiencia Complementaria" : "Complementary Experience",
+      title: isEs ? "COMPLEMENTARIO / PROYECTOS" : "COMPLEMENTARY / PROJECTS",
       description: isEs
-        ? "Herramientas de desarrollo, motores de datos, plataformas móviles, cloud y diseño trabajados en proyectos y soluciones independientes."
-        : "Development tools, database engines, mobile/cloud platforms, and design tools.",
+        ? "Tecnologías, plataformas cloud, arquitecturas de proyectos e infraestructura aplicadas en desarrollos específicos del portafolio."
+        : "Technologies, cloud platforms, project architectures, and infrastructure used across portfolio builds.",
       icon: <Wrench className="w-6 h-6 text-purple-500" />,
-      badgeColor: "bg-purple-500/10 text-purple-600 dark:text-purple-400 border-purple-500/30 font-semibold",
+      badgeColor: "bg-purple-500/10 text-purple-600 dark:text-purple-400 border-purple-500/30 font-normal",
       items: [
-        "React Native",
-        "Kotlin",
-        "Firebase / Firestore",
+        "Java",
+        "Spring Boot",
+        "Spring Cloud",
+        "Microservicios",
         "AWS",
-        "MySQL",
-        "WordPress",
-        "Elementor",
-        "Power BI",
-        "Figma",
-        "Git / GitHub",
+        "Kotlin",
+        "Firebase",
+        "React Native",
+        "Prisma",
+        "TypeScript",
+        "Tailwind CSS",
         "Android Studio",
+        "ApexCharts",
+        "H2 Database",
       ],
     },
   ];
@@ -113,8 +120,8 @@ export default function Skills({ lang }: SkillsProps) {
           <div className="w-24 h-1 bg-gradient-to-r from-blue-500 to-indigo-500 mx-auto rounded-full mb-6" />
           <p className="text-slate-600 dark:text-slate-300 max-w-2xl mx-auto text-base md:text-lg">
             {isEs
-              ? "Reorganización transparente del dominio tecnológico alineada con la experiencia demostrable del CV 2026."
-              : "Clear reorganization of tech stack matching verified experience in CV 2026."}
+              ? "Reorganización clara en 3 niveles de dominio técnico para reflejar con precisión la experiencia profesional del CV 2026."
+              : "Clear 3-level reorganization matching verified experience in CV 2026."}
           </p>
         </motion.div>
 

@@ -84,7 +84,7 @@ export default function Navbar({ lang, setLang }: NavbarProps) {
             className="hidden sm:flex items-center gap-1.5 px-4 py-2 text-xs font-bold rounded-full bg-blue-600 hover:bg-blue-500 text-white shadow-md shadow-blue-500/20 transition-all cursor-pointer"
           >
             <Download className="w-3.5 h-3.5" />
-            <span>CV 2026</span>
+            <span>Ver CV 2026</span>
             <ExternalLink className="w-3 h-3 opacity-70" />
           </a>
 
@@ -137,7 +137,7 @@ export default function Navbar({ lang, setLang }: NavbarProps) {
             className="flex items-center justify-center gap-2 w-full py-3 text-sm font-bold rounded-xl bg-blue-600 text-white shadow-md cursor-pointer mt-4"
           >
             <Download className="w-4 h-4" />
-            <span>Descargar CV 2026</span>
+            <span>Ver CV 2026</span>
             <ExternalLink className="w-3.5 h-3.5 opacity-80" />
           </a>
         </div>

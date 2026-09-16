@@ -41,7 +41,7 @@ export default function Projects({
   const projectsList: ProjectItem[] = (translations[lang]?.projects as ProjectItem[]) || [];
 
   const categories = [
-    { id: "all", label: isEs ? "Todos los proyectos" : "All Projects" },
+    { id: "all", label: isEs ? "Todos los proyectos (13)" : "All Projects (13)" },
     { id: "enterprise", label: isEs ? "Sistemas Empresariales & ERPs" : "Enterprise Systems & ERPs" },
     { id: "web", label: isEs ? "Desarrollo Web & SaaS" : "Web Development & SaaS" },
     { id: "mobile", label: isEs ? "Aplicaciones Móviles" : "Mobile Apps" },
@@ -89,9 +89,7 @@ export default function Projects({
           <div className="w-28 h-1.5 bg-gradient-to-r from-blue-500 to-indigo-500 mx-auto rounded-full mb-6" />
 
           <p className="max-w-3xl mx-auto text-slate-600 dark:text-slate-300 text-base md:text-lg leading-relaxed">
-            {isEs
-              ? "Reorganizados por relevancia laboral: ERPs empresariales, control de ventas e inventarios, plataformas SaaS, aplicaciones móviles y soluciones web profesionales."
-              : "Reordered by enterprise relevance: ERPs, sales & inventory systems, cloud SaaS, mobile apps, and professional web platforms."}
+            {translations[lang]?.projectsIntro || "Proyectos de desarrollo de software, sistemas empresariales, aplicaciones web y móviles, plataformas SaaS e interfaces digitales."}
           </p>
         </motion.div>
 

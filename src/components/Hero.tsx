@@ -56,7 +56,7 @@ export default function Hero({ lang }: HeroProps) {
     },
     {
       value: "C# / .NET & SQL",
-      label: lang === "es" ? "Desarrollo de Sistemas Empresariales" : "Enterprise Software Specialty",
+      label: lang === "es" ? "Especialidad Principal" : "Primary Specialty",
       icon: <Database className="w-5 h-5 text-purple-500" />,
     },
   ];
@@ -131,7 +131,7 @@ export default function Hero({ lang }: HeroProps) {
         transition={{ duration: 0.5, delay: 0.45 }}
         className="mt-8 z-10 flex flex-wrap justify-center items-center gap-4"
       >
-        {/* DESCARGAR CV 2026 */}
+        {/* VER CV 2026 */}
         <a
           href={CV_LINK}
           target="_blank"

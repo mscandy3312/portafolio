@@ -3,18 +3,18 @@ export const CV_LINK = "https://drive.google.com/file/d/1SAPa2BuWCUGLzthq4CyIz6k
 export const translations = {
   es: {
     personalData: {
-      name: "JUAN CARLOS ANDRÉS HERNÁNDEZ",
+      name: "Juan Carlos Andrés Hernández",
       shortName: "Juan Carlos",
       title: "Ingeniero en Sistemas Computacionales",
-      subtitle: ".NET / C# | SQL Server | React / Next.js | Full Stack",
+      subtitle: ".NET / C# • SQL Server • Full Stack",
       description1: "Ingeniero en Sistemas Computacionales con más de 7 años de experiencia en desarrollo de software, administración de sistemas empresariales, soporte técnico-funcional y resolución de incidencias.",
       description2: "Experiencia profesional en Valora IT y en la administración y soporte del Sistema de Contrataciones Públicas COMPRANET.",
       profileText1: "Ingeniero en Sistemas Computacionales con más de 7 años de experiencia en desarrollo de software y administración de plataformas críticas. Experiencia en .NET/C#, SQL Server, desarrollo web, soporte técnico-funcional, análisis y resolución de incidencias, pruebas funcionales y mantenimiento de sistemas empresariales.",
       profileText2: "Mi experiencia combina desarrollo de software con operación y soporte de sistemas, permitiéndome participar tanto en la construcción de soluciones como en el diagnóstico y resolución de problemas.",
-      jobAvailability: "Actualmente busco nuevas oportunidades profesionales donde pueda aportar mi experiencia en desarrollo de software, .NET/C#, SQL Server, sistemas empresariales y desarrollo Full Stack. Interesado en oportunidades remoto, híbrido o presencial.",
+      jobAvailability: "Estoy disponible para integrarme a equipos de desarrollo y participar en proyectos donde pueda aportar mi experiencia en .NET, C#, SQL Server, desarrollo Full Stack y soporte de sistemas.",
       ctaProjects: "Ver Proyectos",
       ctaContact: "Contactarme",
-      ctaCv: "DESCARGAR CV 2026",
+      ctaCv: "Ver CV 2026",
       email: "jcarlos61200@gmail.com",
       github: "https://github.com/mscandy3312",
       linkedin: "https://www.linkedin.com/in/juan-carlos-andrés-hernández-8850b136a",
@@ -31,6 +31,8 @@ export const translations = {
       title: "Especialidades técnicas",
       subtitle: "Reorganizadas según dominio técnico real y experiencia laboral acreditada en el CV 2026.",
     },
+
+    projectsIntro: "Proyectos de desarrollo de software, sistemas empresariales, aplicaciones web y móviles, plataformas SaaS e interfaces digitales.",
 
     projects: [
       {
@@ -194,18 +196,18 @@ export const translations = {
 
   en: {
     personalData: {
-      name: "JUAN CARLOS ANDRÉS HERNÁNDEZ",
+      name: "Juan Carlos Andrés Hernández",
       shortName: "Juan Carlos",
       title: "Computer Systems Engineer",
-      subtitle: ".NET / C# | SQL Server | React / Next.js | Full Stack",
+      subtitle: ".NET / C# • SQL Server • Full Stack",
       description1: "Computer Systems Engineer with over 7 years of experience in software development, enterprise systems administration, technical-functional support, and incident resolution.",
       description2: "Professional experience at Valora IT and in administration and support of the COMPRANET Federal Procurement System.",
       profileText1: "Computer Systems Engineer with over 7 years of experience in software development and critical platform administration. Expertise in .NET/C#, SQL Server, web development, technical-functional support, incident analysis and resolution, functional testing, and enterprise systems maintenance.",
       profileText2: "My background combines software development with systems operations and support, allowing me to participate in both building solutions and troubleshooting complex issues.",
-      jobAvailability: "Currently seeking new professional opportunities to contribute my experience in software development, .NET/C#, SQL Server, enterprise systems, and Full Stack development. Open to remote, hybrid, or on-site roles.",
+      jobAvailability: "I am available to join development teams and participate in projects where I can contribute my experience in .NET, C#, SQL Server, Full Stack development, and systems support.",
       ctaProjects: "View Projects",
       ctaContact: "Contact Me",
-      ctaCv: "DOWNLOAD CV 2026",
+      ctaCv: "View CV 2026",
       email: "jcarlos61200@gmail.com",
       github: "https://github.com/mscandy3312",
       linkedin: "https://www.linkedin.com/in/juan-carlos-andrés-hernández-8850b136a",
@@ -222,6 +224,8 @@ export const translations = {
       title: "Technical Specialties",
       subtitle: "Reorganized according to real technical mastery and verified experience in CV 2026.",
     },
+
+    projectsIntro: "Software development projects, enterprise systems, web & mobile applications, SaaS platforms, and digital interfaces.",
 
     projects: [
       {
