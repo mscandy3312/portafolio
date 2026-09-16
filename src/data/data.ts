@@ -6,12 +6,12 @@ export const translations = {
       name: "Juan Carlos Andrés Hernández",
       shortName: "Juan Carlos",
       title: "Ingeniero en Sistemas Computacionales",
-      subtitle: ".NET / C# • SQL Server • Full Stack",
-      description1: "Ingeniero en Sistemas Computacionales con más de 7 años de experiencia en desarrollo de software, administración de sistemas empresariales, soporte técnico-funcional y resolución de incidencias.",
-      description2: "Experiencia profesional en Valora IT y en la administración y soporte del Sistema de Contrataciones Públicas COMPRANET.",
+      subtitle: "C# / .NET & SQL Server • Desarrollo de Sistemas y Full Stack",
+      description1: "Soy Ingeniero en Sistemas Computacionales con más de 7 años de experiencia en desarrollo de software, administración y soporte de sistemas, bases de datos y atención de incidencias. He trabajado principalmente con tecnologías .NET, C#, ASP.NET Core, MVC y SQL Server, además de contar con experiencia en desarrollo Full Stack con React, Next.js, Node.js y otras tecnologías web.",
+      description2: "Mi experiencia en el sector público federal, particularmente en la administración y soporte del sistema COMPRANET, me permitió desarrollar habilidades en resolución de incidencias, análisis técnico y funcional, validación de información, SQL Server, pruebas funcionales y continuidad operativa.",
       profileText1: "Ingeniero en Sistemas Computacionales con más de 7 años de experiencia en desarrollo de software y administración de plataformas críticas. Experiencia en .NET/C#, SQL Server, desarrollo web, soporte técnico-funcional, análisis y resolución de incidencias, pruebas funcionales y mantenimiento de sistemas empresariales.",
       profileText2: "Mi experiencia combina desarrollo de software con operación y soporte de sistemas, permitiéndome participar tanto en la construcción de soluciones como en el diagnóstico y resolución de problemas.",
-      jobAvailability: "Estoy disponible para integrarme a equipos de desarrollo y participar en proyectos donde pueda aportar mi experiencia en .NET, C#, SQL Server, desarrollo Full Stack y soporte de sistemas.",
+      jobAvailability: "Estoy disponible para integrarme a equipos de desarrollo y aportar mi experiencia en .NET, C#, SQL Server, desarrollo Full Stack, análisis de sistemas y soporte técnico/funcional.",
       ctaProjects: "Ver Proyectos",
       ctaContact: "Contactarme",
       ctaCv: "Ver CV 2026",
@@ -32,7 +32,7 @@ export const translations = {
       subtitle: "Reorganizadas según dominio técnico real y experiencia laboral acreditada en el CV 2026.",
     },
 
-    projectsIntro: "Proyectos de desarrollo de software, sistemas empresariales, aplicaciones web y móviles, plataformas SaaS e interfaces digitales.",
+    projectsIntro: "Explora proyectos de desarrollo de software, sistemas empresariales, aplicaciones web y móviles, plataformas SaaS e interfaces digitales.",
 
     recommendations: {
       title: "Recomendaciones profesionales",
@@ -40,21 +40,21 @@ export const translations = {
       items: [
         {
           id: "rec-1",
-          title: "Recomendación Profesional",
+          title: "Carta de recomendación profesional",
           subtitle: "Documento de Referencia Laboral",
           description: "Carta de recomendación profesional respaldando mi desempeño, responsabilidad y capacidad técnica en desarrollo de software y resolución de incidencias.",
-          link: "https://drive.google.com/file/d/1UNm8TKVXyT_t2F8abSa7fNw7TlPvxRF8/view?usp=drive_link",
+          link: "https://drive.google.com/file/d/16t29RYzoBT-QZIds0CqIwRTVY3odIq5o/view?usp=drive_link",
         },
         {
           id: "rec-2",
-          title: "Recomendación Profesional",
+          title: "Carta de recomendación profesional",
           subtitle: "Documento de Referencia Laboral",
           description: "Documento de referencia avalando mi compromiso profesional, cumplimiento de requerimientos y colaboración en entornos de TI.",
-          link: "https://drive.google.com/file/d/1DqyadLDrDO5RvQITQWRx5VmOKRFZdA4K/view?usp=drive_link",
+          link: "https://drive.google.com/file/d/1UNm8TKVXyT_t2F8abSa7fNw7TlPvxRF8/view?usp=drive_link",
         },
         {
           id: "rec-3",
-          title: "Recomendación Profesional",
+          title: "Carta de recomendación profesional",
           subtitle: "Documento de Referencia Laboral",
           description: "Carta de referencia destacando mi rigor en soporte técnico-funcional, optimización de sistemas y comunicación profesional.",
           link: "https://drive.google.com/file/d/1cg4yJgfqWJOc5flHrRcfOIXrpvsC8-2s/view?usp=drive_link",
@@ -71,24 +71,26 @@ export const translations = {
         }
       },
       certifications: {
-        title: "Certificaciones y Formación",
-        subtitle: "Acreditaciones y certificaciones profesionales",
+        title: "Documentación Profesional y Certificaciones",
+        subtitle: "Título profesional acreditado, certificaciones y respaldos laborales.",
         items: [
           {
             id: "cert-1",
             title: "Ingeniería en Sistemas Computacionales",
             issuer: "Título Profesional Acreditado",
-            year: "Formación Universitaria",
+            year: "Título Universitario",
             description: "Acreditación profesional en desarrollo de software, bases de datos y arquitectura de sistemas.",
-            link: CV_LINK,
+            link: "https://drive.google.com/file/d/1DqyadLDrDO5RvQITQWRx5VmOKRFZdA4K/view?usp=drive_link",
+            buttonText: "Ver título profesional",
           },
           {
             id: "cert-2",
-            title: "Certificación / Acreditación Técnica",
-            issuer: "Diseño Web Avanzado",
-            year: "Acreditación Profesional",
-            description: "Formación y acreditación en diseño y desarrollo web avanzado.",
+            title: "Diseño Web Avanzado",
+            issuer: "Certificación",
+            year: "Certificación Técnica",
+            description: "Certificación relacionada con diseño y desarrollo web.",
             link: "https://drive.google.com/file/d/1DOQ9ECDOJNnOj70p2E3f6nWD4dIosY8t/view?usp=drive_link",
+            buttonText: "Ver certificación",
           }
         ]
       }
@@ -259,12 +261,12 @@ export const translations = {
       name: "Juan Carlos Andrés Hernández",
       shortName: "Juan Carlos",
       title: "Computer Systems Engineer",
-      subtitle: ".NET / C# • SQL Server • Full Stack",
-      description1: "Computer Systems Engineer with over 7 years of experience in software development, enterprise systems administration, technical-functional support, and incident resolution.",
-      description2: "Professional experience at Valora IT and in administration and support of the COMPRANET Federal Procurement System.",
+      subtitle: "C# / .NET & SQL Server • Systems Development & Full Stack",
+      description1: "I am a Computer Systems Engineer with over 7 years of experience in software development, systems administration and support, databases, and incident resolution. I have worked primarily with .NET, C#, ASP.NET Core, MVC, and SQL Server technologies, along with Full Stack web experience in React, Next.js, Node.js, and modern web tools.",
+      description2: "My federal public sector experience, particularly in administering and supporting the COMPRANET system, allowed me to develop skills in incident resolution, technical and functional analysis, data validation, SQL Server, functional testing, and operational continuity.",
       profileText1: "Computer Systems Engineer with over 7 years of experience in software development and critical platform administration. Expertise in .NET/C#, SQL Server, web development, technical-functional support, incident analysis and resolution, functional testing, and enterprise systems maintenance.",
       profileText2: "My background combines software development with systems operations and support, allowing me to participate in both building solutions and troubleshooting complex issues.",
-      jobAvailability: "I am available to join development teams and participate in projects where I can contribute my experience in .NET, C#, SQL Server, Full Stack development, and systems support.",
+      jobAvailability: "I am available to join development teams and contribute my experience in .NET, C#, SQL Server, Full Stack development, systems analysis, and technical/functional support.",
       ctaProjects: "View Projects",
       ctaContact: "Contact Me",
       ctaCv: "View CV 2026",
@@ -285,7 +287,7 @@ export const translations = {
       subtitle: "Reorganized according to real technical mastery and verified experience in CV 2026.",
     },
 
-    projectsIntro: "Software development projects, enterprise systems, web & mobile applications, SaaS platforms, and digital interfaces.",
+    projectsIntro: "Explore software development projects, enterprise systems, web & mobile applications, SaaS platforms, and digital interfaces.",
 
     recommendations: {
       title: "Professional Recommendations",
@@ -293,21 +295,21 @@ export const translations = {
       items: [
         {
           id: "rec-1",
-          title: "Professional Recommendation",
+          title: "Professional Recommendation Letter",
           subtitle: "Employment Reference Document",
           description: "Professional recommendation letter backing my performance, accountability, and technical expertise in software development and incident resolution.",
-          link: "https://drive.google.com/file/d/1UNm8TKVXyT_t2F8abSa7fNw7TlPvxRF8/view?usp=drive_link",
+          link: "https://drive.google.com/file/d/16t29RYzoBT-QZIds0CqIwRTVY3odIq5o/view?usp=drive_link",
         },
         {
           id: "rec-2",
-          title: "Professional Recommendation",
+          title: "Professional Recommendation Letter",
           subtitle: "Employment Reference Document",
           description: "Reference letter endorsing my professional commitment, requirement delivery, and IT teamwork.",
-          link: "https://drive.google.com/file/d/1DqyadLDrDO5RvQITQWRx5VmOKRFZdA4K/view?usp=drive_link",
+          link: "https://drive.google.com/file/d/1UNm8TKVXyT_t2F8abSa7fNw7TlPvxRF8/view?usp=drive_link",
         },
         {
           id: "rec-3",
-          title: "Professional Recommendation",
+          title: "Professional Recommendation Letter",
           subtitle: "Employment Reference Document",
           description: "Reference letter highlighting my rigor in technical support, system optimization, and professional communication.",
           link: "https://drive.google.com/file/d/1cg4yJgfqWJOc5flHrRcfOIXrpvsC8-2s/view?usp=drive_link",
@@ -324,8 +326,8 @@ export const translations = {
         }
       },
       certifications: {
-        title: "Certifications & Education",
-        subtitle: "Professional accreditations & certificates",
+        title: "Professional Documentation & Certifications",
+        subtitle: "Accredited university degree, technical certificates, and work references.",
         items: [
           {
             id: "cert-1",
@@ -333,15 +335,17 @@ export const translations = {
             issuer: "Accredited University Degree",
             year: "Academic Degree",
             description: "Professional degree in software engineering, database design, and systems architecture.",
-            link: CV_LINK,
+            link: "https://drive.google.com/file/d/1DqyadLDrDO5RvQITQWRx5VmOKRFZdA4K/view?usp=drive_link",
+            buttonText: "View degree diploma",
           },
           {
             id: "cert-2",
-            title: "Technical Certification / Accreditation",
-            issuer: "Advanced Web Design",
-            year: "Professional Accreditation",
-            description: "Training and accreditation in advanced web design and development.",
+            title: "Advanced Web Design",
+            issuer: "Certification",
+            year: "Technical Certification",
+            description: "Certification related to web design and development.",
             link: "https://drive.google.com/file/d/1DOQ9ECDOJNnOj70p2E3f6nWD4dIosY8t/view?usp=drive_link",
+            buttonText: "View certification",
           }
         ]
       }

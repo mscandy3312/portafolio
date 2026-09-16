@@ -41,22 +41,22 @@ export default function Hero({ lang }: HeroProps) {
   const stats = [
     {
       value: "+7",
-      label: lang === "es" ? "Años de Experiencia Profesional" : "Years Professional Experience",
+      label: lang === "es" ? "Años de Experiencia" : "Years of Experience",
       icon: <ShieldCheck className="w-5 h-5 text-blue-500" />,
     },
     {
-      value: "+100",
-      label: lang === "es" ? "Incidencias/mes en COMPRANET" : "Monthly Incidents (COMPRANET)",
-      icon: <Terminal className="w-5 h-5 text-cyan-500" />,
-    },
-    {
-      value: "2020–2024",
-      label: lang === "es" ? "Experiencia SHCP / SFP COMPRANET" : "SHCP / SFP COMPRANET Record",
+      value: "13+",
+      label: lang === "es" ? "Proyectos Destacados" : "Featured Projects",
       icon: <Cpu className="w-5 h-5 text-indigo-500" />,
     },
     {
-      value: "C# / .NET & SQL",
-      label: lang === "es" ? "Especialidad Principal" : "Primary Specialty",
+      value: "+100",
+      label: lang === "es" ? "Incidencias/mes (COMPRANET)" : "Incidents/month (COMPRANET)",
+      icon: <Terminal className="w-5 h-5 text-cyan-500" />,
+    },
+    {
+      value: ".NET / C#",
+      label: lang === "es" ? "Experiencia profesional" : "Professional Experience",
       icon: <Database className="w-5 h-5 text-purple-500" />,
     },
   ];

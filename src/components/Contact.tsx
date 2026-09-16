@@ -43,8 +43,9 @@ export default function Contact({ lang = "es" }: { lang?: "es" | "en" }) {
     "Desarrollador Full Stack",
     "Analista de Sistemas",
     "Desarrollador Web",
-    "Soporte técnico-funcional / aplicaciones",
-    "Especialista en SQL Server",
+    "Programador SQL Server",
+    "Soporte Técnico / Funcional",
+    "Desarrollo y mantenimiento de sistemas",
   ];
 
   const handleCopyEmail = () => {

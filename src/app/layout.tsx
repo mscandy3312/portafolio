@@ -7,7 +7,7 @@ const outfit = Outfit({ subsets: ["latin"] });
 export const metadata: Metadata = {
   metadataBase: new URL("https://github.com/mscandy3312/portafolio"),
   title: "Juan Carlos Andrés Hernández | Ingeniero en Sistemas | .NET C# | SQL Server",
-  description: "Ingeniero en Sistemas Computacionales con más de 7 años de experiencia en .NET/C#, SQL Server, React, Next.js, sistemas empresariales y soporte técnico-funcional.",
+  description: "Ingeniero en Sistemas Computacionales con más de 7 años de experiencia en C#, .NET, ASP.NET Core, SQL Server, desarrollo Full Stack, React, Next.js, análisis de sistemas y soporte técnico. Experiencia en COMPRANET y desarrollo de soluciones web y empresariales.",
   keywords: [
     "Ingeniero en Sistemas",
     "Desarrollador .NET",

@@ -71,7 +71,7 @@ export default function Recommendations({ lang = "es" }: { lang?: "es" | "en" })
                     rel="noopener noreferrer"
                     className="inline-flex items-center gap-2 px-4 py-2 text-sm font-medium rounded-lg bg-primary/10 hover:bg-primary/20 text-primary border border-primary/20 transition-all w-full justify-center group/btn"
                   >
-                    <span>{lang === "es" ? "Ver certificado" : "View certificate"}</span>
+                    <span>{cert.buttonText || (lang === "es" ? "Ver certificado" : "View certificate")}</span>
                     <ExternalLink className="w-4 h-4 group-hover/btn:translate-x-0.5 group-hover/btn:-translate-y-0.5 transition-transform" />
                   </a>
                 </div>

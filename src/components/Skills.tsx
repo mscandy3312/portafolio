@@ -35,30 +35,35 @@ export default function Skills({ lang }: SkillsProps) {
         "ASP.NET Core",
         "MVC",
         "SQL Server",
-        "SQL / optimización de consultas",
-        "Soporte técnico y funcional",
+        "SQL",
+        "Optimización de consultas",
+        "Desarrollo de sistemas",
+        "Soporte técnico/funcional",
+        "REST APIs",
       ],
     },
     {
       id: "experience",
       categoryName: isEs ? "NIVEL 2" : "LEVEL 2",
-      title: isEs ? "EXPERIENCIA" : "EXPERIENCE",
+      title: isEs ? "EXPERIENCIA WEB / FULL STACK" : "WEB / FULL STACK EXPERIENCE",
       description: isEs
-        ? "Tecnologías de desarrollo web Full Stack, maquetación, motores relacionales y servicios web aplicados en proyectos corporativos."
-        : "Full Stack web technologies, layout, relational engines, and web services used in corporate applications.",
+        ? "Tecnologías de desarrollo web Full Stack, maquetación, frontend, backend y herramientas aplicadas en proyectos corporativos e independientes."
+        : "Full Stack web technologies, layout, frontend, backend, and tools used across corporate and independent builds.",
       icon: <Server className="w-6 h-6 text-indigo-500" />,
       badgeColor: "bg-indigo-500/10 text-indigo-600 dark:text-indigo-400 border-indigo-500/30 font-semibold",
       items: [
-        "HTML",
-        "CSS",
+        "HTML5",
+        "CSS3",
         "JavaScript",
         "React",
         "Next.js",
         "Node.js",
+        "TypeScript",
+        "Tailwind CSS",
         "Laravel / PHP",
         "MySQL",
-        "WordPress / Elementor",
-        "REST APIs",
+        "WordPress",
+        "Elementor",
         "Git / GitHub",
         "Figma",
       ],
@@ -66,10 +71,10 @@ export default function Skills({ lang }: SkillsProps) {
     {
       id: "complementary",
       categoryName: isEs ? "NIVEL 3" : "LEVEL 3",
-      title: isEs ? "COMPLEMENTARIO / PROYECTOS" : "COMPLEMENTARY / PROJECTS",
+      title: isEs ? "TECNOLOGÍAS COMPLEMENTARIAS / PROYECTOS" : "COMPLEMENTARY / PROJECT TECHNOLOGIES",
       description: isEs
-        ? "Tecnologías, plataformas cloud, arquitecturas de proyectos e infraestructura aplicadas en desarrollos específicos del portafolio."
-        : "Technologies, cloud platforms, project architectures, and infrastructure used across portfolio builds.",
+        ? "Tecnologías, plataformas cloud, móviles y arquitecturas específicas utilizadas en proyectos concretos del portafolio."
+        : "Technologies, cloud platforms, mobile toolkits, and specific architectures used across portfolio projects.",
       icon: <Wrench className="w-6 h-6 text-purple-500" />,
       badgeColor: "bg-purple-500/10 text-purple-600 dark:text-purple-400 border-purple-500/30 font-normal",
       items: [
@@ -82,11 +87,9 @@ export default function Skills({ lang }: SkillsProps) {
         "Firebase",
         "React Native",
         "Prisma",
-        "TypeScript",
-        "Tailwind CSS",
-        "Android Studio",
-        "ApexCharts",
-        "H2 Database",
+        "Jetpack Compose",
+        "H2",
+        "Stripe",
       ],
     },
   ];
