@@ -3,15 +3,15 @@
 :root {
   --background: #ffffff;
   --foreground: #020617; /* Slate 950 */
-  --card-bg: #f8fafc;
+  --card-bg: rgba(248, 250, 252, 0.85);
   --border: #e2e8f0;
 }
 
 .dark {
   --background: #030712; /* Sleeker dark mode (Gray 950) */
   --foreground: #f8fafc;
-  --card-bg: rgba(15, 23, 42, 0.4); /* Glass Slate 900 */
-  --border: rgba(30, 41, 59, 0.5); /* Slate 800 */
+  --card-bg: rgba(15, 23, 42, 0.55); /* Glass Slate 900 */
+  --border: rgba(30, 41, 59, 0.6); /* Slate 800 */
 }
 
 @theme inline {
@@ -25,6 +25,25 @@ body {
   background: var(--background);
   color: var(--foreground);
   transition: background-color 0.3s ease, color 0.3s ease;
+  overflow-x: hidden;
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--background);
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgba(59, 130, 246, 0.3);
+  border-radius: 9999px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(59, 130, 246, 0.6);
 }
 
 /* Premium Utilities */
@@ -36,9 +55,33 @@ body {
 }
 
 .text-gradient {
-  background: linear-gradient(135deg, #3b82f6 0%, #8b5cf6 100%);
+  background: linear-gradient(135deg, #38bdf8 0%, #3b82f6 50%, #8b5cf6 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
   color: transparent;
-}
+}
+
+/* 3D Styles */
+.preserve-3d {
+  transform-style: preserve-3d;
+}
+
+.perspective-1000 {
+  perspective: 1000px;
+}
+
+@keyframes pulseGlow {
+  0%, 100% {
+    opacity: 0.4;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 0.8;
+    transform: scale(1.05);
+  }
+}
+
+.animate-pulse-glow {
+  animation: pulseGlow 4s ease-in-out infinite;
+}

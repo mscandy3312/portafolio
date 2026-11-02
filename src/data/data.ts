@@ -5,7 +5,10 @@ export const translations = {
       title: "Ingeniero en Sistemas Computacionales",
       profile: "Soy Ingeniero en Sistemas con más de 7 años de experiencia creando soluciones de software robustas y escalables. Mi paso por la administración del sistema COMPRANET me enseñó a trabajar bajo presión, con estándares de calidad y a optimizar sistemas críticos a nivel federal. Ahora, como Full Stack y Freelance, aplico esa visión para ayudar a empresas y startups a construir productos digitales de alto impacto.",
       cta: "Ver Proyectos",
-      email: "tu-email@ejemplo.com" // Asegúrate de tener este campo para el footer
+      email: "jcarlos61200@gmail.com",
+      phone: "+52 56 6385 2677",
+      phoneDisplay: "(56) 6385-2677",
+      location: "5to Callejón San José Sur, Lomas de Chicoloapan, CP 56380, CDMX / Estado de México"
     },
     experience: {
       title: "Experiencia Profesional",
@@ -74,7 +77,10 @@ export const translations = {
       title: "Computer Systems Engineer",
       profile: "I am a Systems Engineer with over 7 years of experience building robust and scalable software solutions. My background managing the federal COMPRANET system taught me to work under pressure, meet rigorous quality standards, and optimize critical government-level systems. Currently, as a Full Stack Developer and Freelancer, I apply that expertise to help companies and startups build high-impact digital products.",
       cta: "View Projects",
-      email: "tu-email@ejemplo.com"
+      email: "jcarlos61200@gmail.com",
+      phone: "+52 56 6385 2677",
+      phoneDisplay: "(56) 6385-2677",
+      location: "5to Callejón San José Sur, Lomas de Chicoloapan, CP 56380, Mexico City / State of Mexico"
     },
     experience: {
       title: "Professional Experience",
