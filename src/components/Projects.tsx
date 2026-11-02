@@ -5,7 +5,7 @@ import Image from "next/image";
 import { useState } from "react";
 import { translations } from "@/data/data";
 import TiltCard from "@/components/TiltCard";
-import { Search, Eye, X, Sparkles, Code, ExternalLink, Layers, Mail, FolderKanban } from "lucide-react";
+import { Search, Eye, X, Sparkles, Code, ExternalLink, Layers, Mail, FolderKanban, BookOpen, ShoppingBag } from "lucide-react";
 
 function GithubIcon(props: React.SVGProps<SVGSVGElement>) {
   return (
@@ -46,7 +46,7 @@ export default function Projects({
     { id: "enterprise", label: isEs ? "Sistemas Empresariales & ERPs" : "Enterprise Systems & ERPs" },
     { id: "web", label: isEs ? "Desarrollo Web & SaaS" : "Web Development & SaaS" },
     { id: "mobile", label: isEs ? "Aplicaciones Móviles" : "Mobile Apps" },
-    { id: "personal", label: isEs ? "Proyectos Personales" : "Personal Projects" },
+    { id: "personal", label: isEs ? "Libro & Proyectos Personales 📖" : "Book & Personal Projects 📖" },
   ];
 
   const filteredProjects = projectsList.filter((project) => {
@@ -79,7 +79,7 @@ export default function Projects({
         >
           <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-blue-500/10 border border-blue-500/20 text-blue-600 dark:text-blue-400 text-xs font-bold uppercase tracking-wider mb-4">
             <FolderKanban className="w-3.5 h-3.5" />
-            {isEs ? "Casos Reales y Producción" : "Real Cases & Production"}
+            {isEs ? "Casos Reales, Producción & Obra Literaria" : "Real Cases, Production & Literary Work"}
           </div>
 
           <h2 className="text-4xl sm:text-5xl md:text-6xl font-black text-foreground mb-4 tracking-tight">
@@ -90,8 +90,8 @@ export default function Projects({
           </h2>
           <p className="text-base sm:text-lg text-slate-600 dark:text-slate-400 max-w-2xl mx-auto font-light leading-relaxed">
             {isEs
-              ? "Soluciones de software empresariales (.NET / C#, SQL Server, Laravel), plataformas Full Stack en la nube y aplicaciones móviles."
-              : "Enterprise software solutions (.NET / C#, SQL Server, Laravel), Full Stack cloud platforms, and mobile apps."}
+              ? "Sistemas empresariales (.NET / C#, SQL Server, Laravel), plataformas Full Stack en la nube, aplicaciones móviles y la obra literaria Guardianes de la Luz."
+              : "Enterprise software solutions (.NET / C#, SQL Server, Laravel), Full Stack cloud platforms, mobile apps, and the literary novel Guardians of Light."}
           </p>
 
           {/* SEARCH & FILTERS */}
@@ -99,7 +99,7 @@ export default function Projects({
             <Search className="w-4 h-4 absolute left-4 top-1/2 -translate-y-1/2 text-slate-400" />
             <input
               type="text"
-              placeholder={isEs ? "Buscar por tecnología (.NET, SQL Server, Next.js, Laravel) o nombre..." : "Search by technology (.NET, SQL Server, Next.js) or name..."}
+              placeholder={isEs ? "Buscar por tecnología (.NET, SQL Server, Next.js, Hotmart) o nombre..." : "Search by technology (.NET, SQL Server, Next.js, Hotmart) or name..."}
               value={searchQuery}
               onChange={(e) => setSearchQuery(e.target.value)}
               className="w-full pl-11 pr-4 py-3 rounded-full glass border border-border text-foreground text-sm focus:outline-none focus:ring-2 focus:ring-blue-500 shadow-md"
@@ -134,127 +134,165 @@ export default function Projects({
           </div>
         ) : (
           <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-8">
-            {filteredProjects.map((project, index) => (
-              <TiltCard key={project.id || `${project.title}-${index}`} intensity={10} glare={true} className="h-full">
-                <motion.div
-                  initial={{ opacity: 0, y: 35 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true }}
-                  transition={{
-                    duration: 0.5,
-                    delay: (index % 3) * 0.1,
-                  }}
-                  className="group relative h-full rounded-3xl overflow-hidden glass-card shadow-xl flex flex-col justify-between border border-border hover:border-blue-500/40"
-                >
-                  <div>
-                    {/* IMAGE CONTAINER */}
-                    <div
-                      className="relative w-full h-56 overflow-hidden cursor-pointer bg-slate-950"
-                      onClick={() => setSelectedProject(project)}
-                    >
-                      <Image
-                        src={project.image}
-                        alt={project.title}
-                        fill
-                        unoptimized
-                        sizes="(max-width: 768px) 100vw, (max-width: 1280px) 50vw, 33vw"
-                        className="object-cover group-hover:scale-105 transition-transform duration-700 opacity-90 group-hover:opacity-100"
-                      />
+            {filteredProjects.map((project, index) => {
+              const isHotmartBook = project.demoUrl?.includes("hotmart.com") || project.id === "guardianes-luz";
 
-                      {/* OVERLAY */}
-                      <div className="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-950/20 to-transparent opacity-80" />
-
-                      {/* CATEGORY BADGE */}
-                      <div className="absolute top-4 left-4 z-20">
-                        <span className="px-3 py-1 rounded-full bg-slate-900/80 backdrop-blur-md border border-slate-700 text-slate-200 text-[10px] font-extrabold uppercase tracking-wider">
-                          {project.category === "enterprise" ? (isEs ? "Empresarial" : "Enterprise") :
-                           project.category === "mobile" ? (isEs ? "Móvil" : "Mobile") :
-                           project.category === "personal" ? (isEs ? "Personal" : "Personal") : "Web"}
-                        </span>
-                      </div>
-
-                      {/* CTA OVERLAY HOVER */}
-                      <div className="absolute inset-0 z-20 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-all duration-300 bg-blue-950/40 backdrop-blur-[2px]">
-                        <span className="px-5 py-2.5 rounded-full bg-white text-slate-900 font-bold text-xs tracking-wide shadow-2xl flex items-center gap-2 transform translate-y-4 group-hover:translate-y-0 transition-transform">
-                          <Eye className="w-4 h-4 text-blue-600" />
-                          {isEs ? "Ver Detalles Completos" : "View Full Details"}
-                        </span>
-                      </div>
-                    </div>
-
-                    {/* CONTENT */}
-                    <div className="p-7">
-                      <h3 
+              return (
+                <TiltCard key={project.id || `${project.title}-${index}`} intensity={10} glare={true} className="h-full">
+                  <motion.div
+                    initial={{ opacity: 0, y: 35 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    viewport={{ once: true }}
+                    transition={{
+                      duration: 0.5,
+                      delay: (index % 3) * 0.1,
+                    }}
+                    className={`group relative h-full rounded-3xl overflow-hidden glass-card shadow-xl flex flex-col justify-between border ${
+                      isHotmartBook
+                        ? "border-orange-500/40 hover:border-orange-500 shadow-orange-500/5"
+                        : "border-border hover:border-blue-500/40"
+                    }`}
+                  >
+                    <div>
+                      {/* IMAGE CONTAINER */}
+                      <div
+                        className="relative w-full h-56 overflow-hidden cursor-pointer bg-slate-950"
                         onClick={() => setSelectedProject(project)}
-                        className="text-xl font-bold text-foreground mb-2 group-hover:text-blue-500 transition-colors duration-300 cursor-pointer line-clamp-1"
                       >
-                        {project.title}
-                      </h3>
+                        <Image
+                          src={project.image}
+                          alt={project.title}
+                          fill
+                          unoptimized
+                          sizes="(max-width: 768px) 100vw, (max-width: 1280px) 50vw, 33vw"
+                          className="object-cover group-hover:scale-105 transition-transform duration-700 opacity-90 group-hover:opacity-100"
+                        />
 
-                      {/* PURPOSE / PROBLEM STATEMENT */}
-                      <div className="mb-3 text-xs font-semibold text-blue-600 dark:text-blue-400 bg-blue-500/10 px-3 py-1.5 rounded-xl border border-blue-500/20">
-                        <span className="font-extrabold">{isEs ? "Propósito: " : "Purpose: "}</span>
-                        {project.problemPurpose}
+                        {/* OVERLAY */}
+                        <div className="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-950/20 to-transparent opacity-80" />
+
+                        {/* CATEGORY BADGE */}
+                        <div className="absolute top-4 left-4 z-20 flex flex-wrap gap-1.5">
+                          {isHotmartBook ? (
+                            <span className="px-3 py-1 rounded-full bg-gradient-to-r from-orange-500 to-amber-500 text-white text-[10px] font-extrabold uppercase tracking-wider shadow-lg shadow-orange-500/30 flex items-center gap-1">
+                              <BookOpen className="w-3 h-3" />
+                              {isEs ? "Libro en Hotmart" : "Book on Hotmart"}
+                            </span>
+                          ) : (
+                            <span className="px-3 py-1 rounded-full bg-slate-900/80 backdrop-blur-md border border-slate-700 text-slate-200 text-[10px] font-extrabold uppercase tracking-wider">
+                              {project.category === "enterprise" ? (isEs ? "Empresarial" : "Enterprise") :
+                               project.category === "mobile" ? (isEs ? "Móvil" : "Mobile") :
+                               project.category === "personal" ? (isEs ? "Personal" : "Personal") : "Web"}
+                            </span>
+                          )}
+                        </div>
+
+                        {/* CTA OVERLAY HOVER */}
+                        <div className="absolute inset-0 z-20 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-all duration-300 bg-blue-950/40 backdrop-blur-[2px]">
+                          <span className="px-5 py-2.5 rounded-full bg-white text-slate-900 font-bold text-xs tracking-wide shadow-2xl flex items-center gap-2 transform translate-y-4 group-hover:translate-y-0 transition-transform">
+                            <Eye className="w-4 h-4 text-blue-600" />
+                            {isEs ? "Ver Detalles Completos" : "View Full Details"}
+                          </span>
+                        </div>
                       </div>
 
-                      <p className="text-slate-600 dark:text-slate-300 text-sm leading-relaxed mb-4 line-clamp-3 font-normal">
-                        {project.description}
-                      </p>
+                      {/* CONTENT */}
+                      <div className="p-7">
+                        <div className="flex items-center justify-between gap-2 mb-2">
+                          <h3 
+                            onClick={() => setSelectedProject(project)}
+                            className="text-xl font-bold text-foreground group-hover:text-blue-500 transition-colors duration-300 cursor-pointer line-clamp-1"
+                          >
+                            {project.title}
+                          </h3>
+                        </div>
+
+                        {/* PURPOSE / PROBLEM STATEMENT */}
+                        <div className={`mb-3 text-xs font-semibold px-3 py-1.5 rounded-xl border ${
+                          isHotmartBook
+                            ? "bg-orange-500/10 text-orange-600 dark:text-orange-400 border-orange-500/25"
+                            : "bg-blue-500/10 text-blue-600 dark:text-blue-400 border-blue-500/20"
+                        }`}>
+                          <span className="font-extrabold">{isEs ? "Propósito: " : "Purpose: "}</span>
+                          {project.problemPurpose}
+                        </div>
+
+                        <p className="text-slate-600 dark:text-slate-300 text-sm leading-relaxed mb-4 line-clamp-3 font-normal">
+                          {project.description}
+                        </p>
+                      </div>
                     </div>
-                  </div>
 
-                  {/* CARD FOOTER */}
-                  <div className="px-7 pb-7 pt-2 flex flex-col gap-4 mt-auto">
-                    {/* TECH STACK */}
-                    <div className="flex flex-wrap gap-1.5 pt-3 border-t border-border/40">
-                      {project.tech.map((tech, i) => (
-                        <span
-                          key={i}
-                          className="px-2.5 py-1 rounded-md text-[11px] font-semibold bg-slate-200/60 dark:bg-slate-800/60 text-slate-700 dark:text-slate-300"
+                    {/* CARD FOOTER */}
+                    <div className="px-7 pb-7 pt-2 flex flex-col gap-4 mt-auto">
+                      {/* TECH STACK */}
+                      <div className="flex flex-wrap gap-1.5 pt-3 border-t border-border/40">
+                        {project.tech.map((tech, i) => (
+                          <span
+                            key={i}
+                            className={`px-2.5 py-1 rounded-md text-[11px] font-semibold ${
+                              isHotmartBook && tech.toLowerCase().includes("hotmart")
+                                ? "bg-orange-500/20 text-orange-600 dark:text-orange-400 border border-orange-500/30 font-bold"
+                                : "bg-slate-200/60 dark:bg-slate-800/60 text-slate-700 dark:text-slate-300"
+                            }`}
+                          >
+                            {tech}
+                          </span>
+                        ))}
+                      </div>
+
+                      {/* ACTION BUTTONS */}
+                      <div className="flex items-center gap-2 pt-2">
+                        <button
+                          onClick={() => setSelectedProject(project)}
+                          className="flex-1 py-2 rounded-xl bg-blue-600 hover:bg-blue-500 text-white font-bold text-xs transition-all flex items-center justify-center gap-1.5 shadow-md shadow-blue-500/20 cursor-pointer"
                         >
-                          {tech}
-                        </span>
-                      ))}
+                          <Eye className="w-3.5 h-3.5" />
+                          <span>{isEs ? "Ver Proyecto" : "View Project"}</span>
+                        </button>
+
+                        {/* Dedicated Hotmart Buy Button or standard demo link */}
+                        {isHotmartBook && project.demoUrl ? (
+                          <a
+                            href={project.demoUrl}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="px-3.5 py-2 rounded-xl bg-gradient-to-r from-orange-500 to-amber-500 hover:from-orange-600 hover:to-amber-600 text-white font-bold text-xs transition-all flex items-center gap-1.5 shadow-md shadow-orange-500/25 shrink-0"
+                            title={isEs ? "Comprar Libro en Hotmart" : "Buy Book on Hotmart"}
+                          >
+                            <BookOpen className="w-3.5 h-3.5" />
+                            <span>{isEs ? "Comprar en Hotmart" : "Buy on Hotmart"}</span>
+                            <ExternalLink className="w-3 h-3 opacity-80" />
+                          </a>
+                        ) : project.demoUrl ? (
+                          <a
+                            href={project.demoUrl}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="p-2 rounded-xl glass hover:bg-blue-500/20 text-blue-500 transition-all border border-blue-500/30"
+                            title="Demo en vivo"
+                          >
+                            <ExternalLink className="w-4 h-4" />
+                          </a>
+                        ) : null}
+
+                        {project.githubUrl && (
+                          <a
+                            href={project.githubUrl}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="p-2 rounded-xl glass hover:bg-purple-500/20 text-purple-500 transition-all border border-purple-500/30"
+                            title="Repositorio GitHub"
+                          >
+                            <GithubIcon />
+                          </a>
+                        )}
+                      </div>
                     </div>
-
-                    {/* ACTION BUTTONS */}
-                    <div className="flex items-center gap-2 pt-2">
-                      <button
-                        onClick={() => setSelectedProject(project)}
-                        className="flex-1 py-2 rounded-xl bg-blue-600 hover:bg-blue-500 text-white font-bold text-xs transition-all flex items-center justify-center gap-1.5 shadow-md shadow-blue-500/20 cursor-pointer"
-                      >
-                        <Eye className="w-3.5 h-3.5" />
-                        <span>{isEs ? "Ver Proyecto" : "View Project"}</span>
-                      </button>
-
-                      {project.demoUrl && (
-                        <a
-                          href={project.demoUrl}
-                          target="_blank"
-                          rel="noopener noreferrer"
-                          className="p-2 rounded-xl glass hover:bg-blue-500/20 text-blue-500 transition-all border border-blue-500/30"
-                          title="Demo en vivo"
-                        >
-                          <ExternalLink className="w-4 h-4" />
-                        </a>
-                      )}
-
-                      {project.githubUrl && (
-                        <a
-                          href={project.githubUrl}
-                          target="_blank"
-                          rel="noopener noreferrer"
-                          className="p-2 rounded-xl glass hover:bg-purple-500/20 text-purple-500 transition-all border border-purple-500/30"
-                          title="Repositorio GitHub"
-                        >
-                          <GithubIcon />
-                        </a>
-                      )}
-                    </div>
-                  </div>
-                </motion.div>
-              </TiltCard>
-            ))}
+                  </motion.div>
+                </TiltCard>
+              );
+            })}
           </div>
         )}
       </div>
@@ -304,7 +342,11 @@ export default function Projects({
                       {selectedProject.category}
                     </span>
                     {selectedProject.highlights && (
-                      <span className="px-3 py-1 rounded-full text-xs font-semibold bg-emerald-500/10 text-emerald-400 border border-emerald-500/30">
+                      <span className={`px-3 py-1 rounded-full text-xs font-semibold border ${
+                        selectedProject.demoUrl?.includes("hotmart.com")
+                          ? "bg-orange-500/15 text-orange-400 border-orange-500/30"
+                          : "bg-emerald-500/10 text-emerald-400 border-emerald-500/30"
+                      }`}>
                         {selectedProject.highlights}
                       </span>
                     )}
@@ -313,6 +355,34 @@ export default function Projects({
                     {selectedProject.title}
                   </h3>
                 </div>
+
+                {/* SPECIAL HOTMART BANNER IF BOOK */}
+                {selectedProject.demoUrl?.includes("hotmart.com") && (
+                  <div className="p-4 sm:p-5 rounded-2xl bg-gradient-to-r from-orange-500/15 via-amber-500/15 to-orange-500/10 border border-orange-500/30 text-white flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
+                    <div>
+                      <div className="flex items-center gap-2 text-orange-400 font-bold text-sm sm:text-base mb-1">
+                        <BookOpen className="w-5 h-5" />
+                        <span>{isEs ? "Adquiere el Libro en Hotmart Oficial" : "Buy the Book on Official Hotmart"}</span>
+                      </div>
+                      <p className="text-xs sm:text-sm text-slate-300 font-light leading-relaxed">
+                        {isEs 
+                          ? "Obra completa de 60 capítulos lista para compra y descarga digital con acceso inmediato a través de Hotmart."
+                          : "Complete 60-chapter literary novel ready for digital purchase and instant download via Hotmart."}
+                      </p>
+                    </div>
+
+                    <a
+                      href={selectedProject.demoUrl}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="px-6 py-3 rounded-full bg-gradient-to-r from-orange-500 to-amber-500 hover:from-orange-600 hover:to-amber-600 text-white font-bold text-xs sm:text-sm shadow-lg shadow-orange-500/30 transition-all flex items-center gap-2 shrink-0 cursor-pointer"
+                    >
+                      <ShoppingBag className="w-4 h-4" />
+                      <span>{isEs ? "Comprar en Hotmart" : "Buy on Hotmart"}</span>
+                      <ExternalLink className="w-3.5 h-3.5" />
+                    </a>
+                  </div>
+                )}
 
                 {/* PURPOSE BOX */}
                 <div className="p-4 rounded-2xl bg-blue-500/10 border border-blue-500/20 text-slate-200">
@@ -344,7 +414,11 @@ export default function Projects({
                     {selectedProject.tech.map((t, i) => (
                       <span
                         key={i}
-                        className="px-3 py-1.5 rounded-xl text-xs font-bold bg-blue-500/10 border border-blue-500/30 text-blue-400"
+                        className={`px-3 py-1.5 rounded-xl text-xs font-bold ${
+                          t.toLowerCase().includes("hotmart")
+                            ? "bg-orange-500/20 text-orange-400 border border-orange-500/30"
+                            : "bg-blue-500/10 border border-blue-500/30 text-blue-400"
+                        }`}
                       >
                         {t}
                       </span>
@@ -354,7 +428,33 @@ export default function Projects({
 
                 {/* MODAL FOOTER */}
                 <div className="pt-4 border-t border-slate-800 flex flex-wrap items-center justify-between gap-4">
-                  <div className="flex items-center gap-3">
+                  <div className="flex flex-wrap items-center gap-3">
+                    {/* Hotmart Direct Link in Footer */}
+                    {selectedProject.demoUrl?.includes("hotmart.com") && (
+                      <a
+                        href={selectedProject.demoUrl}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="px-6 py-3 rounded-full bg-gradient-to-r from-orange-500 to-amber-500 hover:from-orange-600 hover:to-amber-600 text-white font-bold text-sm transition-all flex items-center gap-2 shadow-lg shadow-orange-500/25 cursor-pointer"
+                      >
+                        <BookOpen className="w-4 h-4" />
+                        <span>{isEs ? "Comprar Libro en Hotmart Oficial" : "Buy Book on Official Hotmart"}</span>
+                        <ExternalLink className="w-3.5 h-3.5 opacity-80" />
+                      </a>
+                    )}
+
+                    {selectedProject.demoUrl && !selectedProject.demoUrl.includes("hotmart.com") && (
+                      <a
+                        href={selectedProject.demoUrl}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="px-6 py-3 rounded-full bg-emerald-600 hover:bg-emerald-500 text-white font-semibold text-sm transition-all flex items-center gap-2 shadow-lg shadow-emerald-500/20"
+                      >
+                        <ExternalLink className="w-4 h-4" />
+                        <span>{isEs ? "Visitar Sitio en Vivo" : "Visit Live Site"}</span>
+                      </a>
+                    )}
+
                     <a
                       href="mailto:jcarlos61200@gmail.com"
                       className="px-6 py-3 rounded-full bg-blue-600 hover:bg-blue-500 text-white font-semibold text-sm transition-all flex items-center gap-2 shadow-lg shadow-blue-500/20"
@@ -378,7 +478,7 @@ export default function Projects({
 
                   <button
                     onClick={() => setSelectedProject(null)}
-                    className="px-6 py-3 rounded-full glass text-slate-300 hover:text-white font-semibold text-sm transition-all"
+                    className="px-6 py-3 rounded-full glass text-slate-300 hover:text-white font-semibold text-sm transition-all cursor-pointer"
                   >
                     {isEs ? "Cerrar" : "Close"}
                   </button>

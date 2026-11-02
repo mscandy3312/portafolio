@@ -107,10 +107,11 @@ export const projects = [
   {
     title: "Guardianes de la Luz",
     description:
-      "Obra literaria de 60 capítulos con estilo dark/gótico y maquetación profesional.",
-    tech: ["Edición Editorial", "Maquetación profesional"],
+      "Obra literaria de 60 capítulos con estilo dark/gótico, fantasía épica y maquetación profesional. Disponible para compra en Hotmart.",
+    tech: ["Obra Literaria", "Edición Editorial", "Maquetación Profesional", "Hotmart"],
     highlights:
-      "Documento listo para publicación física y digital.",
-    image: "/projects/libro.png",
+      "Publicación oficial disponible para compra y descarga digital en Hotmart.",
+    image: "/projects/guardianes.png",
+    demoUrl: "https://hotmart.com/es/marketplace/productos/guardianes_de_la_luz/W102641406H",
   },
 ];
