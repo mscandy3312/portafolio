@@ -1,14 +1,18 @@
 import "./globals.css";
 import { Outfit } from "next/font/google";
 import { Metadata } from "next";
+import { Analytics } from "@vercel/analytics/react";
+import { SpeedInsights } from "@vercel/speed-insights/next";
 
 const outfit = Outfit({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://github.com/mscandy3312/portafolio"),
-  title: "Juan Carlos Andrés Hernández | Ingeniero en Sistemas | .NET C# | SQL Server",
-  description: "Ingeniero en Sistemas Computacionales con más de 7 años de experiencia en C#, .NET, ASP.NET Core, SQL Server, desarrollo Full Stack, React, Next.js, análisis de sistemas y soporte técnico. Experiencia en COMPRANET y desarrollo de soluciones web y empresariales.",
+  metadataBase: new URL("https://jcah-portafolio.com"),
+  title: "Juan Carlos Andrés Hernández (JCAH) | Ingeniero en Sistemas | .NET C# | Full Stack",
+  description: "Desarrollamos, conectamos y hacemos crecer tus ideas. Portafolio profesional de desarrollo web, .NET C#, SQL Server, redes, videovigilancia y soporte técnico.",
   keywords: [
+    "Juan Carlos Andrés Hernández",
+    "JCAH",
     "Ingeniero en Sistemas",
     "Desarrollador .NET",
     "C#",
@@ -17,8 +21,8 @@ export const metadata: Metadata = {
     "React",
     "Next.js",
     "Full Stack Developer",
-    "Analista de Sistemas",
-    "Desarrollador Web",
+    "Cableado Estructurado",
+    "Videovigilancia CCTV",
     "COMPRANET",
     "México",
   ],
@@ -31,16 +35,16 @@ export const metadata: Metadata = {
     telephone: false,
   },
   openGraph: {
-    title: "Juan Carlos Andrés Hernández | Ingeniero en Sistemas | .NET C# | SQL Server",
-    description: "Ingeniero en Sistemas Computacionales con más de 7 años de experiencia en desarrollo .NET/C#, SQL Server, React, Next.js, sistemas empresariales y soporte técnico-funcional.",
-    url: "https://github.com/mscandy3312/portafolio",
-    siteName: "Portafolio Profesional Juan Carlos Andrés Hernández",
+    title: "Juan Carlos Andrés Hernández (JCAH) | Ingeniero en Sistemas",
+    description: "Desarrollamos, conectamos y hacemos crecer tus ideas. Sitios web, sistemas empresariales, cableado estructurado, videovigilancia y soporte técnico.",
+    url: "https://jcah-portafolio.com",
+    siteName: "Portafolio Profesional JCAH",
     images: [
       {
         url: "/projects/erp-web.png",
         width: 1200,
         height: 630,
-        alt: "Juan Carlos Andrés Hernández - Ingeniero en Sistemas .NET C# SQL Server",
+        alt: "Juan Carlos Andrés Hernández - JCAH Portafolio",
       },
     ],
     locale: "es_MX",
@@ -48,7 +52,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Juan Carlos Andrés Hernández | Ingeniero en Sistemas",
+    title: "Juan Carlos Andrés Hernández (JCAH) | Ingeniero en Sistemas",
     description: "Desarrollo .NET/C#, SQL Server, React, Next.js, sistemas empresariales y administración COMPRANET.",
     images: ["/projects/erp-web.png"],
   },
@@ -74,6 +78,8 @@ export default function RootLayout({
     <html lang="es" className="dark scroll-smooth">
       <body className={`${outfit.className} bg-background text-foreground antialiased selection:bg-blue-500/30 selection:text-blue-200 transition-colors duration-300`}>
         {children}
+        <Analytics />
+        <SpeedInsights />
       </body>
     </html>
   );

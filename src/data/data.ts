@@ -9,9 +9,11 @@ export const translations = {
       subtitle: "C# / .NET & SQL Server • Desarrollo de Sistemas y Full Stack",
       description1: "Soy Ingeniero en Sistemas Computacionales con más de 7 años de experiencia en desarrollo de software, administración y soporte de sistemas, bases de datos y atención de incidencias. He trabajado principalmente con tecnologías .NET, C#, ASP.NET Core, MVC y SQL Server, además de contar con experiencia en desarrollo Full Stack con React, Next.js, Node.js y otras tecnologías web.",
       description2: "Mi experiencia en el sector público federal, particularmente en la administración y soporte del sistema COMPRANET, me permitió desarrollar habilidades en resolución de incidencias, análisis técnico y funcional, validación de información, SQL Server, pruebas funcionales y continuidad operativa.",
+      profile: "Soy Ingeniero en Sistemas con más de 7 años de experiencia creando soluciones de software robustas y escalables. Mi paso por la administración del sistema COMPRANET me enseñó a trabajar bajo presión, con estándares de calidad y a optimizar sistemas críticos a nivel federal. Ahora, como Full Stack y Freelance, aplico esa visión para ayudar a empresas y startups a construir productos digitales de alto impacto.",
       profileText1: "Ingeniero en Sistemas Computacionales con más de 7 años de experiencia en desarrollo de software y administración de plataformas críticas. Experiencia en .NET/C#, SQL Server, desarrollo web, soporte técnico-funcional, análisis y resolución de incidencias, pruebas funcionales y mantenimiento de sistemas empresariales.",
       profileText2: "Mi experiencia combina desarrollo de software con operación y soporte de sistemas, permitiéndome participar tanto en la construcción de soluciones como en el diagnóstico y resolución de problemas.",
       jobAvailability: "Estoy disponible para integrarme a equipos de desarrollo y aportar mi experiencia en .NET, C#, SQL Server, desarrollo Full Stack, análisis de sistemas y soporte técnico/funcional.",
+      cta: "Ver Proyectos",
       ctaProjects: "Ver Proyectos",
       ctaContact: "Contactarme",
       ctaCv: "Ver CV 2026",
@@ -20,6 +22,8 @@ export const translations = {
       linkedin: "https://www.linkedin.com/in/juan-carlos-andrés-hernández-8850b136a",
       phone: "+52 56 6385 2677",
       phoneRaw: "5663852677",
+      phoneDisplay: "(56) 6385-2677",
+      location: "5to Callejón San José Sur, Lomas de Chicoloapan, CP 56380, CDMX / Estado de México"
     },
 
     experience: {
@@ -265,9 +269,11 @@ export const translations = {
       subtitle: "C# / .NET & SQL Server • Systems Development & Full Stack",
       description1: "I am a Computer Systems Engineer with over 7 years of experience in software development, systems administration and support, databases, and incident resolution. I have worked primarily with .NET, C#, ASP.NET Core, MVC, and SQL Server technologies, along with Full Stack web experience in React, Next.js, Node.js, and modern web tools.",
       description2: "My federal public sector experience, particularly in administering and supporting the COMPRANET system, allowed me to develop skills in incident resolution, technical and functional analysis, data validation, SQL Server, functional testing, and operational continuity.",
+      profile: "I am a Systems Engineer with over 7 years of experience building robust and scalable software solutions. My background managing the federal COMPRANET system taught me to work under pressure, meet rigorous quality standards, and optimize critical government-level systems. Currently, as a Full Stack Developer and Freelancer, I apply that expertise to help companies and startups build high-impact digital products.",
       profileText1: "Computer Systems Engineer with over 7 years of experience in software development and critical platform administration. Expertise in .NET/C#, SQL Server, web development, technical-functional support, incident analysis and resolution, functional testing, and enterprise systems maintenance.",
       profileText2: "My background combines software development with systems operations and support, allowing me to participate in both building solutions and troubleshooting complex issues.",
       jobAvailability: "I am available to join development teams and contribute my experience in .NET, C#, SQL Server, Full Stack development, systems analysis, and technical/functional support.",
+      cta: "View Projects",
       ctaProjects: "View Projects",
       ctaContact: "Contact Me",
       ctaCv: "View CV 2026",
@@ -276,6 +282,8 @@ export const translations = {
       linkedin: "https://www.linkedin.com/in/juan-carlos-andrés-hernández-8850b136a",
       phone: "+52 56 6385 2677",
       phoneRaw: "5663852677",
+      phoneDisplay: "(56) 6385-2677",
+      location: "5to Callejón San José Sur, Lomas de Chicoloapan, CP 56380, Mexico City / State of Mexico"
     },
 
     experience: {

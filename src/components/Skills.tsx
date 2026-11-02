@@ -2,7 +2,7 @@
 
 import { motion } from "framer-motion";
 import { useState } from "react";
-import { Code2, Server, Wrench, Sparkles } from "lucide-react";
+import { Code2, Server, Shield, Wrench, Sparkles, Cpu } from "lucide-react";
 
 interface SkillsProps {
   lang: "es" | "en";
@@ -14,82 +14,97 @@ export default function Skills({ lang }: SkillsProps) {
 
   const categories = [
     { id: "all", label: isEs ? "Todas las tecnologías" : "All Stacks" },
-    { id: "primary", label: isEs ? "Especialidad Principal" : "Primary Specialty" },
-    { id: "experience", label: isEs ? "Experiencia" : "Experience" },
-    { id: "complementary", label: isEs ? "Complementario / Proyectos" : "Complementary / Projects" },
+    { id: "primary", label: isEs ? "Especialidad Principal (.NET & SQL)" : "Primary Specialty (.NET & SQL)" },
+    { id: "web", label: isEs ? "Web & Full Stack" : "Web & Full Stack" },
+    { id: "infrastructure", label: isEs ? "Infraestructura & CCTV" : "Infrastructure & CCTV" },
+    { id: "complementary", label: isEs ? "Cloud & Mobile" : "Cloud & Mobile" },
   ];
 
   const skillGroups = [
     {
       id: "primary",
       categoryName: isEs ? "NIVEL 1" : "LEVEL 1",
-      title: isEs ? "ESPECIALIDAD PRINCIPAL" : "PRIMARY SPECIALTY",
+      title: isEs ? "ESPECIALIDAD PRINCIPAL (.NET / C# & SQL SERVER)" : "PRIMARY SPECIALTY (.NET / C# & SQL SERVER)",
       description: isEs 
-        ? "Tecnologías y competencias centrales respaldadas por trayectoria profesional comprobable en desarrollo de sistemas empresariales y administración de bases de datos."
-        : "Core technologies and competencies backed by verified enterprise software experience.",
+        ? "Tecnologías y competencias centrales respaldadas por trayectoria profesional comprobable en desarrollo de sistemas empresariales y administración de bases de datos críticas."
+        : "Core technologies and competencies backed by verified enterprise software experience in mission-critical environments.",
       icon: <Code2 className="w-6 h-6 text-blue-500" />,
       badgeColor: "bg-blue-500/10 text-blue-600 dark:text-blue-400 border-blue-500/30 font-bold",
       items: [
         "C#",
-        ".NET",
+        ".NET Core",
         "ASP.NET Core",
-        "MVC",
+        "Arquitectura MVC",
         "SQL Server",
-        "SQL",
-        "Optimización de consultas",
-        "Desarrollo de sistemas",
-        "Soporte técnico/funcional",
-        "REST APIs",
+        "Optimización de consultas SQL",
+        "Soporte técnico COMPRANET",
+        "RESTful APIs",
+        "Entity Framework",
+        "Alta Disponibilidad",
       ],
     },
     {
-      id: "experience",
+      id: "web",
       categoryName: isEs ? "NIVEL 2" : "LEVEL 2",
-      title: isEs ? "EXPERIENCIA WEB / FULL STACK" : "WEB / FULL STACK EXPERIENCE",
+      title: isEs ? "DESARROLLO WEB FULL STACK" : "FULL STACK WEB DEVELOPMENT",
       description: isEs
-        ? "Tecnologías de desarrollo web Full Stack, maquetación, frontend, backend y herramientas aplicadas en proyectos corporativos e independientes."
-        : "Full Stack web technologies, layout, frontend, backend, and tools used across corporate and independent builds.",
+        ? "Ecosistema web moderno, frameworks reactivos, diseño responsivo y herramientas aplicadas en plataformas corporativas e independientes."
+        : "Modern web ecosystem, reactive frameworks, responsive design, and tools used across enterprise applications.",
       icon: <Server className="w-6 h-6 text-indigo-500" />,
       badgeColor: "bg-indigo-500/10 text-indigo-600 dark:text-indigo-400 border-indigo-500/30 font-semibold",
       items: [
-        "HTML5",
-        "CSS3",
-        "JavaScript",
         "React",
-        "Next.js",
-        "Node.js",
+        "Next.js (App Router)",
         "TypeScript",
+        "JavaScript (ES6+)",
         "Tailwind CSS",
+        "Node.js",
+        "HTML5 / CSS3",
         "Laravel / PHP",
         "MySQL",
-        "WordPress",
-        "Elementor",
+        "Three.js / WebGL",
+        "Framer Motion",
         "Git / GitHub",
-        "Figma",
+      ],
+    },
+    {
+      id: "infrastructure",
+      categoryName: isEs ? "NIVEL 3" : "LEVEL 3",
+      title: isEs ? "INFRAESTRUCTURA, REDES & SEGURIDAD CCTV" : "INFRASTRUCTURE, NETWORKING & CCTV",
+      description: isEs
+        ? "Instalación física y lógica de cableado estructurado certificado, cámaras de videovigilancia IP/analógicas, NVR/DVR y configuración de redes empresariales."
+        : "Physical and logical installation of certified structured cabling, IP/analog CCTV, NVR/DVR, and enterprise networking.",
+      icon: <Shield className="w-6 h-6 text-emerald-500" />,
+      badgeColor: "bg-emerald-500/10 text-emerald-600 dark:text-emerald-400 border-emerald-500/30 font-semibold",
+      items: [
+        "Cableado Estructurado Cat6 / Cat5e",
+        "Sistemas CCTV IP & Analógicas",
+        "Grabación DVR / NVR Pro",
+        "Racks y Gabinetes de Telecomunicaciones",
+        "Switches Administrables & Routers",
+        "Puntos de Red & Telefonía",
+        "Mantenimiento Hardware & Pasta Térmica",
+        "Diagnóstico y Reparación de Equipos",
       ],
     },
     {
       id: "complementary",
-      categoryName: isEs ? "NIVEL 3" : "LEVEL 3",
-      title: isEs ? "TECNOLOGÍAS COMPLEMENTARIAS / PROYECTOS" : "COMPLEMENTARY / PROJECT TECHNOLOGIES",
+      categoryName: isEs ? "NIVEL 4" : "LEVEL 4",
+      title: isEs ? "CLOUD, MÓVIL & HERRAMIENTAS COMPLEMENTARIAS" : "CLOUD, MOBILE & COMPLEMENTARY TOOLS",
       description: isEs
-        ? "Tecnologías, plataformas cloud, móviles y arquitecturas específicas utilizadas en proyectos concretos del portafolio."
-        : "Technologies, cloud platforms, mobile toolkits, and specific architectures used across portfolio projects.",
+        ? "Servicios cloud, aplicaciones móviles multiplataforma, bases de datos no relacionales y pasarelas de pago integradas."
+        : "Cloud services, cross-platform mobile apps, NoSQL databases, and integrated payment gateways.",
       icon: <Wrench className="w-6 h-6 text-purple-500" />,
       badgeColor: "bg-purple-500/10 text-purple-600 dark:text-purple-400 border-purple-500/30 font-normal",
       items: [
-        "Java",
-        "Spring Boot",
-        "Spring Cloud",
-        "Microservicios",
-        "AWS",
-        "Kotlin",
-        "Firebase",
+        "AWS (EC2, S3)",
+        "Firebase / Firestore",
         "React Native",
-        "Prisma",
-        "Jetpack Compose",
-        "H2",
-        "Stripe",
+        "Prisma ORM",
+        "Stripe Payments",
+        "Google Cloud Platform (GCP)",
+        "WordPress & Elementor",
+        "Adobe Photoshop",
       ],
     },
   ];
@@ -99,8 +114,8 @@ export default function Skills({ lang }: SkillsProps) {
     : skillGroups.filter((g) => g.id === activeCategory);
 
   return (
-    <section id="especialidades" className="py-24 px-6 relative bg-card-bg border-y border-border">
-      <div className="max-w-6xl mx-auto">
+    <section id="skills" className="py-24 px-6 relative bg-card-bg border-y border-border">
+      <div id="especialidades" className="max-w-6xl mx-auto">
         {/* HEADER */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -110,21 +125,21 @@ export default function Skills({ lang }: SkillsProps) {
           className="text-center mb-12"
         >
           <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full glass border border-blue-500/20 text-blue-600 dark:text-blue-400 text-xs font-semibold mb-4">
-            <Sparkles className="w-4 h-4 text-blue-500" />
+            <Cpu className="w-4 h-4 text-blue-500" />
             <span>{isEs ? "Capacidad Técnica & Stacks" : "Technical Capability & Stacks"}</span>
           </div>
 
           <h2 className="text-4xl md:text-5xl font-extrabold text-foreground mb-4 tracking-tight">
-            {isEs ? "Especialidades " : "Technical "}
+            {isEs ? "Habilidades & " : "Skills & "}
             <span className="text-gradient">
-              {isEs ? "técnicas" : "Specialties"}
+              {isEs ? "Especialidades Técnicas" : "Technical Specialties"}
             </span>
           </h2>
           <div className="w-24 h-1 bg-gradient-to-r from-blue-500 to-indigo-500 mx-auto rounded-full mb-6" />
-          <p className="text-slate-600 dark:text-slate-300 max-w-2xl mx-auto text-base md:text-lg">
+          <p className="text-slate-600 dark:text-slate-300 max-w-2xl mx-auto text-base md:text-lg font-light leading-relaxed">
             {isEs
-              ? "Herramientas y tecnologías que utilizo para desarrollar sistemas empresariales, aplicaciones web y soluciones Full Stack."
-              : "Tools and technologies I use to develop enterprise software, web applications, and Full Stack solutions."}
+              ? "Herramientas y tecnologías que utilizo para desarrollar sistemas empresariales, aplicaciones web, cableado de red y soluciones de seguridad física."
+              : "Tools and technologies I use to develop enterprise software, web applications, network cabling, and physical security solutions."}
           </p>
         </motion.div>
 
@@ -165,10 +180,10 @@ export default function Skills({ lang }: SkillsProps) {
                     <span className="text-[11px] font-extrabold tracking-widest uppercase text-blue-600 dark:text-blue-400">
                       {group.categoryName}
                     </span>
-                    <h3 className="text-2xl font-bold text-foreground">{group.title}</h3>
+                    <h3 className="text-xl sm:text-2xl font-bold text-foreground">{group.title}</h3>
                   </div>
                 </div>
-                <p className="text-xs sm:text-sm text-slate-500 dark:text-slate-400 max-w-md">
+                <p className="text-xs sm:text-sm text-slate-500 dark:text-slate-400 max-w-md font-light">
                   {group.description}
                 </p>
               </div>

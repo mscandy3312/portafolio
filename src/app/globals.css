@@ -3,7 +3,7 @@
 :root {
   --background: #f8fafc;
   --foreground: #020617; /* Slate 950 */
-  --card-bg: rgba(255, 255, 255, 0.7);
+  --card-bg: rgba(255, 255, 255, 0.75);
   --border: rgba(226, 232, 240, 0.8);
   --grid-color: rgba(148, 163, 184, 0.1);
 }
@@ -12,7 +12,7 @@
   --background: #030712; /* Deep Black / Dark Gray 950 */
   --foreground: #f8fafc;
   --card-bg: rgba(15, 23, 42, 0.55); /* Glass Slate 900 */
-  --border: rgba(51, 65, 85, 0.4); /* Slate 700 */
+  --border: rgba(51, 65, 85, 0.5); /* Slate 700 */
   --grid-color: rgba(255, 255, 255, 0.04);
 }
 
@@ -29,6 +29,25 @@ body {
   transition: background-color 0.4s ease, color 0.4s ease;
   background-image: radial-gradient(var(--grid-color) 1px, transparent 1px);
   background-size: 24px 24px;
+  overflow-x: hidden;
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--background);
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgba(59, 130, 246, 0.35);
+  border-radius: 9999px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #3b82f6;
 }
 
 /* Premium Glassmorphism & Utilities */
@@ -52,7 +71,7 @@ body {
 }
 
 .text-gradient {
-  background: linear-gradient(135deg, #3b82f6 0%, #6366f1 50%, #8b5cf6 100%);
+  background: linear-gradient(135deg, #38bdf8 0%, #3b82f6 50%, #8b5cf6 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
@@ -67,21 +86,26 @@ body {
   color: transparent;
 }
 
-/* Custom Scrollbar */
-::-webkit-scrollbar {
-  width: 8px;
+/* 3D Styles */
+.preserve-3d {
+  transform-style: preserve-3d;
 }
 
-::-webkit-scrollbar-track {
-  background: var(--background);
+.perspective-1000 {
+  perspective: 1000px;
 }
 
-::-webkit-scrollbar-thumb {
-  background: #3b82f640;
-  border-radius: 9999px;
+@keyframes pulseGlow {
+  0%, 100% {
+    opacity: 0.4;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 0.8;
+    transform: scale(1.05);
+  }
 }
 
-::-webkit-scrollbar-thumb:hover {
-  background: #3b82f6;
+.animate-pulse-glow {
+  animation: pulseGlow 4s ease-in-out infinite;
 }
-
