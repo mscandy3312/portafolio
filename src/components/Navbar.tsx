@@ -67,7 +67,7 @@ export default function Navbar({ lang, setLang }: NavbarProps) {
             <span className="text-base font-black tracking-tight text-foreground leading-none">
               JCAH<span className="text-blue-500">.dev</span>
             </span>
-            <span className="text-[10px] text-slate-400 font-medium">Ingeniería en Sistemas</span>
+            <span className="text-[10px] text-slate-400 font-medium">Soluciones Tecnológicas</span>
           </div>
         </a>
 

@@ -8,11 +8,14 @@ const outfit = Outfit({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://jcah-portafolio.com"),
-  title: "Juan Carlos Andrés Hernández (JCAH) | Ingeniero en Sistemas | .NET C# | Full Stack",
-  description: "Desarrollamos, conectamos y hacemos crecer tus ideas. Portafolio profesional de desarrollo web, .NET C#, SQL Server, redes, videovigilancia y soporte técnico.",
+  title: "Juan Carlos Andrés Hernández (JCAH) | Soluciones Tecnológicas & Software Empresarial",
+  description: "Transformamos procesos de negocio en soluciones digitales. Desarrollo de software empresarial, plataformas web y automatizaciones diseñadas para ayudar a tu negocio a trabajar mejor, vender más y crecer.",
   keywords: [
     "Juan Carlos Andrés Hernández",
     "JCAH",
+    "Soluciones Tecnológicas",
+    "Software Empresarial",
+    "Automatización de Procesos",
     "Ingeniero en Sistemas",
     "Desarrollador .NET",
     "C#",
@@ -21,6 +24,10 @@ export const metadata: Metadata = {
     "React",
     "Next.js",
     "Full Stack Developer",
+    "Embudos de Venta",
+    "Hotmart",
+    "Make",
+    "Systeme.io",
     "Cableado Estructurado",
     "Videovigilancia CCTV",
     "MongoDB Atlas",
@@ -36,16 +43,16 @@ export const metadata: Metadata = {
     telephone: false,
   },
   openGraph: {
-    title: "Juan Carlos Andrés Hernández (JCAH) | Ingeniero en Sistemas",
-    description: "Desarrollamos, conectamos y hacemos crecer tus ideas. Sitios web, sistemas empresariales, cableado estructurado, videovigilancia y soporte técnico.",
+    title: "Juan Carlos Andrés Hernández (JCAH) | Soluciones Tecnológicas & Software Empresarial",
+    description: "Transformamos procesos de negocio en soluciones digitales. Desarrollo de software empresarial, plataformas web y automatizaciones.",
     url: "https://jcah-portafolio.com",
-    siteName: "Portafolio Profesional JCAH",
+    siteName: "Portafolio Comercial JCAH",
     images: [
       {
         url: "/projects/erp-web.png",
         width: 1200,
         height: 630,
-        alt: "Juan Carlos Andrés Hernández - JCAH Portafolio",
+        alt: "Juan Carlos Andrés Hernández - JCAH Soluciones Tecnológicas",
       },
     ],
     locale: "es_MX",
@@ -53,8 +60,8 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Juan Carlos Andrés Hernández (JCAH) | Ingeniero en Sistemas",
-    description: "Desarrollo .NET/C#, SQL Server, React, Next.js, sistemas empresariales y administración COMPRANET.",
+    title: "Juan Carlos Andrés Hernández (JCAH) | Soluciones Tecnológicas & Software Empresarial",
+    description: "Transformamos procesos de negocio en soluciones digitales. Desarrollo de software empresarial, plataformas web y automatizaciones.",
     images: ["/projects/erp-web.png"],
   },
   robots: {

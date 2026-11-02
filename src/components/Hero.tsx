@@ -19,6 +19,8 @@ import {
   Star,
   Shield,
   MessageCircle,
+  Zap,
+  Code2,
 } from "lucide-react";
 
 function GithubIcon(props: React.SVGProps<SVGSVGElement>) {
@@ -58,12 +60,12 @@ export default function Hero({ lang }: HeroProps) {
   const stats = [
     {
       value: "+7",
-      label: lang === "es" ? "Años de Experiencia" : "Years of Experience",
+      label: lang === "es" ? "Años de Experiencia" : "Years Experience",
       icon: <ShieldCheck className="w-5 h-5 text-blue-500" />,
     },
     {
-      value: "13+",
-      label: lang === "es" ? "Proyectos Destacados" : "Featured Projects",
+      value: "3 Líneas",
+      label: lang === "es" ? "Comerciales Core" : "Commercial Pillars",
       icon: <Cpu className="w-5 h-5 text-indigo-500" />,
     },
     {
@@ -73,7 +75,7 @@ export default function Hero({ lang }: HeroProps) {
     },
     {
       value: ".NET / C#",
-      label: lang === "es" ? "Especialidad Principal" : "Core Specialty",
+      label: lang === "es" ? "Especialidad Core" : "Core Specialty",
       icon: <Database className="w-5 h-5 text-purple-500" />,
     },
   ];
@@ -102,82 +104,118 @@ export default function Hero({ lang }: HeroProps) {
           <span className="relative inline-flex rounded-full h-2.5 w-2.5 bg-emerald-500"></span>
         </span>
         <span className="text-xs md:text-sm font-semibold tracking-wide text-foreground">
-          JCAH • {t.personalData.title}
+          JCAH • Soluciones Tecnológicas & Software Empresarial
         </span>
       </motion.div>
 
-      {/* Slogan Pill */}
+      {/* Authority & Experience Pill */}
       <motion.div
         initial={{ opacity: 0, scale: 0.9 }}
         animate={{ opacity: 1, scale: 1 }}
         transition={{ duration: 0.6, delay: 0.1 }}
-        className="z-10 mb-4"
+        className="z-10 mb-5"
       >
-        <span className="text-xs sm:text-sm font-semibold text-blue-600 dark:text-blue-400 bg-blue-500/10 px-4 py-1.5 rounded-full border border-blue-500/20">
-          {lang === "es"
-            ? "Desarrollamos, conectamos y hacemos crecer tus ideas"
-            : "We develop, connect, and scale your ideas"}
+        <span className="inline-flex items-center gap-2 text-xs sm:text-sm font-bold text-blue-600 dark:text-blue-400 bg-blue-500/10 px-4 py-1.5 rounded-full border border-blue-500/20 shadow-sm">
+          <ShieldCheck className="w-4 h-4 text-blue-500 shrink-0" />
+          <span>
+            {lang === "es"
+              ? "Juan Carlos Andrés Hernández · Ingeniero en Sistemas Computacionales · +7 años de experiencia"
+              : "Juan Carlos Andrés Hernández · Computer Systems Engineer · 7+ Years Experience"}
+          </span>
         </span>
       </motion.div>
 
-      {/* Main Title */}
+      {/* Main Commercial Heading */}
       <motion.h1
         initial={{ opacity: 0, y: 30, filter: "blur(10px)" }}
         animate={{ opacity: 1, y: 0, filter: "blur(0px)" }}
         transition={{ duration: 0.8, delay: 0.2 }}
-        className="text-4xl sm:text-6xl md:text-7xl lg:text-8xl font-black text-foreground z-10 tracking-tight leading-[1.08] max-w-5xl"
+        className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-black text-foreground z-10 tracking-tight leading-[1.12] max-w-5xl"
       >
-        <span>Juan Carlos Andrés</span>
-        <span className="block text-gradient mt-1 font-extrabold">Hernández</span>
+        <span>
+          {lang === "es" ? "Transformamos procesos de negocio en " : "We transform business workflows into "}
+        </span>
+        <span className="text-gradient block mt-1.5 font-extrabold">
+          {lang === "es" ? "soluciones digitales." : "digital solutions."}
+        </span>
       </motion.h1>
 
-      {/* Subtitle / Bio */}
+      {/* Commercial Value Proposition / Subtitle */}
       <motion.p
         initial={{ opacity: 0, y: 30 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.8, delay: 0.35 }}
-        className="mt-6 text-base sm:text-lg md:text-xl text-slate-600 dark:text-slate-300 max-w-2xl z-10 font-light leading-relaxed"
+        className="mt-6 text-base sm:text-lg md:text-xl text-slate-600 dark:text-slate-300 max-w-3xl z-10 font-light leading-relaxed"
       >
-        {t.personalData.profile}
+        {lang === "es"
+          ? "Desarrollo de software empresarial, plataformas web y automatizaciones diseñadas para ayudar a tu negocio a trabajar mejor, vender más y crecer."
+          : "Enterprise software development, web platforms, and automations engineered to help your business work better, sell more, and scale."}
       </motion.p>
 
-      {/* Interactive Floating 3D Metric Badges */}
+      {/* 4 Core Technology Stack Pills */}
       <motion.div
-        initial={{ opacity: 0, y: 30 }}
+        initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.8, delay: 0.45 }}
-        className="mt-6 z-10 flex flex-wrap justify-center items-center gap-3 max-w-3xl"
+        transition={{ duration: 0.6, delay: 0.45 }}
+        className="mt-6 z-10 flex flex-wrap justify-center items-center gap-2.5 sm:gap-3 max-w-3xl"
       >
-        <button
-          onClick={() => {
-            const el = document.getElementById("reviews");
-            el?.scrollIntoView({ behavior: "smooth" });
-          }}
-          className="flex items-center gap-2 px-4 py-2 rounded-full glass border border-amber-500/30 text-xs font-bold hover:scale-105 transition-all text-foreground cursor-pointer shadow-lg shadow-amber-500/5"
-        >
-          <div className="flex text-amber-400">
-            <Star className="w-3.5 h-3.5 fill-amber-400" />
-          </div>
-          <span>5.0 • {lang === "es" ? "Reseñas de Clientes" : "Client Reviews"}</span>
-        </button>
-
-        <div className="flex items-center gap-2 px-4 py-2 rounded-full glass border border-blue-500/30 text-xs font-bold text-foreground shadow-lg shadow-blue-500/5">
-          <Sparkles className="w-3.5 h-3.5 text-blue-500" />
-          <span>+7 {lang === "es" ? "Años de Experiencia" : "Years Experience"}</span>
+        <div className="px-3.5 py-1.5 rounded-xl glass border border-blue-500/30 text-xs sm:text-sm font-bold text-foreground flex items-center gap-2 shadow-sm">
+          <span className="w-2 h-2 rounded-full bg-blue-500 animate-pulse" />
+          <span>.NET / C#</span>
         </div>
-
-        <div className="flex items-center gap-2 px-4 py-2 rounded-full glass border border-emerald-500/30 text-xs font-bold text-foreground shadow-lg shadow-emerald-500/5">
-          <Shield className="w-3.5 h-3.5 text-emerald-500" />
-          <span>{lang === "es" ? "Tu proyecto, en buenas manos" : "Your project, in good hands"}</span>
+        <div className="px-3.5 py-1.5 rounded-xl glass border border-indigo-500/30 text-xs sm:text-sm font-bold text-foreground flex items-center gap-2 shadow-sm">
+          <span className="w-2 h-2 rounded-full bg-indigo-500 animate-pulse" />
+          <span>React / Next.js</span>
+        </div>
+        <div className="px-3.5 py-1.5 rounded-xl glass border border-purple-500/30 text-xs sm:text-sm font-bold text-foreground flex items-center gap-2 shadow-sm">
+          <span className="w-2 h-2 rounded-full bg-purple-500 animate-pulse" />
+          <span>SQL Server</span>
+        </div>
+        <div className="px-3.5 py-1.5 rounded-xl glass border border-emerald-500/30 text-xs sm:text-sm font-bold text-foreground flex items-center gap-2 shadow-sm">
+          <span className="w-2 h-2 rounded-full bg-emerald-500 animate-pulse" />
+          <span>{lang === "es" ? "Automatización & Cloud" : "Automation & Cloud"}</span>
         </div>
       </motion.div>
 
-      {/* Action CTA Buttons */}
+      {/* Primary Action CTA Buttons */}
       <motion.div
         initial={{ opacity: 0, scale: 0.95 }}
         animate={{ opacity: 1, scale: 1 }}
         transition={{ duration: 0.5, delay: 0.55 }}
-        className="mt-8 z-10 flex flex-wrap justify-center items-center gap-3.5 w-full sm:w-auto px-4"
+        className="mt-8 z-10 flex flex-wrap justify-center items-center gap-4 w-full sm:w-auto px-4"
+      >
+        {/* SOLICITAR UNA COTIZACIÓN (Primary CTA) */}
+        <button
+          onClick={() => {
+            const section = document.getElementById("services");
+            section?.scrollIntoView({ behavior: "smooth" });
+          }}
+          className="px-8 py-4 bg-gradient-to-r from-blue-600 via-indigo-600 to-cyan-500 text-white rounded-full font-bold text-sm sm:text-base hover:shadow-2xl hover:shadow-blue-500/40 hover:scale-105 active:scale-[0.98] transition-all duration-300 flex items-center gap-2.5 cursor-pointer shadow-xl shadow-blue-500/25"
+        >
+          <Zap className="w-4 h-4 text-cyan-200" />
+          <span>{lang === "es" ? "Solicitar una cotización" : "Request a Quote"}</span>
+          <ArrowRight className="w-4 h-4" />
+        </button>
+
+        {/* VER PROYECTOS (Secondary CTA) */}
+        <button
+          onClick={() => {
+            const section = document.getElementById("proyectos");
+            section?.scrollIntoView({ behavior: "smooth" });
+          }}
+          className="px-8 py-4 bg-foreground text-background dark:bg-white dark:text-black rounded-full font-bold text-sm sm:text-base hover:scale-105 active:scale-[0.98] transition-all duration-300 shadow-xl shadow-blue-500/10 flex items-center justify-center gap-2 cursor-pointer"
+        >
+          <span>{lang === "es" ? "Ver proyectos" : "View Projects"}</span>
+          <ArrowRight className="w-4 h-4 opacity-80" />
+        </button>
+      </motion.div>
+
+      {/* Secondary Quick Action Links Row */}
+      <motion.div
+        initial={{ opacity: 0, y: 15 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.5, delay: 0.65 }}
+        className="mt-5 z-10 flex flex-wrap justify-center items-center gap-3 px-4"
       >
         {/* VER CV 2026 */}
         {CV_LINK && (
@@ -185,25 +223,13 @@ export default function Hero({ lang }: HeroProps) {
             href={CV_LINK}
             target="_blank"
             rel="noopener noreferrer"
-            className="px-6 py-3.5 bg-gradient-to-r from-blue-600 to-indigo-600 text-white rounded-full font-bold text-xs sm:text-sm hover:shadow-xl hover:shadow-blue-500/30 hover:scale-[1.02] active:scale-[0.98] transition-all duration-300 flex items-center gap-2 cursor-pointer shadow-lg shadow-blue-500/20"
+            className="px-4 py-2 glass rounded-full font-semibold text-xs text-foreground hover:border-blue-500/40 transition-all flex items-center gap-1.5 cursor-pointer shadow-sm"
           >
-            <Download className="w-4 h-4" />
+            <Download className="w-3.5 h-3.5 text-blue-500" />
             <span>Ver CV 2026</span>
-            <ExternalLink className="w-3.5 h-3.5 opacity-80" />
+            <ExternalLink className="w-3 h-3 opacity-60" />
           </a>
         )}
-
-        {/* VER SERVICIOS */}
-        <button
-          onClick={() => {
-            const section = document.getElementById("services");
-            section?.scrollIntoView({ behavior: "smooth" });
-          }}
-          className="px-6 py-3.5 bg-foreground text-background dark:bg-white dark:text-black rounded-full font-bold text-xs sm:text-sm hover:scale-105 transition-all duration-300 shadow-xl shadow-blue-500/10 flex items-center justify-center gap-2 cursor-pointer"
-        >
-          <span>{lang === "es" ? "Ver Servicios & Tarifas" : "View Services & Pricing"}</span>
-          <ArrowRight className="w-4 h-4" />
-        </button>
 
         {/* CALIFICAR CON GOOGLE */}
         <button
@@ -215,9 +241,9 @@ export default function Hero({ lang }: HeroProps) {
               el?.scrollIntoView({ behavior: "smooth" });
             }
           }}
-          className="px-6 py-3.5 rounded-full glass text-foreground font-bold text-xs sm:text-sm hover:bg-white/10 transition-all duration-300 border border-blue-500/30 flex items-center justify-center gap-2 hover:scale-105 cursor-pointer"
+          className="px-4 py-2 rounded-full glass text-foreground font-semibold text-xs hover:border-blue-500/40 transition-all flex items-center gap-1.5 cursor-pointer shadow-sm"
         >
-          <svg className="w-4 h-4" viewBox="0 0 24 24">
+          <svg className="w-3.5 h-3.5" viewBox="0 0 24 24">
             <path
               fill="#4285F4"
               d="M23.745 12.27c0-.7-.06-1.4-.19-2.07H12v4.51h6.6c-.29 1.52-1.14 2.82-2.4 3.68v3.05h3.88c2.27-2.09 3.665-5.17 3.665-9.17z"
@@ -246,14 +272,28 @@ export default function Hero({ lang }: HeroProps) {
           </span>
         </button>
 
+        {/* REVIEWS BADGE LINK */}
+        <button
+          onClick={() => {
+            const el = document.getElementById("reviews");
+            el?.scrollIntoView({ behavior: "smooth" });
+          }}
+          className="flex items-center gap-1.5 px-4 py-2 rounded-full glass border border-amber-500/30 text-xs font-semibold text-foreground cursor-pointer shadow-sm hover:scale-105 transition-transform"
+        >
+          <div className="flex text-amber-400">
+            <Star className="w-3.5 h-3.5 fill-amber-400" />
+          </div>
+          <span>5.0 • {lang === "es" ? "Reseñas" : "Reviews"}</span>
+        </button>
+
         {/* WHATSAPP */}
         <a
-          href="https://wa.me/525663852677?text=Hola%20Juan%20Carlos,%20vi%20tu%20portafolio%20y%20me%20gustar%C3%ADa%20cotizar%20un%20proyecto."
+          href="https://wa.me/525663852677?text=Hola%20Juan%20Carlos,%20me%20gustar%C3%ADa%20solicitar%20una%20cotizaci%C3%B3n%20para%20un%20proyecto."
           target="_blank"
           rel="noopener noreferrer"
-          className="px-5 py-3.5 rounded-full bg-emerald-600/10 text-emerald-600 dark:text-emerald-400 font-bold text-xs sm:text-sm hover:bg-emerald-600/20 transition-all border border-emerald-500/30 flex items-center justify-center gap-2 hover:scale-105"
+          className="px-4 py-2 rounded-full bg-emerald-600/10 text-emerald-600 dark:text-emerald-400 font-semibold text-xs hover:bg-emerald-600/20 transition-all border border-emerald-500/30 flex items-center gap-1.5 shadow-sm"
         >
-          <MessageCircle className="w-4 h-4" />
+          <MessageCircle className="w-3.5 h-3.5" />
           <span>WhatsApp</span>
         </a>
       </motion.div>
@@ -272,7 +312,7 @@ export default function Hero({ lang }: HeroProps) {
       <motion.div
         initial={{ opacity: 0, y: 30 }}
         animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.8, delay: 0.65 }}
+        transition={{ duration: 0.8, delay: 0.75 }}
         className="mt-10 w-full max-w-5xl z-10 grid grid-cols-2 md:grid-cols-4 gap-4 px-2"
       >
         {stats.map((stat, i) => (
@@ -297,7 +337,7 @@ export default function Hero({ lang }: HeroProps) {
       <motion.div
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.5, delay: 0.75 }}
+        transition={{ duration: 0.5, delay: 0.85 }}
         className="mt-6 z-10 flex flex-wrap items-center justify-center gap-4 text-xs font-semibold text-slate-600 dark:text-slate-300"
       >
         <a
