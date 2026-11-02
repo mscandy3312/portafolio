@@ -92,17 +92,18 @@ export default function Skills({ lang }: SkillsProps) {
       categoryName: isEs ? "NIVEL 4" : "LEVEL 4",
       title: isEs ? "CLOUD, MÓVIL & HERRAMIENTAS COMPLEMENTARIAS" : "CLOUD, MOBILE & COMPLEMENTARY TOOLS",
       description: isEs
-        ? "Servicios cloud, aplicaciones móviles multiplataforma, bases de datos no relacionales y pasarelas de pago integradas."
-        : "Cloud services, cross-platform mobile apps, NoSQL databases, and integrated payment gateways.",
+        ? "Servicios cloud, bases de datos NoSQL en la nube (MongoDB Atlas, Firebase), aplicaciones móviles multiplataforma y pasarelas de pago integradas."
+        : "Cloud services, cloud NoSQL databases (MongoDB Atlas, Firebase), cross-platform mobile apps, and integrated payment gateways.",
       icon: <Wrench className="w-6 h-6 text-purple-500" />,
       badgeColor: "bg-purple-500/10 text-purple-600 dark:text-purple-400 border-purple-500/30 font-normal",
       items: [
         "AWS (EC2, S3)",
+        isEs ? "MongoDB / MongoDB Atlas (Base de datos en la nube)" : "MongoDB / MongoDB Atlas (Cloud NoSQL DB)",
         "Firebase / Firestore",
+        "Google Cloud Platform (GCP)",
         "React Native",
         "Prisma ORM",
         "Stripe Payments",
-        "Google Cloud Platform (GCP)",
         "WordPress & Elementor",
         "Adobe Photoshop",
       ],

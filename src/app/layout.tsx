@@ -23,6 +23,7 @@ export const metadata: Metadata = {
     "Full Stack Developer",
     "Cableado Estructurado",
     "Videovigilancia CCTV",
+    "MongoDB Atlas",
     "COMPRANET",
     "México",
   ],
