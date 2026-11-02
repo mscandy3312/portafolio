@@ -73,9 +73,28 @@ export default function Reviews({ lang = "es" }: ReviewsProps) {
     try {
       const res = await fetch("/api/reviews");
       const data = await res.json();
+      let apiReviews: Review[] = [];
       if (data.success && Array.isArray(data.reviews)) {
-        setReviews(data.reviews);
+        apiReviews = data.reviews;
       }
+
+      // Merge with any local reviews stored in browser localStorage
+      try {
+        const localStored = localStorage.getItem("jcah_client_reviews");
+        if (localStored) {
+          const parsedLocal: Review[] = JSON.parse(localStored);
+          const combined = [...parsedLocal];
+          for (const rev of apiReviews) {
+            if (!combined.some((item) => item.id === rev.id)) {
+              combined.push(rev);
+            }
+          }
+          setReviews(combined);
+          return;
+        }
+      } catch (_) {}
+
+      setReviews(apiReviews);
     } catch (err) {
       console.error("Error loading reviews:", err);
     } finally {
@@ -134,6 +153,14 @@ export default function Reviews({ lang = "es" }: ReviewsProps) {
         setRating(5);
         setSubmitSuccess(true);
 
+        // Also persist in client localStorage so user reviews stay even across sessions
+        try {
+          const currentLocal = localStorage.getItem("jcah_client_reviews");
+          const parsed = currentLocal ? JSON.parse(currentLocal) : [];
+          const updated = [data.review, ...parsed.filter((r: Review) => r.id !== data.review.id)];
+          localStorage.setItem("jcah_client_reviews", JSON.stringify(updated));
+        } catch (_) {}
+
         // Fire festive confetti!
         try {
           confetti({
@@ -170,6 +197,14 @@ export default function Reviews({ lang = "es" }: ReviewsProps) {
       const data = await res.json();
       if (data.success) {
         setReviews(data.reviews);
+        try {
+          const currentLocal = localStorage.getItem("jcah_client_reviews");
+          if (currentLocal) {
+            const parsed = JSON.parse(currentLocal);
+            const filtered = parsed.filter((r: Review) => r.id !== reviewId);
+            localStorage.setItem("jcah_client_reviews", JSON.stringify(filtered));
+          }
+        } catch (_) {}
       }
     } catch (err) {
       console.error("Error deleting review:", err);
